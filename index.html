@@ -50,9 +50,9 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li class="dropdown"><a href="#"><span>Components</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li class="dropdown"><a href="#"><span>Local Graph Clustering</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span> Clustering</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">ACL</a></li>
+                  <li><a href="#local">Local Graph Clustering</a></li>
                 </ul>
               </li>
              </ul>
@@ -121,9 +121,49 @@
       </div>
     </section><!-- End About Section -->
 
+    <!-- ======= Local Graph Clustering Section ======= -->
+    <section id="local" class="about section-bg">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-lg-12 pt-5 pt-lg-0">
+            <h3 data-aos="fade-up">Local Graph Clustering</h3> <br>
+            <p data-aos="fade-up" data-aos-delay="100">
+                Given a vertex of some underlying graph as input,  a local graph clustering algorithm is to find some low-conductance set around the input vertex, while the algorithm runs in time proportional to the size of the target cluster and independent of the size of the entire graph. As one of the key components in designing nearly-linear time graph algorithms, local graph clustering algorithms have been extensively studied in algorithmic spectral graph theory.
+            </p>
+              
+             <p data-aos="fade-up" data-aos-delay="100">
+                Generally speaking, there are two techniques for designing local clustering algorithms: one is based on PageRank, and the other is based on evolving sets. We have included the implementation of a PageRank based algorithm (the ACL algorithm) in STAG, and will publish our implementation of an evolving set based algorithm later this year.
+            </p>
+              
+            <div class="row">
+              <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                <i class="bx bx-receipt"></i>
+                <h4>Reference</h4>
+                  <p data-aos="fade-up" data-aos-delay="100">
+                Reid Andersen, Shayan Oveis Gharan, Yuval Peres, Luca Trevisan: Almost Optimal Local Graph Clustering Using Evolving Sets. J. ACM 63(2): 15:1-15:31 (2016)
+                  </p>
+                  
+                  <p data-aos="fade-up" data-aos-delay="100">
+                	Reid Andersen, Fan R. K. Chung, Kevin J. Lang: Local Graph Partitioning using PageRank Vectors. FOCS 2006: 475-486
+                  </p>
+                
+                  <p data-aos="fade-up" data-aos-delay="100">
+                	Daniel A. Spielman, Shang-Hua Teng: A Local Clustering Algorithm for Massive Graphs and Its Application to Nearly Linear Time Graph Partitioning. SIAM J. Comput. 42(1): 1-26 (2013)
+                  </p>
+
+                  
+              </div>
+             </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Local Graph Clustering Section -->
+  
   
     <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq section-bg">
+    <section id="faq" class="faq">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -166,7 +206,7 @@
     </section><!-- End F.A.Q Section -->
 
   <!-- ======= Contact Us Section ======= -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -200,7 +240,7 @@
                     School of Informatics <br>
                     University of Edinburgh <br>        
                     h.sun@ed.ac.uk</p>
-                    <a href="https://homepages.inf.ed.ac.uk/hsun4/index.html"> Personal Webpage</a> </p>
+                    <a href="https://homepages.inf.ed.ac.uk/hsun4/index.html"> Personal Webpage</a> 
               </div>          
             </div>
           </div>
@@ -221,7 +261,6 @@
 
         
           
-      </div>
     </section><!-- End Contact Us Section -->
   
    

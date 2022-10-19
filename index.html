@@ -100,7 +100,8 @@
           <div class="col-lg-6 pt-5 pt-lg-0">
             <h3 data-aos="fade-up">About Us</h3>
             <p data-aos="fade-up" data-aos-delay="100">
-               The team for developing STAG is based in the School of Informatics, University of Edinburgh, United Kingdom. 
+                This project is part of He Sun's  5-year EPSRC Fellowship titled "Efficient Spectral Algorithms for Massive and Dynamic Graphs" with a total award of 1.5 million pounds. 
+               The STAG team  is based in the School of Informatics, University of Edinburgh, United Kingdom. 
             </p>
             <div class="row">
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -111,7 +112,7 @@
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <i class="bx bx-cube-alt"></i>
                 <h4>Funding Information</h4>
-                <p>This project is part of He Sun's Fellowship on titled "Efficient Spectral Algorithms for Massive and Dynamic Graphs", and is supported by the UK Engineering and Physical Sciences Research Council (EPSRC, EP/T00729X/1)</p>
+                <p>UK Engineering and Physical Sciences Research Council, EP/T00729X/1</p>
               </div>
             </div>
           </div>
@@ -132,20 +133,29 @@
 
         <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
 
+            <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What will be included in STAG? Why does it take 2 years to develop?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+               Our objective is to develop an open-source library that includes the classical algorithms in algorithmic spectral graph theory, like local graph clustering, spectral sparsification, and Laplacian solvers. In particular, we are very interested to see the practical performance of a sequence of nearly-linear time algorithms developed in the Theoretical Computer Science community over the past 20 years. Such experimental studies of nearly-linear time algorithms would require detailed planning of the algorithms to be implemented, and appropriately choosing the real-world datasets on which our developed codes are evaluated. That is why the first phase of our development would take 2 years.
+              </p>
+            </div>
+            </li>
+            
           <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Which programming language is used to develop STAG? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">Which programming language is used to develop STAG? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
               <p>
                 STAG is mainly written in C++. However, it contains a  python wrapper STAGPy around the underlying C++ library which provides convenient methods for learning on graphs in python.
               </p>
             </div>
-          </li>
+           </li>
             
           <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">How can I cite STAG in a paper? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq3">Do you have more information for your implemented algorithms? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
               <p>
-                To be added.
+              Yes, that's why we have this website. We will publish a series of technical reports to detail our implementation, choice of algorithms, datasets on which our codes are evaluated, and our findings. We expect to publish such technical reports every 2-3 months.
               </p>
             </div>
           </li>
@@ -227,7 +237,7 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>STAG</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>The STAG Team</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

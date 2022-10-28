@@ -1,0 +1,31 @@
+#dateslabel {
+    text-align: center;
+    margin-top: 1em;
+}
+
+#sizelabel {
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.ui-slider {
+    background: #b2b2b2;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.ui-widget-content {
+    border: 1px solid #757575 !important;
+}
+
+.ui-slider-range {
+    background: #00870e;
+}
+
+#warninglabel {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1em;
+    color: #fc6703;
+    text-align: center;
+}

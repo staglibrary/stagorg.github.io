@@ -128,7 +128,7 @@
                     <h4 data-aos="fade-up">Instructions</h4>
                     <p data-aos="fade-up" data-aos-delay="100">
                         Use the sliders to select a time period and cluster size.
-                        Then, click a country on the map to see two groups of countries which tended to have conflicts
+                        Then, click a country on the map to see two groups of countries which often had conflicts
                         with each other between the chosen dates.
                     </p>
 
@@ -168,6 +168,9 @@
                             The dataset used in this application is the Correlates of War Dyadic Militarized Interstate
                             Disputes Dataset which can be downloaded from <a
                                 href="https://correlatesofwar.org/data-sets/mids/">here</a>.
+                            This dataset contains a record of every militarized dispute between 1816
+                            and 2014, and includes information about the
+                            countries involved and the severity of the dispute.
                         </p>
                     </div>
                 </div>
@@ -179,14 +182,18 @@
                         <i class="bx bx-code"></i>
                         <h4>Algorithm</h4>
                         <p data-aos="fade-up" data-aos-delay="100">
-                            Add information about the algorithm.
+                            The algorithm for finding groups of countries is based on <em>Local Graph Clustering</em>.
+                            We construct a graph based on the militarized disputes between the chosen dates.
+                            Every country is represented by a vertex in the graph, and
+                            there is an edge between each pair of countries weighted according to the severity of their
+                            military disputes.
+                            Then, by performing random walks on the graph, it is possible to recover groups of countries which tend to enter conflicts with each other.
+                            Roughly speaking, the <em>cluster size factor</em> is used to control the length of the random walks, and shorter walks result in
+                            smaller clusters which are more closely related to the starting country.
                         </p>
                     </div>
                 </div>
             </div>
-
-
-
 
             <div class="row justify-content-between">
                 <div class="row">
@@ -197,6 +204,8 @@
                             The code for computing the clusters is available <a
                                 href="https://github.com/pmacg/mid-clustering">on
                             GitHub</a>.
+                            The algorithm uses the <code>approximate_pagerank</code> method of the STAG Library in order to compute the
+                            stationary distribution of the personalised Pagerank on the constructed graph.
                         </p>
                     </div>
                 </div>

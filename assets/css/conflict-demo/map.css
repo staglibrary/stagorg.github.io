@@ -1,0 +1,37 @@
+.mapael .mapTooltip {
+    position: absolute;
+    background-color: #474c4b;
+    moz-opacity: 0.70;
+    opacity: 0.70;
+    filter: alpha(opacity=70);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 1000;
+    max-width: 200px;
+    display: none;
+    color: #fff;
+}
+
+.mapcontainer {
+    max-width: 50em !important;
+    margin: auto;
+}
+
+.key-elem {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.key-elem-selected {
+    background-color: #1c2791;
+}
+
+.key-elem-this-cluster {
+    background-color: #0088db;
+}
+
+.key-elem-that-cluster {
+    background-color: #fcba03;
+}

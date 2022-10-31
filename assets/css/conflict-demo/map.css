@@ -16,3 +16,22 @@
     max-width: 50em !important;
     margin: auto;
 }
+
+.key-elem {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.key-elem-selected {
+    background-color: #1c2791;
+}
+
+.key-elem-this-cluster {
+    background-color: #0088db;
+}
+
+.key-elem-that-cluster {
+    background-color: #fcba03;
+}

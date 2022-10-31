@@ -204,6 +204,9 @@ $(function () {
     // Make sure that the colors are set correctly
     reset_country_colors();
 
+    // Simulate a click on the US.
+    country_click_handler(0, "US", 0, 0);
+
     // Initialise the sliders
     $( "#slider-date-range" ).slider({
       range: true,

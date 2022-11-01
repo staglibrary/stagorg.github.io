@@ -84,7 +84,7 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                 
+
                 <ol>
                     <li><a href="index.html">Components</a></li>
                     <li>Demo</li>
@@ -99,7 +99,8 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-12 pt-5 pt-lg-0">
-                    <h3 data-aos="fade-up"> Analysing Militarised Interstate Disputes  with Local Graph Clustering</h3> <br>
+                    <h3 data-aos="fade-up"> Analysing Militarised Interstate Disputes with Local Graph Clustering</h3>
+                    <br>
                 </div>
             </div>
 
@@ -125,10 +126,11 @@
                 </div>
 
                 <div class="col-lg-4 order-1 order-lg-2 hero-img img-fluid">
-                    <h4 data-aos="fade-up">Instruction</h4>
+                    <h4 data-aos="fade-up">Instructions</h4>
                     <p data-aos="fade-up" data-aos-delay="100">
                         Use the sliders to select a time period and cluster size.
-                        Then, click a country in the map to see two groups of countries (the blue group and the yellow one) which often have conflicts
+                        Then, click a country in the map to see two groups of countries (the blue group and the yellow
+                        one) which often have conflicts
                         with each other between the chosen data range.
                     </p>
 
@@ -138,7 +140,8 @@
 
                     <p data-aos="fade-up" data-aos-delay="100">
                         <b>Cluster size factor</b> is the key parameter of the
-                        clustering algorithm: a smaller factor forces the algorithm to  find smaller groups   more closely related to the selected country.
+                        clustering algorithm: a smaller factor forces the algorithm to find smaller groups more closely
+                        related to the selected country.
                     </p>
 
                     <h5 data-aos="fade-up" data-aos-delay="100">The coloured countries</h5>
@@ -148,11 +151,11 @@
                     </p>
                     <p data-aos="fade-up" data-aos-delay="100">
                         <span class="key-elem key-elem-this-cluster"></span>
-                        - the countries in the same group as the selected country.
+                        - the countries in the same group as the selected country
                     </p>
                     <p data-aos="fade-up" data-aos-delay="100">
                         <span class="key-elem key-elem-that-cluster"></span>
-                        - the countries in the other group.
+                        - the countries in the other group
                     </p>
                 </div>
             </div>
@@ -163,12 +166,13 @@
                         <i class="bx bx-data"></i>
                         <h4>Dataset</h4>
                         <p data-aos="fade-up" data-aos-delay="100">
-                            We employ  the Correlates of War Dyadic Militarised Interstate
-                            Disputes Dataset in this application. This dataset contains a record of every militarised dispute between 1816
-                                                        and 2014, and includes information about the
-                                                        countries involved and the severity of the disputecontains. 
-                                 <a
-                                href="https://correlatesofwar.org/data-sets/mids/">Link to the dataset</a>.
+                            We employ the Correlates of War Dyadic Militarised Interstate
+                            Disputes Dataset in this application. This dataset contains a record of every militarised
+                            dispute between 1816
+                            and 2014, and includes information about the
+                            countries involved and the severity of the dispute.
+                            <a
+                                    href="https://correlatesofwar.org/data-sets/mids/">Link to the dataset</a>.
                         </p>
                     </div>
                 </div>
@@ -180,11 +184,15 @@
                         <i class="bx bx-code"></i>
                         <h4>Algorithm</h4>
                         <p data-aos="fade-up" data-aos-delay="100">
-                            Our implemented algorithm for this application is based on <em>Local Graph Clustering</em>. Specifically, we   construct a graph based on the militarised disputes between the chosen data range: every country is represented by a vertex in the graph, and
+                            Our implemented algorithm for this application is based on <em>Local Graph Clustering</em>.
+                            Specifically, we construct a graph based on the militarised disputes within the chosen date
+                            range: every country is represented by a vertex in the graph, and
                             there is an edge between each pair of countries weighted according to the severity of their
                             military disputes.
-                            By performing random walks on the graph, our algoirthm returns two sets of countries which tend to enter conflicts with each other.
-                         The <em>cluster size factor</em> is used to control the length of the random walks, and shorter walks result in
+                            By performing random walks on the graph, our algoirthm returns two sets of countries which
+                            tend to enter conflicts with each other.
+                            The <em>cluster size factor</em> is used to control the length of the random walks, and
+                            shorter walks result in
                             smaller clusters which are more closely related to the selected country.
                         </p>
                     </div>
@@ -197,7 +205,9 @@
                         <i class="bx bxl-github"></i>
                         <h4>Code</h4>
                         <p data-aos="fade-up" data-aos-delay="100">
-                            Our implemented algorithm is based on the <code>approximate_pagerank</code> method of the STAG Library in order to compute the                stationary distribution of the personalised Pagerank on the constructed graph. The source code of this application can be found <a
+                            Our implemented algorithm is based on the <code>approximate_pagerank</code> method of the
+                            STAG Library in order to compute the stationary distribution of the personalised Pagerank on
+                            the constructed graph. The source code of this application can be found <a
                                 href="https://github.com/pmacg/mid-clustering">here</a>.
                         </p>
                     </div>
@@ -205,35 +215,46 @@
             </div>
 
 
+            <div id="faq" class="faq ">
+                <div class="row">
+                    <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
 
-    <div id="faq" class="faq ">
-            <div class="row">    
-                <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx  bx-message-rounded-check"></i>
+                        <h4>FAQ</h4>
+                        <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
+                            <li>
+                                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1"> Why is there no
+                                    clustering result for some selected country and data range? <i
+                                            class="bi bi-chevron-down icon-show"></i><i
+                                            class="bi bi-chevron-up icon-close"></i></div>
+                                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                                    <p> Due to the nature of this dataset, our constructed graph might not be a fully
+                                        connected graph, and could contain many isolated vertices for a certain data
+                                        range. If this occurs, then you wouldn't see the two sets of coloured
+                                        countries.
+                                    </p>
+                                </div>
+                            </li>
 
-                <i class="bx  bx-message-rounded-check"></i>
-                <h4>FAQ</h4> 
-                <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-                <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1"> Why is there no clustering result for some selected country and data range? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                <p> Due to the nature of this dataset, our constructed graph might not be a fully connected graph, and could contain many isolated vertices for certain data range. If this occurrs, then you wouldn't see the two sets of coloured countries. 
-                </p>
-                </div>
-                </li>
-        
-                <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq2"> Not every country is coloured even I set the cluster size factor to be 1. Why?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-                <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                <p> That is simply because one cannot put all the countries into just two groups with respect to militarised interstate disputes. This also demonstrates the advantage of employing local graph clustering over the global ones, when analysing such datasets. 
-                </p>
-                </div>
-                </li>
-                </ul>
+                            <li>
+                                <div data-bs-toggle="collapse" class="collapsed question" href="#faq2"> Not every
+                                    country is coloured even when I set the cluster size factor to be 1. Why?<i
+                                            class="bi bi-chevron-down icon-show"></i><i
+                                            class="bi bi-chevron-up icon-close"></i></div>
+                                <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                                    <p>
+                                        For a certain date range, there may be countries for which the data set contains
+                                        no information. These countries cannot be classified by the algorithm into either
+                                        of the returned sets of countries and are left uncoloured.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-    </div>
 
-    <div class="row justify-content-between">
+            <div class="row justify-content-between">
                 <div class="row">
                     <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
                         <i class="bx bx-receipt"></i>
@@ -247,7 +268,7 @@
             </div>
 
 
-    </div>
+        </div>
     </section>
 
 </main><!-- End #main -->

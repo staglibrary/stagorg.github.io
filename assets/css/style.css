@@ -351,10 +351,10 @@ h6,
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 70vh;
+  height: 43vh;
   background: #fef8f5;
   border-bottom: 2px solid #fcebe3;
-  margin: 72px 0 -72px 0;
+  margin: 0px 0 -0px 0;
 }
 
 #hero h1 {

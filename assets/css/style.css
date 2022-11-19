@@ -368,7 +368,7 @@ h6,
 #hero h2 {
   color: #a08f86;
   margin: 15px 0 0 0;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #hero .btn-get-started {
@@ -490,7 +490,7 @@ section {
   padding-bottom: 15px;
   margin-bottom: 15px;
   position: relative;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   color: #4e4039;
 }

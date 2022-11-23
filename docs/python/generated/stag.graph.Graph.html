@@ -219,27 +219,34 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">Graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adj_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code></a></p>
 <p>Core graph object.</p>
-<p>We keep things simple - a graph is represented by its sparse adjacency
-matrix.
-Throughout the library, we use the scipy sparse matrix
+<p>The graph object is initialised with a sparse adjacency matrix and this
+is used directly as the internal representation of the graph.</p>
+<p>Throughout the library, we use the scipy sparse matrix
 object. It may be useful to refer to the
 <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.html">scipy.sparse documentation</a>.
 Matrices returned by STAG methods will be instances of the
-<code class="docutils literal notranslate"><span class="pre">scipy.sparse.csr_matrix</span></code> class.</p>
+<code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code> class.</p>
 <p>This graph object cannot be dynamically updated.
 It is initialised with an adjacency matrix.
 Vertices are always referred to by their index in the adjacency matrix.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adj_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adj_mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialise the graph with an adjacency matrix.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.graph</span>
+<span class="kn">import</span> <span class="nn">scipy.sparse</span>
+
+<span class="n">adj_mat</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csc_matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                                <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">adj_mat</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>adj_mat</strong> – A sparse scipy matrix.</p></li>
-<li><p><strong>internal_graph</strong> – (optional) provide an internal STAG graph object with
-which to initialise the python wrapper</p></li>
-</ul>
+<dd class="field-odd"><p><strong>adj_mat</strong> – A sparse scipy matrix, such as <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -248,7 +255,7 @@ which to initialise the python wrapper</p></li>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.__init__" title="stag.graph.Graph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(adj_mat[, internal_graph])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.__init__" title="stag.graph.Graph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(adj_mat)</p></td>
 <td><p>Initialise the graph with an adjacency matrix.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.Graph.adjacency" title="stag.graph.Graph.adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency</span></code></a>()</p></td>
@@ -308,7 +315,7 @@ which to initialise the python wrapper</p></li>
 <dd><p>Return the sparse adjacency matrix of the graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>a sparse matrix representing the graph adjacency matrix</p>
+<dd class="field-odd"><p>a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code> representing the graph adjacency matrix</p>
 </dd>
 </dl>
 </dd></dl>
@@ -318,12 +325,15 @@ which to initialise the python wrapper</p></li>
 <span class="sig-name descname"><span class="pre">laplacian</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.laplacian" title="Permalink to this definition">#</a></dt>
 <dd><p>Construct the Laplacian matrix of the graph.</p>
 <p>The Laplacian matrix is defined by</p>
-<p>L = D - A</p>
-<p>where D is the diagonal matrix of vertex degrees and A is the adjacency
-matrix of the graph.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[L = D - A\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(D\)</span> is the diagonal matrix of vertex degrees
+and <span class="math notranslate nohighlight">\(A\)</span> is the adjacency matrix of the graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>a sparse matrix representing the graph Laplacian</p>
+<dd class="field-odd"><p>a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code> representing the graph Laplacian</p>
 </dd>
 </dl>
 </dd></dl>
@@ -333,12 +343,15 @@ matrix of the graph.</p>
 <span class="sig-name descname"><span class="pre">normalised_laplacian</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.normalised_laplacian" title="Permalink to this definition">#</a></dt>
 <dd><p>Construct the normalised Laplacian matrix of the graph.</p>
 <p>The normalised Laplacian matrix is defined by</p>
-<p>Ln = D^{-1/2} L D^{-1/2}</p>
-<p>where D is the diagonal matrix of vertex degrees and L is the Laplacian
-matrix of the graph</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathcal{L} = D^{-1/2} L D^{-1/2}\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(D\)</span> is the diagonal matrix of vertex degrees and <span class="math notranslate nohighlight">\(L\)</span>
+is the Laplacian matrix of the graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>a sparse matrix representing the normalised Laplacian</p>
+<dd class="field-odd"><p>a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code> representing the normalised Laplacian</p>
 </dd>
 </dl>
 </dd></dl>
@@ -347,11 +360,13 @@ matrix of the graph</p>
 <dt class="sig sig-object py" id="stag.graph.Graph.degree_matrix">
 <span class="sig-name descname"><span class="pre">degree_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.degree_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>The degree matrix of the graph.</p>
-<p>The degree matrix is an n x n matrix such that each diagonal entry is the degree
-of the corresponding node.</p>
+<p>The degree matrix <span class="math notranslate nohighlight">\(D \in \mathbb{R}^{n \times n}\)</span>
+is a diagonal matrix such that <span class="math notranslate nohighlight">\(D(i, i) = \mathrm{deg}(i)\)</span>
+where <span class="math notranslate nohighlight">\(\mathrm{deg}(i)\)</span> is the degree of vertex <span class="math notranslate nohighlight">\(i\)</span> and
+<span class="math notranslate nohighlight">\(n\)</span> is the number of vertices in the graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the sparse degree matrix</p>
+<dd class="field-odd"><p>a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code> representing the degree matrix</p>
 </dd>
 </dl>
 </dd></dl>
@@ -566,6 +581,7 @@ improve the performance of local clustering algorithms.</p>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>
 </html>

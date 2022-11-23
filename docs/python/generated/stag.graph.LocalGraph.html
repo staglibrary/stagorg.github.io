@@ -224,14 +224,24 @@ This ‘intermediate’ class is included for possible future python-specific fu
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.LocalGraph.__init__" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>Base constructor.</p>
+<p>The constructor of any classes inheriting from this base class should
+call this constructor. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyLocalGraph</span><span class="p">(</span><span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">LocalGraph</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+    <span class="c1"># Add custom initialisation for MyLocalGraph</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.LocalGraph.__init__" title="stag.graph.LocalGraph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
-<td><p></p></td>
+<td><p>Base constructor.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.LocalGraph.degree" title="stag.graph.LocalGraph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></a>(v)</p></td>
 <td><p>Given a vertex v, return its weighted degree.</p></td>
@@ -239,64 +249,68 @@ This ‘intermediate’ class is included for possible future python-specific fu
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.LocalGraph.degree_unweighted" title="stag.graph.LocalGraph.degree_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree_unweighted</span></code></a>(v)</p></td>
 <td><p>Given a vertex v, return its unweighted degree.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees</span></code>(vertices)</p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.LocalGraph.degrees" title="stag.graph.LocalGraph.degrees"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees</span></code></a>(vertices)</p></td>
+<td><p>Given a list of vertices, return a list of their weighted degrees.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees_unweighted</span></code>(vertices)</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.LocalGraph.degrees_unweighted" title="stag.graph.LocalGraph.degrees_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees_unweighted</span></code></a>(vertices)</p></td>
+<td><p>Given a list of vertices, return a list of their unweighted degrees.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.LocalGraph.neighbors" title="stag.graph.LocalGraph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a>(v)</p></td>
-<td><p>Given a vertex v, return a vector of edges representing the neighborhood of v.</p></td>
+<td><p>Given a vertex v, return a list of edges representing the neighbors of v.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.LocalGraph.neighbors_unweighted" title="stag.graph.LocalGraph.neighbors_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors_unweighted</span></code></a>(v)</p></td>
-<td><p>Given a vertex v, return a vector containing the neighbors of v.</p></td>
+<td><p>Given a vertex v, return a list of neighbors of v.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.degree">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degree" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degree" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a vertex v, return its weighted degree.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.degree_unweighted">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">degree_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degree_unweighted" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">degree_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degree_unweighted" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a vertex v, return its unweighted degree. That is, the number of
 neighbors of v, ignoring the edge weights.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.neighbors">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="stag.graph.Edge.html#stag.graph.Edge" title="stag.graph.Edge"><span class="pre">Edge</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.neighbors" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a vertex v, return a vector of edges representing the
-neighborhood of v.</p>
-<p>The returned edges will all have the ordering (v, x) such that
-edge.v = v.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>v</strong> – an int representing some vertex in the graph</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a list of Edge objects containing the neighborhood information</p>
-</dd>
-</dl>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="stag.graph.Edge.html#stag.graph.Edge" title="stag.graph.Edge"><span class="pre">Edge</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.neighbors" title="Permalink to this definition">#</a></dt>
+<dd><p>Given a vertex v, return a list of edges representing the
+neighbors of v.</p>
+<p>The returned edge objects will all have the ordering <code class="docutils literal notranslate"><span class="pre">(v1,</span> <span class="pre">v2)</span></code> such that
+<code class="docutils literal notranslate"><span class="pre">edge.v1</span> <span class="pre">=</span> <span class="pre">v</span></code> and <code class="docutils literal notranslate"><span class="pre">edge.v2</span></code> is a neighbor of <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.neighbors_unweighted">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighbors_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.neighbors_unweighted" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a vertex v, return a vector containing the neighbors of v.</p>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighbors_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.neighbors_unweighted" title="Permalink to this definition">#</a></dt>
+<dd><p>Given a vertex v, return a list of neighbors of v.</p>
 <p>The weights of edges to the neighbors are not returned by this method.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>v</strong> – an int representing some vertex in the graph</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>an int vector giving the neighbors of v</p>
-</dd>
-</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="stag.graph.LocalGraph.degrees">
+<span class="sig-name descname"><span class="pre">degrees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degrees" title="Permalink to this definition">#</a></dt>
+<dd><p>Given a list of vertices, return a list of their weighted degrees.</p>
+<p>This base class provides a default implementation of this
+method which makes repeated calls to <code class="docutils literal notranslate"><span class="pre">self.degree</span></code>.
+Providing a more efficient method of returning a list of degrees will
+improve the performance of local clustering algorithms.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="stag.graph.LocalGraph.degrees_unweighted">
+<span class="sig-name descname"><span class="pre">degrees_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degrees_unweighted" title="Permalink to this definition">#</a></dt>
+<dd><p>Given a list of vertices, return a list of their unweighted degrees.</p>
+<p>This base class provides a default implementation of this
+method which makes repeated calls to <code class="docutils literal notranslate"><span class="pre">self.degree_unweighted</span></code>.
+Providing a more efficient method of returning a list of degrees will
+improve the performance of local clustering algorithms.</p>
 </dd></dl>
 
 </dd></dl>
@@ -367,6 +381,8 @@ edge.v = v.</p>
 <li><a class="reference internal" href="#stag.graph.LocalGraph.degree_unweighted"><code class="docutils literal notranslate"><span class="pre">LocalGraph.degree_unweighted()</span></code></a></li>
 <li><a class="reference internal" href="#stag.graph.LocalGraph.neighbors"><code class="docutils literal notranslate"><span class="pre">LocalGraph.neighbors()</span></code></a></li>
 <li><a class="reference internal" href="#stag.graph.LocalGraph.neighbors_unweighted"><code class="docutils literal notranslate"><span class="pre">LocalGraph.neighbors_unweighted()</span></code></a></li>
+<li><a class="reference internal" href="#stag.graph.LocalGraph.degrees"><code class="docutils literal notranslate"><span class="pre">LocalGraph.degrees()</span></code></a></li>
+<li><a class="reference internal" href="#stag.graph.LocalGraph.degrees_unweighted"><code class="docutils literal notranslate"><span class="pre">LocalGraph.degrees_unweighted()</span></code></a></li>
 </ul>
 </li>
 </ul>

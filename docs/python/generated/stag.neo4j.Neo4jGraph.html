@@ -218,24 +218,36 @@
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">stag.neo4j.</span></span><span class="sig-name descname"><span class="pre">Neo4jGraph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.neo4j.Neo4jGraph" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code></a></p>
-<p>Represent a neo4j database as a STAG LocalGraph object.</p>
+<p>Represent a neo4j database as a <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">stag.graph.LocalGraph</span></code></a> object.</p>
 <p>This provides ‘local’ access to the graph only. Given a node, we can query
-its neighbors.</p>
-<p>For now, the graph does not support weighted edges, and it does not
+its neighbors and its degree.
+The graph does not support weighted edges, and it does not
 distinguish between edge types or directions.</p>
+<p>The neo4j <code class="docutils literal notranslate"><span class="pre">&lt;id&gt;</span></code> attributes are used as the STAG vertex ids.</p>
+<p>All methods which make calls to the database backend have a small cache of
+recent queries, meaning that consecutive queries for the same node will be
+fast.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Base constructor.</p>
-<p>The constructor of any classes inheriting from this base class should
-call this constructor. For example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyLocalGraph</span><span class="p">(</span><span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">LocalGraph</span><span class="p">):</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-
-    <span class="c1"># Add custom initialisation for MyLocalGraph</span>
+<dd><p>Connect to a neo4j database backend.</p>
+<p>For example, assuming that there is a Neo4j database running locally,
+the graph object can be created as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.neo4j</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">neo4j</span><span class="o">.</span><span class="n">Neo4jGraph</span><span class="p">(</span><span class="s2">&quot;bolt://localhost:7687&quot;</span><span class="p">,</span> <span class="s2">&quot;neo4j&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>It is also possible to connect to a remote Neo4j database by passing
+the relevant <code class="docutils literal notranslate"><span class="pre">uri</span></code> to the constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uri</strong> – the location of the neo4j database</p></li>
+<li><p><strong>username</strong> – the neo4j username</p></li>
+<li><p><strong>password</strong> – the neo4j password</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <p class="rubric">Methods</p>
@@ -243,31 +255,31 @@ call this constructor. For example:</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.__init__" title="stag.neo4j.Neo4jGraph.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
-<td><p>Base constructor.</p></td>
+<td><p>Connect to a neo4j database backend.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.degree" title="stag.neo4j.Neo4jGraph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></a></p></td>
-<td><p>Given a vertex v, return its weighted degree.</p></td>
+<td><p>Equivalent to <a class="reference internal" href="#stag.neo4j.Neo4jGraph.degree_unweighted" title="stag.neo4j.Neo4jGraph.degree_unweighted"><code class="xref py py-meth docutils literal notranslate"><span class="pre">degree_unweighted()</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.degree_unweighted" title="stag.neo4j.Neo4jGraph.degree_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree_unweighted</span></code></a></p></td>
-<td><p>Query the degree of the node with the given ID.</p></td>
+<td><p>Query the degree of the node with the given neo4j ID.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.degrees" title="stag.neo4j.Neo4jGraph.degrees"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees</span></code></a></p></td>
-<td><p>Given a list of vertices, return a list of their weighted degrees.</p></td>
+<td><p>Equivalent to <a class="reference internal" href="#stag.neo4j.Neo4jGraph.degrees_unweighted" title="stag.neo4j.Neo4jGraph.degrees_unweighted"><code class="xref py py-meth docutils literal notranslate"><span class="pre">degrees_unweighted()</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.degrees_unweighted" title="stag.neo4j.Neo4jGraph.degrees_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees_unweighted</span></code></a></p></td>
-<td><p>Given a list of vertices, return a list of their unweighted degrees.</p></td>
+<td><p>Query the degrees of the nodes with the given neo4j IDs.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.neighbors" title="stag.neo4j.Neo4jGraph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a></p></td>
-<td><p>Given a vertex v, return a list of edges representing the neighbors of v.</p></td>
+<td><p>Fetch the neighbors of the node with the given Neo4j node ID.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.neighbors_unweighted" title="stag.neo4j.Neo4jGraph.neighbors_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors_unweighted</span></code></a></p></td>
-<td><p>Given a vertex v, return a list of neighbors of v.</p></td>
+<td><p>Fetch the neighbors of the node with the given Neo4j node ID.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_id</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.query_id" title="stag.neo4j.Neo4jGraph.query_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_id</span></code></a></p></td>
+<td><p>Find the Neo4j ID of a node with the given property.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_property</span></code></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#stag.neo4j.Neo4jGraph.query_property" title="stag.neo4j.Neo4jGraph.query_property"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query_property</span></code></a></p></td>
+<td><p>Find the requested property of a Neo4j node.</p></td>
 </tr>
 </tbody>
 </table>
@@ -275,53 +287,95 @@ call this constructor. For example:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.degree">
 <span class="sig-name descname"><span class="pre">degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.degree" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a vertex v, return its weighted degree.</p>
-<p>Given a graph <span class="math notranslate nohighlight">\(G = (V, E, w)\)</span>, the degree ov vertex <span class="math notranslate nohighlight">\(v\)</span> is
-defined by</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\mathrm{deg}(v) = \sum_{u \in V} w(v, u).\]</div>
-</div>
+<dd><p>Equivalent to <a class="reference internal" href="#stag.neo4j.Neo4jGraph.degree_unweighted" title="stag.neo4j.Neo4jGraph.degree_unweighted"><code class="xref py py-meth docutils literal notranslate"><span class="pre">degree_unweighted()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.degree_unweighted">
 <span class="sig-name descname"><span class="pre">degree_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.degree_unweighted" title="Permalink to this definition">#</a></dt>
-<dd><p>Query the degree of the node with the given ID.</p>
+<dd><p>Query the degree of the node with the given neo4j ID.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.degrees">
 <span class="sig-name descname"><span class="pre">degrees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.degrees" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a list of vertices, return a list of their weighted degrees.</p>
-<p>When developing implementations of the <code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code> class,
-providing an efficient method of returning a list of degrees will
-improve the performance of local clustering algorithms.</p>
+<dd><p>Equivalent to <a class="reference internal" href="#stag.neo4j.Neo4jGraph.degrees_unweighted" title="stag.neo4j.Neo4jGraph.degrees_unweighted"><code class="xref py py-meth docutils literal notranslate"><span class="pre">degrees_unweighted()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.degrees_unweighted">
 <span class="sig-name descname"><span class="pre">degrees_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.degrees_unweighted" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a list of vertices, return a list of their unweighted degrees.</p>
-<p>When developing implementations of the <code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code> class,
-providing an efficient method of returning a list of degrees will
-improve the performance of local clustering algorithms.</p>
+<dd><p>Query the degrees of the nodes with the given neo4j IDs.</p>
+<p>This method makes a single query to the database to return all of the
+node degrees.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.neighbors">
 <span class="sig-name descname"><span class="pre">neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="stag.graph.Edge.html#stag.graph.Edge" title="stag.graph.Edge"><span class="pre">Edge</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.neighbors" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a vertex v, return a list of edges representing the
-neighbors of v.</p>
-<p>The returned edge objects will all have the ordering <code class="docutils literal notranslate"><span class="pre">(v1,</span> <span class="pre">v2)</span></code> such that
-<code class="docutils literal notranslate"><span class="pre">edge.v1</span> <span class="pre">=</span> <span class="pre">v</span></code> and <code class="docutils literal notranslate"><span class="pre">edge.v2</span></code> is a neighbor of <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
+<dd><p>Fetch the neighbors of the node with the given Neo4j node ID.</p>
+<p>The returned <a class="reference internal" href="stag.graph.Edge.html#stag.graph.Edge" title="stag.graph.Edge"><code class="xref py py-class docutils literal notranslate"><span class="pre">stag.graph.Edge</span></code></a> objects all have weight <span class="math notranslate nohighlight">\(1\)</span> .</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.neighbors_unweighted">
 <span class="sig-name descname"><span class="pre">neighbors_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.neighbors_unweighted" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a vertex v, return a list of neighbors of v.</p>
-<p>The weights of edges to the neighbors are not returned by this method.</p>
+<dd><p>Fetch the neighbors of the node with the given Neo4j node ID.</p>
+<p>Returns the Neo4j node IDs of the neighboring nodes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.query_id">
+<span class="sig-name descname"><span class="pre">query_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">property_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.query_id" title="Permalink to this definition">#</a></dt>
+<dd><p>Find the Neo4j ID of a node with the given property.</p>
+<p>For example, using the Neo4j movie database example you can find the
+Neo4j node corresponding to a given movie as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.neo4j</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">neo4j</span><span class="o">.</span><span class="n">Neo4jGraph</span><span class="p">(</span><span class="s2">&quot;bolt://localhost:7687&quot;</span><span class="p">,</span> <span class="s2">&quot;neo4j&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">node_id</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">query_id</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;Avatar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will make a query to the database to find a node with the given
+property.
+This query will be slow unless the database has an index for
+<code class="docutils literal notranslate"><span class="pre">property_name</span></code>.
+For more information, see the Neo4j documentation on
+<a class="reference external" href="https://neo4j.com/docs/cypher-manual/current/indexes-for-search-performance/">creating an index</a> .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>property_name</strong> – the node property to query</p></li>
+<li><p><strong>property_value</strong> – the value of the node property to search for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the Neo4j node ID of a node with the given property value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="stag.neo4j.Neo4jGraph.query_property">
+<span class="sig-name descname"><span class="pre">query_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">property_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#stag.neo4j.Neo4jGraph.query_property" title="Permalink to this definition">#</a></dt>
+<dd><p>Find the requested property of a Neo4j node.</p>
+<p>For example, using the Neo4j movie database example, you can find the
+title of a movie node as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.neo4j</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">neo4j</span><span class="o">.</span><span class="n">Neo4jGraph</span><span class="p">(</span><span class="s2">&quot;bolt://localhost:7687&quot;</span><span class="p">,</span> <span class="s2">&quot;neo4j&quot;</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">query_property</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> – the Neo4j node ID to query</p></li>
+<li><p><strong>property_name</strong> – the name of the property to query</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of the requested property on the given node</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -394,6 +448,8 @@ neighbors of v.</p>
 <li><a class="reference internal" href="#stag.neo4j.Neo4jGraph.degrees_unweighted"><code class="docutils literal notranslate"><span class="pre">Neo4jGraph.degrees_unweighted()</span></code></a></li>
 <li><a class="reference internal" href="#stag.neo4j.Neo4jGraph.neighbors"><code class="docutils literal notranslate"><span class="pre">Neo4jGraph.neighbors()</span></code></a></li>
 <li><a class="reference internal" href="#stag.neo4j.Neo4jGraph.neighbors_unweighted"><code class="docutils literal notranslate"><span class="pre">Neo4jGraph.neighbors_unweighted()</span></code></a></li>
+<li><a class="reference internal" href="#stag.neo4j.Neo4jGraph.query_id"><code class="docutils literal notranslate"><span class="pre">Neo4jGraph.query_id()</span></code></a></li>
+<li><a class="reference internal" href="#stag.neo4j.Neo4jGraph.query_property"><code class="docutils literal notranslate"><span class="pre">Neo4jGraph.query_property()</span></code></a></li>
 </ul>
 </li>
 </ul>

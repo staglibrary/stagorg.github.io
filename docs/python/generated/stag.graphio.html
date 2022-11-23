@@ -223,29 +223,35 @@
 <td><p>Load a graph from an edgelist file.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graphio.save_edgelist" title="stag.graphio.save_edgelist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_edgelist</span></code></a>(g, filename)</p></td>
-<td><p>Save the given graph as an edgelist file.</p></td>
+<td><p>Save a graph as an edgelist file.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.graphio.load_edgelist">
-<span class="sig-prename descclassname"><span class="pre">stag.graphio.</span></span><span class="sig-name descname"><span class="pre">load_edgelist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graphio.load_edgelist" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">stag.graphio.</span></span><span class="sig-name descname"><span class="pre">load_edgelist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><span class="pre">Graph</span></a></span></span><a class="headerlink" href="#stag.graphio.load_edgelist" title="Permalink to this definition">#</a></dt>
 <dd><p>Load a graph from an edgelist file.</p>
-<p>We define an edgelist file in the following way.
-- Any lines beginning with ‘#’ or ‘//’ are ignored
-- Any blank lines are ignored
-- All other lines are of some format:</p>
-<p>&lt;u&gt;, &lt;v&gt;, &lt;weight&gt;
-&lt;u&gt;, &lt;v&gt;
-&lt;u&gt; &lt;v&gt; &lt;weight&gt;
-&lt;u&gt; &lt;v&gt;</p>
-<p>where &lt;u&gt; and &lt;v&gt; can be parsed as integers, and &lt;weight&gt; can be parsed
-as a double. If the weight is ommitted, it is taken to be 1. The
-data lines of the edgelist file should all have the same format.</p>
+<p>The edgelist file format is defined as follows.</p>
+<ul class="simple">
+<li><p>Any lines beginning with <code class="docutils literal notranslate"><span class="pre">#</span></code> or <code class="docutils literal notranslate"><span class="pre">//</span></code> are ignored</p></li>
+<li><p>Any blank lines are ignored</p></li>
+<li><p>All other lines are of one of the following formats:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">u,</span> <span class="pre">v,</span> <span class="pre">w</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u,</span> <span class="pre">v</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">v</span> <span class="pre">w</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">v</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>where <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">v</span></code> can be parsed as integers, and <code class="docutils literal notranslate"><span class="pre">w</span></code> can be parsed
+as a float.
+If the weight is omitted, it is taken to be <span class="math notranslate nohighlight">\(1\)</span> .
+The data lines of the edgelist file should all have the same format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>a STAG graph object constructed from the given edgelist file</p>
+<dd class="field-odd"><p>a <a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">stag.graph.Graph</span></code></a> object constructed from the given edgelist file</p>
 </dd>
 <dt class="field-even">Except<span class="colon">:</span></dt>
 <dd class="field-even"><p>error if the file cannot be parsed as an edgelist</p>
@@ -256,7 +262,7 @@ data lines of the edgelist file should all have the same format.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.graphio.save_edgelist">
 <span class="sig-prename descclassname"><span class="pre">stag.graphio.</span></span><span class="sig-name descname"><span class="pre">save_edgelist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><span class="pre">Graph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graphio.save_edgelist" title="Permalink to this definition">#</a></dt>
-<dd><p>Save the given graph as an edgelist file.</p>
+<dd><p>Save a graph as an edgelist file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -347,6 +353,7 @@ data lines of the edgelist file should all have the same format.</p>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>
 </html>

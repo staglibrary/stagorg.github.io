@@ -236,88 +236,58 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.barbell_graph" title="stag.graph.barbell_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">barbell_graph</span></code></a>(n)</p></td>
-<td><p>Construct a barbell graph.</p></td>
+<td><p>Construct a barbell graph on <span class="math notranslate nohighlight">\(2n\)</span> vertices.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.complete_graph" title="stag.graph.complete_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complete_graph</span></code></a>(n)</p></td>
-<td><p>Construct a complete graph on n vertices.</p></td>
+<td><p>Construct a complete graph on <span class="math notranslate nohighlight">\(n\)</span> vertices.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.cycle_graph" title="stag.graph.cycle_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cycle_graph</span></code></a>(n)</p></td>
-<td><p>Construct a cycle graph on n vertices.</p></td>
+<td><p>Construct a cycle graph on <span class="math notranslate nohighlight">\(n\)</span> vertices.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.from_networkx" title="stag.graph.from_networkx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_networkx</span></code></a>(netx_graph[, ...])</p></td>
-<td><p>Given a networkx graph, convert it to a STAG graph object.</p></td>
+<td><p>Given a networkx graph, convert it to a STAG <a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a> object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.star_graph" title="stag.graph.star_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">star_graph</span></code></a>(n)</p></td>
-<td><p>Construct a star graph.</p></td>
+<td><p>Construct a star graph on <span class="math notranslate nohighlight">\(n\)</span> vertices.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.graph.cycle_graph">
-<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">cycle_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.cycle_graph" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a cycle graph on n vertices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – the number of vertices in the cycle</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a graph object representing the n-cycle</p>
-</dd>
-</dl>
+<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">cycle_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><span class="pre">Graph</span></a></span></span><a class="headerlink" href="#stag.graph.cycle_graph" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a cycle graph on <span class="math notranslate nohighlight">\(n\)</span> vertices.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.graph.complete_graph">
-<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">complete_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.complete_graph" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a complete graph on n vertices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a graph object representing the complete graph</p>
-</dd>
-</dl>
+<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">complete_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><span class="pre">Graph</span></a></span></span><a class="headerlink" href="#stag.graph.complete_graph" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a complete graph on <span class="math notranslate nohighlight">\(n\)</span> vertices.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.graph.barbell_graph">
-<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">barbell_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.barbell_graph" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a barbell graph. The barbell graph consists of 2 cliques on n vertices,
+<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">barbell_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><span class="pre">Graph</span></a></span></span><a class="headerlink" href="#stag.graph.barbell_graph" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a barbell graph on <span class="math notranslate nohighlight">\(2n\)</span> vertices.</p>
+<p>The barbell graph consists of 2 cliques on <span class="math notranslate nohighlight">\(n\)</span> vertices,
 connected by a single edge.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.graph.star_graph">
-<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">star_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.star_graph" title="Permalink to this definition">#</a></dt>
-<dd><p>Construct a star graph. The star graph consists of one central vertex connected
-by an edge to (n-1) surrounding vertices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>n</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p></p>
-</dd>
-</dl>
+<span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">star_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><span class="pre">Graph</span></a></span></span><a class="headerlink" href="#stag.graph.star_graph" title="Permalink to this definition">#</a></dt>
+<dd><p>Construct a star graph on <span class="math notranslate nohighlight">\(n\)</span> vertices.</p>
+<p>The star graph consists of one central vertex connected
+by an edge to <span class="math notranslate nohighlight">\((n-1)\)</span> surrounding vertices.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.graph.from_networkx">
 <span class="sig-prename descclassname"><span class="pre">stag.graph.</span></span><span class="sig-name descname"><span class="pre">from_networkx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">netx_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_weight_attribute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weight'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.from_networkx" title="Permalink to this definition">#</a></dt>
-<dd><p>Given a networkx graph, convert it to a STAG graph object.</p>
+<dd><p>Given a networkx graph, convert it to a STAG <a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a> object.</p>
 <p>Unless otherwise specified, this method will use the ‘weight’ attribute on the
 networkx edges to assign the weight of the edges. If no such attribute is present,
-the edges will be added with weight 1.</p>
+the edges will be added with weight <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -327,7 +297,7 @@ generate the weights</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A STAG graph object which is equivalent to the networkx graph.</p>
+<dd class="field-even"><p>A STAG <a class="reference internal" href="stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">Graph</span></code></a> object which is equivalent to the networkx graph.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -415,6 +385,7 @@ generate the weights</p></li>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>
 </html>

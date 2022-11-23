@@ -268,6 +268,12 @@ call this constructor. For example:</p>
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.degree">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degree" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a vertex v, return its weighted degree.</p>
+<p>Given a graph <span class="math notranslate nohighlight">\(G = (V, E, w)\)</span>, the degree ov vertex <span class="math notranslate nohighlight">\(v\)</span> is
+defined by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{deg}(v) = \sum_{u \in V} w(v, u).\]</div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -297,9 +303,8 @@ neighbors of v.</p>
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.degrees">
 <span class="sig-name descname"><span class="pre">degrees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degrees" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a list of vertices, return a list of their weighted degrees.</p>
-<p>This base class provides a default implementation of this
-method which makes repeated calls to <code class="docutils literal notranslate"><span class="pre">self.degree</span></code>.
-Providing a more efficient method of returning a list of degrees will
+<p>When developing implementations of the <a class="reference internal" href="#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code></a> class,
+providing an efficient method of returning a list of degrees will
 improve the performance of local clustering algorithms.</p>
 </dd></dl>
 
@@ -307,9 +312,8 @@ improve the performance of local clustering algorithms.</p>
 <dt class="sig sig-object py" id="stag.graph.LocalGraph.degrees_unweighted">
 <span class="sig-name descname"><span class="pre">degrees_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.LocalGraph.degrees_unweighted" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a list of vertices, return a list of their unweighted degrees.</p>
-<p>This base class provides a default implementation of this
-method which makes repeated calls to <code class="docutils literal notranslate"><span class="pre">self.degree_unweighted</span></code>.
-Providing a more efficient method of returning a list of degrees will
+<p>When developing implementations of the <a class="reference internal" href="#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code></a> class,
+providing an efficient method of returning a list of degrees will
 improve the performance of local clustering algorithms.</p>
 </dd></dl>
 
@@ -403,6 +407,7 @@ improve the performance of local clustering algorithms.</p>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>
 </html>

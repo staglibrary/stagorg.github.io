@@ -261,13 +261,13 @@ Vertices are always referred to by their index in the adjacency matrix.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.Graph.adjacency" title="stag.graph.Graph.adjacency"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency</span></code></a>()</p></td>
 <td><p>Return the sparse adjacency matrix of the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.degree" title="stag.graph.Graph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></a>(vertex)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.degree" title="stag.graph.Graph.degree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree</span></code></a>(v)</p></td>
 <td><p>Given a vertex v, return its weighted degree.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.Graph.degree_matrix" title="stag.graph.Graph.degree_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree_matrix</span></code></a>()</p></td>
 <td><p>The degree matrix of the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.degree_unweighted" title="stag.graph.Graph.degree_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree_unweighted</span></code></a>(vertex)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.degree_unweighted" title="stag.graph.Graph.degree_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degree_unweighted</span></code></a>(v)</p></td>
 <td><p>Given a vertex v, return its unweighted degree.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.Graph.degrees" title="stag.graph.Graph.degrees"><code class="xref py py-obj docutils literal notranslate"><span class="pre">degrees</span></code></a>(vertices)</p></td>
@@ -285,10 +285,10 @@ Vertices are always referred to by their index in the adjacency matrix.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.Graph.lazy_random_walk_matrix" title="stag.graph.Graph.lazy_random_walk_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lazy_random_walk_matrix</span></code></a>()</p></td>
 <td><p>The lazy random walk matrix of the graph.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.neighbors" title="stag.graph.Graph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a>(vertex)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.neighbors" title="stag.graph.Graph.neighbors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors</span></code></a>(v)</p></td>
 <td><p>Given a vertex v, return a list of edges representing the neighbors of v.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.Graph.neighbors_unweighted" title="stag.graph.Graph.neighbors_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors_unweighted</span></code></a>(vertex)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#stag.graph.Graph.neighbors_unweighted" title="stag.graph.Graph.neighbors_unweighted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbors_unweighted</span></code></a>(v)</p></td>
 <td><p>Given a vertex v, return a list of neighbors of v.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.graph.Graph.normalised_laplacian" title="stag.graph.Graph.normalised_laplacian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalised_laplacian</span></code></a>()</p></td>
@@ -375,12 +375,22 @@ where <span class="math notranslate nohighlight">\(\mathrm{deg}(i)\)</span> is t
 <dt class="sig sig-object py" id="stag.graph.Graph.inverse_degree_matrix">
 <span class="sig-name descname"><span class="pre">inverse_degree_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.inverse_degree_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>The inverse degree matrix of the graph.</p>
-<p>The inverse degree matrix is an n x n matrix such that each diagonal entry is
-the inverse of the degree of the corresponding node, or 0 if the node
-has degree 0.</p>
+<p>The degree matrix <span class="math notranslate nohighlight">\(D^{-1} \in \mathbb{R}^{n \times n}\)</span>
+is a diagonal matrix such that</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}D(i, i) =  \left\{
+        \begin{array}{lll}
+            \mathrm{deg}(i) &amp; \mbox{if } \mathrm{deg}(i) &gt; 0 \\
+            0 &amp; \mbox{otherwise}
+        \end{array}
+    \right.\end{split}\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(\mathrm{deg}(i)\)</span> is the degree of vertex <span class="math notranslate nohighlight">\(i\)</span> and
+<span class="math notranslate nohighlight">\(n\)</span> is the number of vertices in the graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the sparse inverse degree matrix</p>
+<dd class="field-odd"><p>a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code> representing the inverse degree matrix</p>
 </dd>
 </dl>
 </dd></dl>
@@ -389,59 +399,73 @@ has degree 0.</p>
 <dt class="sig sig-object py" id="stag.graph.Graph.lazy_random_walk_matrix">
 <span class="sig-name descname"><span class="pre">lazy_random_walk_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.lazy_random_walk_matrix" title="Permalink to this definition">#</a></dt>
 <dd><p>The lazy random walk matrix of the graph.</p>
-<p>The lazy random walk matrix is defined to be</p>
-<p>1/2 I + 1/2 A D^{-1}</p>
-<p>where I is the identity matrix, A is the graph adjacency matrix and
-D is the degree matrix of the graph.</p>
+<p>The lazy random walk matrix is defined by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[W = \frac 1 2 I + \frac 1 2 A D^{-1}\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the identity matrix, <span class="math notranslate nohighlight">\(A\)</span> is the graph adjacency
+matrix and <span class="math notranslate nohighlight">\(D\)</span> is the degree matrix of the graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the sparse lazy random walk matrix</p>
+<dd class="field-odd"><p>a <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csc_matrix</span></code> representing the lazy random walk
+matrix</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.total_volume">
-<span class="sig-name descname"><span class="pre">total_volume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.total_volume" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">total_volume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#stag.graph.Graph.total_volume" title="Permalink to this definition">#</a></dt>
 <dd><p>The volume of the graph.</p>
-<p>The volume is defined as the sum of the node degrees.</p>
+<p>The volume of a graph <span class="math notranslate nohighlight">\(G = (V, E, w)\)</span> is defined by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{vol}(G) = \sum_{u \in V} \mathrm{deg}(u),\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(\mathrm{deg}(u)\)</span> is the degree of vertex <span class="math notranslate nohighlight">\(u\)</span>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>the graph’s volume.</p>
+<dd class="field-odd"><p>the graph’s volume, <span class="math notranslate nohighlight">\(\mathrm{vol}(G)\)</span></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.number_of_vertices">
-<span class="sig-name descname"><span class="pre">number_of_vertices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.number_of_vertices" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">number_of_vertices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#stag.graph.Graph.number_of_vertices" title="Permalink to this definition">#</a></dt>
 <dd><p>The number of vertices in the graph.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.number_of_edges">
-<span class="sig-name descname"><span class="pre">number_of_edges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.number_of_edges" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">number_of_edges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#stag.graph.Graph.number_of_edges" title="Permalink to this definition">#</a></dt>
 <dd><p>The number of edges in the graph.</p>
-<p>This is defined based on the number of non-zero elements in the adjacency
-matrix, and ignores the weights of the edges.</p>
+<p>This method ignores the weights of the edges.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.degree">
-<span class="sig-name descname"><span class="pre">degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.degree" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">degree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#stag.graph.Graph.degree" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a vertex v, return its weighted degree.</p>
+<p>Given a graph <span class="math notranslate nohighlight">\(G = (V, E, w)\)</span>, the degree ov vertex <span class="math notranslate nohighlight">\(v\)</span> is
+defined by</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{deg}(v) = \sum_{u \in V} w(v, u).\]</div>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.degree_unweighted">
-<span class="sig-name descname"><span class="pre">degree_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.degree_unweighted" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">degree_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#stag.graph.Graph.degree_unweighted" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a vertex v, return its unweighted degree. That is, the number of
 neighbors of v, ignoring the edge weights.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.neighbors">
-<span class="sig-name descname"><span class="pre">neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.neighbors" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">neighbors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="stag.graph.Edge.html#stag.graph.Edge" title="stag.graph.Edge"><span class="pre">Edge</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.Graph.neighbors" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a vertex v, return a list of edges representing the
 neighbors of v.</p>
 <p>The returned edge objects will all have the ordering <code class="docutils literal notranslate"><span class="pre">(v1,</span> <span class="pre">v2)</span></code> such that
@@ -450,7 +474,7 @@ neighbors of v.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.neighbors_unweighted">
-<span class="sig-name descname"><span class="pre">neighbors_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.neighbors_unweighted" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">neighbors_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.Graph.neighbors_unweighted" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a vertex v, return a list of neighbors of v.</p>
 <p>The weights of edges to the neighbors are not returned by this method.</p>
 </dd></dl>
@@ -459,15 +483,16 @@ neighbors of v.</p>
 <dt class="sig sig-object py" id="stag.graph.Graph.to_networkx">
 <span class="sig-name descname"><span class="pre">to_networkx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stag.graph.Graph.to_networkx" title="Permalink to this definition">#</a></dt>
 <dd><p>Construct a networkx graph object which is equivalent to this STAG graph.</p>
+<p>See the
+<a class="reference external" href="https://networkx.org/documentation/stable/reference/classes/graph.html">networkx documentation</a>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="stag.graph.Graph.degrees">
 <span class="sig-name descname"><span class="pre">degrees</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.Graph.degrees" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a list of vertices, return a list of their weighted degrees.</p>
-<p>This base class provides a default implementation of this
-method which makes repeated calls to <code class="docutils literal notranslate"><span class="pre">self.degree</span></code>.
-Providing a more efficient method of returning a list of degrees will
+<p>When developing implementations of the <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code></a> class,
+providing an efficient method of returning a list of degrees will
 improve the performance of local clustering algorithms.</p>
 </dd></dl>
 
@@ -475,9 +500,8 @@ improve the performance of local clustering algorithms.</p>
 <dt class="sig sig-object py" id="stag.graph.Graph.degrees_unweighted">
 <span class="sig-name descname"><span class="pre">degrees_unweighted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vertices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.graph.Graph.degrees_unweighted" title="Permalink to this definition">#</a></dt>
 <dd><p>Given a list of vertices, return a list of their unweighted degrees.</p>
-<p>This base class provides a default implementation of this
-method which makes repeated calls to <code class="docutils literal notranslate"><span class="pre">self.degree_unweighted</span></code>.
-Providing a more efficient method of returning a list of degrees will
+<p>When developing implementations of the <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalGraph</span></code></a> class,
+providing an efficient method of returning a list of degrees will
 improve the performance of local clustering algorithms.</p>
 </dd></dl>
 

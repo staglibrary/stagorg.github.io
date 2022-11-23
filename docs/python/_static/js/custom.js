@@ -12,7 +12,7 @@ window.onload = () => {
         "    <div class=\"container d-flex align-items-center justify-content-between\">\n" +
         "\n" +
         "        <div class=\"logo\">\n" +
-        "            <h1 class=\"text-light\"><a href=\"https://staglibrary.io/docs/cpp/index.html\"><span>STAG C++</span></a></h1>\n" +
+        "            <h1 class=\"text-light\"><a href=\"https://staglibrary.io/docs/python/index.html\"><span>STAG Python</span></a></h1>\n" +
         "            <!-- Uncomment below if you prefer to use an image logo -->\n" +
         "            <!-- <a href=\"index.html\"><img src=\"assets/img/logo.png\" alt=\"\" class=\"img-fluid\"></a>-->\n" +
         "        </div>\n" +
@@ -34,8 +34,8 @@ window.onload = () => {
         "                </li>\n" +
         "                <li class=\"dropdown active\"><a href=\"#\"><span>Documentation</span> <i class=\"bi bi-chevron-down\"></i></a>\n" +
         "                            <ul>\n" +
-        "                                <li><a href=\"index.html\">C++</a></li>\n" +
-        "                                <li><a href=\"https://staglibrary.io/docs/python/index.html\">Python</a></li>\n" +
+        "                                <li><a href=\"https://staglibrary.io/docs/cpp/index.html\">C++</a></li>\n" +
+        "                                <li><a href=\"index.html\">Python</a></li>\n" +
         "                                <li>\n" +
         "                            </ul>\n" +
         "                </li>\n" +
@@ -50,16 +50,6 @@ window.onload = () => {
         "</header><!-- End Header -->\n"
 
     target.insertBefore(newElement, target.firstChild);
-
-    // Add favicon code to the header
-    target = document.head;
-    target.innerHTML += "<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\">\n" +
-        "<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">\n" +
-        "<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">\n" +
-        "<link rel=\"manifest\" href=\"/site.webmanifest\">\n" +
-        "<link rel=\"mask-icon\" href=\"/safari-pinned-tab.svg\" color=\"#5bbad5\">\n" +
-        "<meta name=\"msapplication-TileColor\" content=\"#2b5797\">\n" +
-        "<meta name=\"theme-color\" content=\"#ffffff\">";
 
     // Set the header background to the side-bar background color
     $("#header").css('background', $(".sidebar-drawer").css('background'));

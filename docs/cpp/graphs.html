@@ -1,15 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Reading and Writing to Disk" href="graphio.html" /><link rel="prev" title="Data Types" href="types.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Reading and Writing to Disk" href="graphio.html" /><link rel="prev" title="Data Types" href="types.html" />
 
-    <meta name="generator" content="sphinx-4.3.0, furo 2021.10.09"/>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
         <title>Constructing Graphs - STAG 0.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/vendor/bootstrap-icons/bootstrap-icons.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/style.css" />
@@ -23,38 +22,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -63,14 +62,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -85,7 +84,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -93,7 +92,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -175,6 +174,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -182,8 +182,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -197,8 +204,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="constructing-graphs">
-<h1>Constructing Graphs<a class="headerlink" href="#constructing-graphs" title="Permalink to this headline">¶</a></h1>
+          <div class="section" id="constructing-graphs">
+<h1>Constructing Graphs<a class="headerlink" href="#constructing-graphs" title="Permalink to this heading">#</a></h1>
 <p>There are two provided graph classes:</p>
 <blockquote>
 <div><ul class="simple">
@@ -210,13 +217,13 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </div></blockquote>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5GraphE">
-<span id="_CPPv3N4stag5GraphE"></span><span id="_CPPv2N4stag5GraphE"></span><span id="stag::Graph"></span><span class="target" id="classstag_1_1Graph"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">stag</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N4stag10LocalGraphE" title="stag::LocalGraph"><span class="n"><span class="pre">LocalGraph</span></span></a><a class="headerlink" href="#_CPPv4N4stag5GraphE" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5GraphE"></span><span id="_CPPv2N4stag5GraphE"></span><span id="stag::Graph"></span><span class="target" id="classstag_1_1Graph"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">stag</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N4stag10LocalGraphE" title="stag::LocalGraph"><span class="n"><span class="pre">LocalGraph</span></span></a><a class="headerlink" href="#_CPPv4N4stag5GraphE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The core object used to represent a graph for use with the library. Graphs are always constructed from sparse matrices, and this is the internal representation used as well. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph5GraphERK7SprsMat">
-<span id="_CPPv3N4stag5Graph5GraphERK7SprsMat"></span><span id="_CPPv2N4stag5Graph5GraphERK7SprsMat"></span><span id="stag::Graph::Graph__SprsMatCR"></span><span class="target" id="classstag_1_1Graph_1a9badfee0ed11139c958c0e5b00f94f08"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph5GraphERK7SprsMat" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph5GraphERK7SprsMat"></span><span id="_CPPv2N4stag5Graph5GraphERK7SprsMat"></span><span id="stag::Graph::Graph__SprsMatCR"></span><span class="target" id="classstag_1_1Graph_1a9badfee0ed11139c958c0e5b00f94f08"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">adjacency_matrix</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph5GraphERK7SprsMat" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Create a graph from an Eigen matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -224,9 +231,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph5GraphERNSt6vectorI8stag_intEERNSt6vectorI8stag_intEERNSt6vectorIdEE">
-<span id="_CPPv3N4stag5Graph5GraphERNSt6vectorI8stag_intEERNSt6vectorI8stag_intEERNSt6vectorIdEE"></span><span id="_CPPv2N4stag5Graph5GraphERNSt6vectorI8stag_intEERNSt6vectorI8stag_intEERNSt6vectorIdEE"></span><span id="stag::Graph::Graph__std::vector:stag_int:R.std::vector:stag_int:R.std::vector:double:R"></span><span class="target" id="classstag_1_1Graph_1a2bb06162029cc8ac146a5171d3169fdc"></span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">outerStarts</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">innerIndices</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph5GraphERNSt6vectorI8stag_intEERNSt6vectorI8stag_intEERNSt6vectorIdEE" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph5GraphERNSt6vectorI8stag_intEERNSt6vectorI8stag_intEERNSt6vectorIdEE"></span><span id="_CPPv2N4stag5Graph5GraphERNSt6vectorI8stag_intEERNSt6vectorI8stag_intEERNSt6vectorIdEE"></span><span id="stag::Graph::Graph__std::vector:stag_int:R.std::vector:stag_int:R.std::vector:double:R"></span><span class="target" id="classstag_1_1Graph_1a2bb06162029cc8ac146a5171d3169fdc"></span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">outerStarts</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">innerIndices</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">values</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph5GraphERNSt6vectorI8stag_intEERNSt6vectorI8stag_intEERNSt6vectorIdEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Create a graph from raw arrays describing a CSR sparse matrix.</p>
 <p>To use this constructor, you should understand the CSR sparse matrix format. Note that this library uses the RowMajor format from the Eigen library.</p>
 <dl class="field-list simple">
@@ -239,9 +247,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4stag5Graph9adjacencyEv">
-<span id="_CPPv3NK4stag5Graph9adjacencyEv"></span><span id="_CPPv2NK4stag5Graph9adjacencyEv"></span><span id="stag::Graph::adjacencyC"></span><span class="target" id="classstag_1_1Graph_1a1e9cb4cac7ffc06d64ba3cfdefe08d90"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">adjacency</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4stag5Graph9adjacencyEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3NK4stag5Graph9adjacencyEv"></span><span id="_CPPv2NK4stag5Graph9adjacencyEv"></span><span id="stag::Graph::adjacencyC"></span><span class="target" id="classstag_1_1Graph_1a1e9cb4cac7ffc06d64ba3cfdefe08d90"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">adjacency</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4stag5Graph9adjacencyEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Return the sparse adjacency matrix of the graph</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -249,9 +258,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph9laplacianEv">
-<span id="_CPPv3N4stag5Graph9laplacianEv"></span><span id="_CPPv2N4stag5Graph9laplacianEv"></span><span id="stag::Graph::laplacian"></span><span class="target" id="classstag_1_1Graph_1a6fa1e7a53dc61ee5f37b3a4c08ebe957"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">laplacian</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph9laplacianEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph9laplacianEv"></span><span id="_CPPv2N4stag5Graph9laplacianEv"></span><span id="stag::Graph::laplacian"></span><span class="target" id="classstag_1_1Graph_1a6fa1e7a53dc61ee5f37b3a4c08ebe957"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">laplacian</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph9laplacianEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Construct the Laplacian matrix of the graph.</p>
 <p>The Laplacian matrix is defined by L = D - A where D is the diagonal matrix of vertex degrees and A is the adjacency matrix of the graph.</p>
 <dl class="field-list simple">
@@ -260,9 +270,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph20normalised_laplacianEv">
-<span id="_CPPv3N4stag5Graph20normalised_laplacianEv"></span><span id="_CPPv2N4stag5Graph20normalised_laplacianEv"></span><span id="stag::Graph::normalised_laplacian"></span><span class="target" id="classstag_1_1Graph_1a669332afb62778ef7b8419e671f9992b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">normalised_laplacian</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph20normalised_laplacianEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph20normalised_laplacianEv"></span><span id="_CPPv2N4stag5Graph20normalised_laplacianEv"></span><span id="stag::Graph::normalised_laplacian"></span><span class="target" id="classstag_1_1Graph_1a669332afb62778ef7b8419e671f9992b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">normalised_laplacian</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph20normalised_laplacianEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Construct the normalised Laplacian matrix of the graph.</p>
 <p>The normalised Laplacian matrix is defined by Ln = D^{-1/2} L D^{-1/2} where D is the diagonal matrix of vertex degrees and L is the Laplacian matrix of the graph.</p>
 <dl class="field-list simple">
@@ -271,9 +282,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph13degree_matrixEv">
-<span id="_CPPv3N4stag5Graph13degree_matrixEv"></span><span id="_CPPv2N4stag5Graph13degree_matrixEv"></span><span id="stag::Graph::degree_matrix"></span><span class="target" id="classstag_1_1Graph_1aacde5e369670d54817b995472717c806"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">degree_matrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph13degree_matrixEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph13degree_matrixEv"></span><span id="_CPPv2N4stag5Graph13degree_matrixEv"></span><span id="stag::Graph::degree_matrix"></span><span class="target" id="classstag_1_1Graph_1aacde5e369670d54817b995472717c806"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">degree_matrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph13degree_matrixEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The degree matrix of the graph.</p>
 <p>The degree matrix is an n x n matrix such that each diagonal entry is the degree of the corresponding node.</p>
 <dl class="field-list simple">
@@ -282,9 +294,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph21inverse_degree_matrixEv">
-<span id="_CPPv3N4stag5Graph21inverse_degree_matrixEv"></span><span id="_CPPv2N4stag5Graph21inverse_degree_matrixEv"></span><span id="stag::Graph::inverse_degree_matrix"></span><span class="target" id="classstag_1_1Graph_1a81fad4968af133222c6225df701d0633"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">inverse_degree_matrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph21inverse_degree_matrixEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph21inverse_degree_matrixEv"></span><span id="_CPPv2N4stag5Graph21inverse_degree_matrixEv"></span><span id="stag::Graph::inverse_degree_matrix"></span><span class="target" id="classstag_1_1Graph_1a81fad4968af133222c6225df701d0633"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">inverse_degree_matrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph21inverse_degree_matrixEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The inverse degree matrix of the graph.</p>
 <p>The inverse degree matrix is an n x n matrix such that each diagonal entry is the inverse of the degree of the corresponding node, or 0 if the node has degree 0.</p>
 <dl class="field-list simple">
@@ -293,9 +306,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph23lazy_random_walk_matrixEv">
-<span id="_CPPv3N4stag5Graph23lazy_random_walk_matrixEv"></span><span id="_CPPv2N4stag5Graph23lazy_random_walk_matrixEv"></span><span id="stag::Graph::lazy_random_walk_matrix"></span><span class="target" id="classstag_1_1Graph_1ac5c452838b81ba1bc7a93b4c32196aab"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">lazy_random_walk_matrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph23lazy_random_walk_matrixEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph23lazy_random_walk_matrixEv"></span><span id="_CPPv2N4stag5Graph23lazy_random_walk_matrixEv"></span><span id="stag::Graph::lazy_random_walk_matrix"></span><span class="target" id="classstag_1_1Graph_1ac5c452838b81ba1bc7a93b4c32196aab"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">lazy_random_walk_matrix</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph23lazy_random_walk_matrixEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The lazy random walk matrix of the graph.</p>
 <p>The lazy random walk matrix is defined to be 1/2 I + 1/2 A D^{-1} where I is the identity matrix, A is the graph adjacency matrix and D is the degree matrix of the graph.</p>
 <dl class="field-list simple">
@@ -304,9 +318,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph12total_volumeEv">
-<span id="_CPPv3N4stag5Graph12total_volumeEv"></span><span id="_CPPv2N4stag5Graph12total_volumeEv"></span><span id="stag::Graph::total_volume"></span><span class="target" id="classstag_1_1Graph_1ae9d2d6c8cd34f5a822b459fe309fa88a"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">total_volume</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph12total_volumeEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph12total_volumeEv"></span><span id="_CPPv2N4stag5Graph12total_volumeEv"></span><span id="stag::Graph::total_volume"></span><span class="target" id="classstag_1_1Graph_1ae9d2d6c8cd34f5a822b459fe309fa88a"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">total_volume</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph12total_volumeEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The total volume of the graph.</p>
 <p>The volume is defined as the sum of the node degrees.</p>
 <dl class="field-list simple">
@@ -315,30 +330,35 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4stag5Graph18number_of_verticesEv">
-<span id="_CPPv3NK4stag5Graph18number_of_verticesEv"></span><span id="_CPPv2NK4stag5Graph18number_of_verticesEv"></span><span id="stag::Graph::number_of_verticesC"></span><span class="target" id="classstag_1_1Graph_1ad0e08bf08ddbfc3876a6c67135bdae37"></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number_of_vertices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4stag5Graph18number_of_verticesEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3NK4stag5Graph18number_of_verticesEv"></span><span id="_CPPv2NK4stag5Graph18number_of_verticesEv"></span><span id="stag::Graph::number_of_verticesC"></span><span class="target" id="classstag_1_1Graph_1ad0e08bf08ddbfc3876a6c67135bdae37"></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number_of_vertices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4stag5Graph18number_of_verticesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The number of vertices in the graph. </p>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK4stag5Graph15number_of_edgesEv">
-<span id="_CPPv3NK4stag5Graph15number_of_edgesEv"></span><span id="_CPPv2NK4stag5Graph15number_of_edgesEv"></span><span id="stag::Graph::number_of_edgesC"></span><span class="target" id="classstag_1_1Graph_1a2c7040223e494b5ef24d581a74ae71c1"></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number_of_edges</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4stag5Graph15number_of_edgesEv" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3NK4stag5Graph15number_of_edgesEv"></span><span id="_CPPv2NK4stag5Graph15number_of_edgesEv"></span><span id="stag::Graph::number_of_edgesC"></span><span class="target" id="classstag_1_1Graph_1a2c7040223e494b5ef24d581a74ae71c1"></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number_of_edges</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4stag5Graph15number_of_edgesEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>The number of edges in the graph.</p>
 <p>This is defined based on the number of non-zero elements in the adjacency matrix, and ignores the weights of the edges. </p>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph6degreeE8stag_int">
-<span id="_CPPv3N4stag5Graph6degreeE8stag_int"></span><span id="_CPPv2N4stag5Graph6degreeE8stag_int"></span><span id="stag::Graph::degree__stag_int"></span><span class="target" id="classstag_1_1Graph_1a43416f58768a67c87baf9220ff370084"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph6degreeE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph6degreeE8stag_int"></span><span id="_CPPv2N4stag5Graph6degreeE8stag_int"></span><span id="stag::Graph::degree__stag_int"></span><span class="target" id="classstag_1_1Graph_1a43416f58768a67c87baf9220ff370084"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph6degreeE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return its weighted degree. </p>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph17degree_unweightedE8stag_int">
-<span id="_CPPv3N4stag5Graph17degree_unweightedE8stag_int"></span><span id="_CPPv2N4stag5Graph17degree_unweightedE8stag_int"></span><span id="stag::Graph::degree_unweighted__stag_int"></span><span class="target" id="classstag_1_1Graph_1a3a525658e1efbf3ed6ea6e74bf84b038"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph17degree_unweightedE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph17degree_unweightedE8stag_int"></span><span id="_CPPv2N4stag5Graph17degree_unweightedE8stag_int"></span><span id="stag::Graph::degree_unweighted__stag_int"></span><span class="target" id="classstag_1_1Graph_1a3a525658e1efbf3ed6ea6e74bf84b038"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph17degree_unweightedE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return its unweighted degree. That is, the number of neighbors of v, ignoring the edge weights. </p>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph9neighborsE8stag_int">
-<span id="_CPPv3N4stag5Graph9neighborsE8stag_int"></span><span id="_CPPv2N4stag5Graph9neighborsE8stag_int"></span><span id="stag::Graph::neighbors__stag_int"></span><span class="target" id="classstag_1_1Graph_1af38c2902d1cefd2dc0adfc349f85a7d3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv4N4stag4edgeE" title="stag::edge"><span class="n"><span class="pre">edge</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph9neighborsE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph9neighborsE8stag_int"></span><span id="_CPPv2N4stag5Graph9neighborsE8stag_int"></span><span id="stag::Graph::neighbors__stag_int"></span><span class="target" id="classstag_1_1Graph_1af38c2902d1cefd2dc0adfc349f85a7d3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv4N4stag4edgeE" title="stag::edge"><span class="n"><span class="pre">edge</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph9neighborsE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return a vector of edges representing the neighborhood of v.</p>
 <p>The returned edges will all have the ordering (v, x) such that edge.v = v.</p>
 <dl class="field-list simple">
@@ -350,9 +370,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph20neighbors_unweightedE8stag_int">
-<span id="_CPPv3N4stag5Graph20neighbors_unweightedE8stag_int"></span><span id="_CPPv2N4stag5Graph20neighbors_unweightedE8stag_int"></span><span id="stag::Graph::neighbors_unweighted__stag_int"></span><span class="target" id="classstag_1_1Graph_1a2cebcca3546dc35f0e2f5c522d7f090c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph20neighbors_unweightedE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag5Graph20neighbors_unweightedE8stag_int"></span><span id="_CPPv2N4stag5Graph20neighbors_unweightedE8stag_int"></span><span id="stag::Graph::neighbors_unweighted__stag_int"></span><span class="target" id="classstag_1_1Graph_1a2cebcca3546dc35f0e2f5c522d7f090c"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph20neighbors_unweightedE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return a vector containing the neighbors of v.</p>
 <p>The weights of edges to the neighbors are not returned by this method.</p>
 <dl class="field-list simple">
@@ -364,11 +385,13 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 </div>
 </dd></dl>
+
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraphE">
-<span id="_CPPv3N4stag10LocalGraphE"></span><span id="_CPPv2N4stag10LocalGraphE"></span><span id="stag::LocalGraph"></span><span class="target" id="classstag_1_1LocalGraph"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LocalGraph</span></span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraphE" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraphE"></span><span id="_CPPv2N4stag10LocalGraphE"></span><span id="stag::LocalGraph"></span><span class="target" id="classstag_1_1LocalGraph"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LocalGraph</span></span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraphE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p><a class="reference internal" href="#classstag_1_1LocalGraph"><span class="std std-ref">LocalGraph</span></a> is an abstract class which defines methods for exploring the local neighborhood of a graph.</p>
 <p>To maximise the performance of the local algorithms using this class, subclasses should cache the results of expensive queries. For example, if querying the neighbors of a vertex requires accessing the disk, then the result should be cached. </p>
 <p>Subclassed by <a class="reference internal" href="#classstag_1_1Graph"><span class="std std-ref">stag::Graph</span></a></p>
@@ -376,17 +399,19 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph6degreeE8stag_int">
-<span id="_CPPv3N4stag10LocalGraph6degreeE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph6degreeE8stag_int"></span><span id="stag::LocalGraph::degree__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a5be639e8245d13f768407bc31e83e31a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph6degreeE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraph6degreeE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph6degreeE8stag_int"></span><span id="stag::LocalGraph::degree__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a5be639e8245d13f768407bc31e83e31a"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph6degreeE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return its weighted degree. </p>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph17degree_unweightedE8stag_int">
-<span id="_CPPv3N4stag10LocalGraph17degree_unweightedE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph17degree_unweightedE8stag_int"></span><span id="stag::LocalGraph::degree_unweighted__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a12a8bc595fc1f138ccccff417ac12e25"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph17degree_unweightedE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraph17degree_unweightedE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph17degree_unweightedE8stag_int"></span><span id="stag::LocalGraph::degree_unweighted__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a12a8bc595fc1f138ccccff417ac12e25"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degree_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph17degree_unweightedE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return its unweighted degree. That is, the number of neighbors of v, ignoring the edge weights. </p>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph9neighborsE8stag_int">
-<span id="_CPPv3N4stag10LocalGraph9neighborsE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph9neighborsE8stag_int"></span><span id="stag::LocalGraph::neighbors__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a2044d3ab29b60e5b15f6abb9a69277c5"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv4N4stag4edgeE" title="stag::edge"><span class="n"><span class="pre">edge</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph9neighborsE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraph9neighborsE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph9neighborsE8stag_int"></span><span id="stag::LocalGraph::neighbors__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a2044d3ab29b60e5b15f6abb9a69277c5"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv4N4stag4edgeE" title="stag::edge"><span class="n"><span class="pre">edge</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph9neighborsE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return a vector of edges representing the neighborhood of v.</p>
 <p>The returned edges will all have the ordering (v, x) such that edge.v = v.</p>
 <dl class="field-list simple">
@@ -398,9 +423,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph20neighbors_unweightedE8stag_int">
-<span id="_CPPv3N4stag10LocalGraph20neighbors_unweightedE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph20neighbors_unweightedE8stag_int"></span><span id="stag::LocalGraph::neighbors_unweighted__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a44aab18c2dc3c9aeb875b7e2a48772cd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph20neighbors_unweightedE8stag_int" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraph20neighbors_unweightedE8stag_int"></span><span id="_CPPv2N4stag10LocalGraph20neighbors_unweightedE8stag_int"></span><span id="stag::LocalGraph::neighbors_unweighted__stag_int"></span><span class="target" id="classstag_1_1LocalGraph_1a44aab18c2dc3c9aeb875b7e2a48772cd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">neighbors_unweighted</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph20neighbors_unweightedE8stag_int" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a vertex v, return a vector containing the neighbors of v.</p>
 <p>The weights of edges to the neighbors are not returned by this method.</p>
 <dl class="field-list simple">
@@ -412,9 +438,10 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE">
-<span id="_CPPv3N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a60c3ef54ce4d67f64f7311da3871787d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a60c3ef54ce4d67f64f7311da3871787d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a list of vertices, return the degrees of each vertex in the list.</p>
 <p>Providing a method for computing the degrees ‘in bulk’ increases the efficiency of algorithms on graphs which are not stored directly in memory.</p>
 <p>
@@ -428,9 +455,10 @@ This file is provided as part of the STAG library and released under the MIT lic
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE">
-<span id="_CPPv3N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees_unweighted__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a0a9e2b8fdf5939e1ee873c45c316994f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees_unweighted</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees_unweighted__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a0a9e2b8fdf5939e1ee873c45c316994f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees_unweighted</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a list of vertices, return their unweighted degrees.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -441,14 +469,17 @@ This file is provided as part of the STAG library and released under the MIT lic
 </dd>
 </dl>
 </dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraphD0Ev">
-<span id="_CPPv3N4stag10LocalGraphD0Ev"></span><span id="_CPPv2N4stag10LocalGraphD0Ev"></span><span id="stag::LocalGraph::~LocalGraph"></span><span class="target" id="classstag_1_1LocalGraph_1a897f4ce6ea5484aa81d0d14da0e56eaa"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~LocalGraph</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraphD0Ev" title="Permalink to this definition">¶</a><br/></dt>
+<span id="_CPPv3N4stag10LocalGraphD0Ev"></span><span id="_CPPv2N4stag10LocalGraphD0Ev"></span><span id="stag::LocalGraph::~LocalGraph"></span><span class="target" id="classstag_1_1LocalGraph_1a897f4ce6ea5484aa81d0d14da0e56eaa"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~LocalGraph</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraphD0Ev" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Destructor for the <a class="reference internal" href="#classstag_1_1LocalGraph"><span class="std std-ref">LocalGraph</span></a> object. </p>
 </dd></dl>
+
 </div>
 </dd></dl>
-</section>
+
+</div>
 
         </article>
       </div>
@@ -462,10 +493,10 @@ This file is provided as part of the STAG library and released under the MIT lic
                 </div>
                 <div class="title">Reading and Writing to Disk</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="types.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -476,17 +507,21 @@ This file is provided as part of the STAG library and released under the MIT lic
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2022, The STAG Team |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="_sources/graphs.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, The STAG Team
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
         </div>
         
       </footer>
@@ -500,8 +535,10 @@ This file is provided as part of the STAG library and released under the MIT lic
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/main.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
     <script src="_static/js/custom.js"></script>
     </body>
 </html>

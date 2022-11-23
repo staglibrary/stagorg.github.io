@@ -220,7 +220,7 @@
 <table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#stag.cluster.approximate_pagerank" title="stag.cluster.approximate_pagerank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">approximate_pagerank</span></code></a></p></td>
-<td><p>Compute the approximate pagerank vector as described in ACL:</p></td>
+<td><p>Compute the approximate pagerank vector.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#stag.cluster.local_cluster" title="stag.cluster.local_cluster"><code class="xref py py-obj docutils literal notranslate"><span class="pre">local_cluster</span></code></a></p></td>
 <td><p>Default local clustering algorithm.</p></td>
@@ -236,33 +236,31 @@
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.cluster.local_cluster">
-<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">local_cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_volume</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.cluster.local_cluster" title="Permalink to this definition">#</a></dt>
-<dd><p>Default local clustering algorithm. Given a graph and starting vertex,
-return a cluster which is close to the starting vertex.</p>
-<p>This method defaults to use the ACL local clustering algorithm.</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang.
-“Local graph partitioning using pagerank vectors.” 2006
-47th Annual IEEE Symposium on Foundations of Computer Science (FOCS’06). IEEE, 2006.</p>
+<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">local_cluster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_volume</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.cluster.local_cluster" title="Permalink to this definition">#</a></dt>
+<dd><p>Default local clustering algorithm.</p>
+<p>Given a graph and starting vertex, return a cluster which is close to the
+starting vertex. The <code class="docutils literal notranslate"><span class="pre">target_volume</span></code> parameter controls the size of the
+returned cluster.</p>
+<p>You should set <code class="docutils literal notranslate"><span class="pre">target_volume</span></code> to be your best guess for the volume of the
+cluster you would like to find. For example, the following code will find
+one of the ‘clusters’ in a barbell graph.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.graph</span>
+<span class="kn">import</span> <span class="nn">stag.cluster</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">local_cluster</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This method calls through to the <a class="reference internal" href="#stag.cluster.local_cluster_acl" title="stag.cluster.local_cluster_acl"><code class="xref py py-meth docutils literal notranslate"><span class="pre">local_cluster_acl()</span></code></a> method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>g</strong> – <ul>
-<li><p>a graph object implementing the LocalGraph interface</p></li>
-</ul>
-</p></li>
-<li><p><strong>seed_vertex</strong> – <ul>
-<li><p>the starting vertex in the graph</p></li>
-</ul>
-</p></li>
-<li><p><strong>target_volume</strong> – <ul>
-<li><p>the approximate volume of the cluster you would like to find</p></li>
-</ul>
-</p></li>
+<li><p><strong>g</strong> – a <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">stag.graph.LocalGraph</span></code></a> object</p></li>
+<li><p><strong>seed_vertex</strong> – the starting vertex in the graph</p></li>
+<li><p><strong>target_volume</strong> – the approximate volume of the target cluster</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a vector containing the indices of vectors considered to be in the
-same cluster as the seed_vertex.</p>
+<dd class="field-even"><p>a list of vertices in the same cluster as the seed vertex</p>
 </dd>
 </dl>
 </dd></dl>
@@ -270,92 +268,111 @@ same cluster as the seed_vertex.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.cluster.local_cluster_acl">
 <span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">local_cluster_acl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.cluster.local_cluster_acl" title="Permalink to this definition">#</a></dt>
-<dd><p>The ACL local clustering algorithm. Given a graph and starting vertex,
-returns a cluster close to the starting vertex, constructed in a local way.</p>
-<p>The locality parameter is passed as the alpha parameter in the personalised
-pagerank calculation.</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang.
-“Local graph partitioning using pagerank vectors.” 2006
-47th Annual IEEE Symposium on Foundations of Computer Science (FOCS’06). IEEE, 2006.</p>
+<dd><p>The ACL local clustering algorithm.</p>
+<p>Given a graph and starting vertex, returns a cluster close to the starting vertex.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">locality</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code> parameters correspond to the <span class="math notranslate nohighlight">\(\alpha\)</span>
+and <span class="math notranslate nohighlight">\(\epsilon\)</span> parameters of the ACL algorithm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>g</strong> – a graph object implementing the LocalGraph interface</p></li>
 <li><p><strong>seed_vertex</strong> – the starting vertex in the graph</p></li>
-<li><p><strong>locality</strong> – a value in [0, 1] indicating how ‘local’ the cluster should
-be. A value of ‘1’ will return the return only the seed vertex
-and a value of ‘0’ will explore the whole graph.</p></li>
+<li><p><strong>locality</strong> – a value in <span class="math notranslate nohighlight">\((0, 1]\)</span> indicating how ‘local’ the cluster should
+be. A value of <span class="math notranslate nohighlight">\(1\)</span> will return only the seed vertex
+and a value of <span class="math notranslate nohighlight">\(0\)</span> will explore the whole graph.</p></li>
 <li><p><strong>error</strong> – (optional) the acceptable error in the calculation of the approximate
-pagerank. Default 0.001.</p></li>
+pagerank. A smaller error will result in longer running time and
+higher quality cluster.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a vector containing the indices of vectors considered to be in the
 same cluster as the seed_vertex.</p>
 </dd>
+<dt class="field-odd">Reference<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang.
+“Local graph partitioning using pagerank vectors.” FOCS’06.</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.cluster.approximate_pagerank">
-<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">approximate_pagerank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">csc_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.cluster.approximate_pagerank" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the approximate pagerank vector as described in ACL:</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang.
-“Local graph partitioning using pagerank vectors.” 2006
-47th Annual IEEE Symposium on Foundations of Computer Science (FOCS’06). IEEE, 2006.</p>
-<p>The parameters s, alpha, and epsilon are used as described in the paper.</p>
+<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">approximate_pagerank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">csc_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">csc_matrix</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">csc_matrix</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.cluster.approximate_pagerank" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the approximate pagerank vector.</p>
+<p>The approximate pagerank vector <span class="math notranslate nohighlight">\(\mathrm{apr}_G(s, \alpha, \epsilon)\)</span>
+is defined in [ACL] and this method implements their proposed algorithm
+for computing it.</p>
+<p>This method forms an important part of the <a class="reference internal" href="#stag.cluster.local_cluster_acl" title="stag.cluster.local_cluster_acl"><code class="xref py py-meth docutils literal notranslate"><span class="pre">local_cluster_acl()</span></code></a>
+algorithm.</p>
 <p>Note that the dimension of the returned vectors may not match the true
 number of vertices in the graph provided since the approximate
 pagerank is computed locally.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>g</strong> – </p></li>
-<li><p><strong>seed_vector</strong> – </p></li>
-<li><p><strong>alpha</strong> – </p></li>
-<li><p><strong>epsilon</strong> – </p></li>
+<li><p><strong>g</strong> – a <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">stag.graph.LocalGraph</span></code></a></p></li>
+<li><p><strong>seed_vector</strong> – a sparse column matrix defining the starting
+distribution on the graph. Although this is a matrix type,
+it should have exactly one column.</p></li>
+<li><p><strong>alpha</strong> – a value in <span class="math notranslate nohighlight">\((0, 1]\)</span> controlling the teleportation parameter
+of the personalised Pagerank.</p></li>
+<li><p><strong>epsilon</strong> – a value in <span class="math notranslate nohighlight">\((0, 1]\)</span> controlling the approximation
+guarantee.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><dl class="simple">
-<dt>A tuple of sparse column vectors corresponding to</dt><dd><p>p - the approximate pagerank vector
-r - the residual vector</p>
-</dd>
-<dt>By the definition of approximate pagerank, it is the case that</dt><dd><p>p + pr(r, alpha) = pr(s, alpha)</p>
-</dd>
-</dl>
+<dd class="field-even"><p><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> : the approximate pagerank vector</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> : the residual vector</p></li>
+</ul>
 </p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ArgumentError</strong> – if the provided seed_vector is not a column vector.</p>
+<dd class="field-odd"><p><strong>ArgumentError</strong> – if the provided <code class="docutils literal notranslate"><span class="pre">seed_vector</span></code> is not a column vector.</p>
+</dd>
+<dt class="field-even">Reference<span class="colon">:</span></dt>
+<dd class="field-even"><p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang.
+“Local graph partitioning using pagerank vectors.” FOCS’06.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.cluster.sweep_set_conductance">
-<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">sweep_set_conductance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">vec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">csc_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.cluster.sweep_set_conductance" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">sweep_set_conductance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">csc_matrix</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.cluster.sweep_set_conductance" title="Permalink to this definition">#</a></dt>
 <dd><p>Find the sweep set of the given vector with the minimum conductance.</p>
-<dl class="simple">
-<dt>First, sort the vector, and then let</dt><dd><p>S_i = {v_j : j &lt;= i}</p>
-</dd>
-<dt>and return the set of original indices corresponding to</dt><dd><p>argmin_i conducance(S_i)</p>
-</dd>
-</dl>
+<p>First, sort the vertices such that <span class="math notranslate nohighlight">\(v(1) \leq v(2) \leq \ldots \leq v(n)\)</span> .
+Then, let</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[S_i = \{j : j &lt;= i\}\]</div>
+</div>
+<p>and return the set of original vertex indices that correspond to</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathrm{argmin}_i \quad \phi(S_i),\]</div>
+</div>
+<p>where</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\phi(S_i) = \frac{w(S_i, \overline{S_i})}{\mathrm{vol}(S_i)}\]</div>
+</div>
+<p>is the conductance of <span class="math notranslate nohighlight">\(S_i\)</span> .</p>
 <p>This method is expected to be run on vectors whose support is much less
-than the total size of the graph. If the total volume of the support of vec
-is larger than half of the volume of the total graph, then this method may
-return unexpected results.</p>
+than the total size of the graph. If the total volume of the support of <code class="docutils literal notranslate"><span class="pre">v</span></code>
+is larger than half of the volume of the total graph, then this method is
+likely to return the total support of <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Param<span class="colon">:</span></dt>
-<dd class="field-odd"><p>graph</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>g</strong> – the <a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">stag.graph.LocalGraph</span></code></a> on which to operate</p></li>
+<li><p><strong>v</strong> – a sparse column vector</p></li>
+</ul>
 </dd>
-<dt class="field-even">Param<span class="colon">:</span></dt>
-<dd class="field-even"><p>vec</p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>a vector containing the indices of vec which give the minimum
-conductance in the given graph</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of the indices of v which give the minimum
+conductance</p>
 </dd>
 </dl>
 </dd></dl>
@@ -434,6 +451,7 @@ conductance in the given graph</p>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/custom.js"></script>
     </body>
 </html>

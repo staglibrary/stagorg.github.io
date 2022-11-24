@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="stag.random" href="stag.random.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
-        <title>stag.cluster - STAG 0.3.0 documentation</title>
+        <title>stag.cluster - STAG 0.3.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -126,7 +126,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">STAG 0.3.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">STAG 0.3.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -162,6 +162,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../neo4j.html">STAG and Neo4j</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../reference.html">STAG Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="stag.graph.html">stag.graph</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="stag.graph.Edge.html">stag.graph.Edge</a></li>
@@ -267,7 +268,7 @@ one of the ‘clusters’ in a barbell graph.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="stag.cluster.local_cluster_acl">
-<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">local_cluster_acl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stag.cluster.local_cluster_acl" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">stag.cluster.</span></span><span class="sig-name descname"><span class="pre">local_cluster_acl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="stag.graph.LocalGraph.html#stag.graph.LocalGraph" title="stag.graph.LocalGraph"><span class="pre">LocalGraph</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_vertex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#stag.cluster.local_cluster_acl" title="Permalink to this definition">#</a></dt>
 <dd><p>The ACL local clustering algorithm.</p>
 <p>Given a graph and starting vertex, returns a cluster close to the starting vertex.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">locality</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code> parameters correspond to the <span class="math notranslate nohighlight">\(\alpha\)</span>
@@ -286,7 +287,7 @@ higher quality cluster.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a vector containing the indices of vectors considered to be in the
+<dd class="field-even"><p>a list containing the indices of vertices considered to be in the
 same cluster as the seed_vertex.</p>
 </dd>
 <dt class="field-odd">Reference<span class="colon">:</span></dt>

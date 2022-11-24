@@ -254,6 +254,25 @@ This command will return the degree of the node with ID 0.</p>
 </pre></div>
 </div>
 </section>
+<section id="finding-clusters-in-the-graph">
+<h2>Finding Clusters in the Graph<a class="headerlink" href="#finding-clusters-in-the-graph" title="Permalink to this heading">#</a></h2>
+<p>Once we have connected successfully to the database, we can find a cluster in
+the data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.cluster</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">local_cluster</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, assuming we are testing against the Neo4j movies dataset, we can display
+the cluster as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">cluster</span><span class="p">:</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">query_node_labels</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;Movie&#39;</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">query_property</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="s1">&#39;Person&#39;</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">query_property</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -316,6 +335,7 @@ This command will return the degree of the node with ID 0.</p>
 <li><a class="reference internal" href="#">STAG and Neo4j</a><ul>
 <li><a class="reference internal" href="#setting-up-a-neo4j-database">Setting up a Neo4j Database</a></li>
 <li><a class="reference internal" href="#connecting-to-the-database-with-stag">Connecting to the Database with STAG</a></li>
+<li><a class="reference internal" href="#finding-clusters-in-the-graph">Finding Clusters in the Graph</a></li>
 </ul>
 </li>
 </ul>

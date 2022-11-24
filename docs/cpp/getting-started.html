@@ -213,13 +213,11 @@ so it may be useful to also refer to the <a class="reference external" href="htt
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
 <p>To include the STAG library in your C++ project:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>download STAG from github</p></li>
 <li><p>copy the <code class="docutils literal notranslate"><span class="pre">stag_lib</span></code> and <code class="docutils literal notranslate"><span class="pre">eigen-3.3.9</span></code> directories into your project</p></li>
 <li><p>add the following to your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p></li>
 </ul>
-</div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">include_directories</span><span class="p">(</span><span class="n">eigen</span><span class="o">-</span><span class="mf">3.3.9</span><span class="p">)</span> <span class="c1"># Eigen - header-only</span>
 <span class="linenos">2</span><span class="n">include_directories</span><span class="p">(</span><span class="n">stag_lib</span><span class="p">)</span>
 <span class="linenos">3</span><span class="n">add_subdirectory</span><span class="p">(</span><span class="n">stag_lib</span> <span class="n">stag_lib</span><span class="p">)</span>

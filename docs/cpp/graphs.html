@@ -207,14 +207,12 @@
           <div class="section" id="constructing-graphs">
 <h1>Constructing Graphs<a class="headerlink" href="#constructing-graphs" title="Permalink to this heading">#</a></h1>
 <p>There are two provided graph classes:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><a class="reference internal" href="#_CPPv4N4stag10LocalGraphE" title="stag::LocalGraph"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">stag::LocalGraph</span></code></a> is an abstract class providing methods for local
 access to the graph.</p></li>
 <li><p><a class="reference internal" href="#_CPPv4N4stag5GraphE" title="stag::Graph"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">stag::Graph</span></code></a> is a general-purpose graph object, defined by a sparse
 Eigen matrix. This class implements and extends the <a class="reference internal" href="#_CPPv4N4stag10LocalGraphE" title="stag::LocalGraph"><code class="xref cpp cpp-class docutils literal notranslate"><span class="pre">stag::LocalGraph</span></code></a> class.</p></li>
 </ul>
-</div></blockquote>
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5GraphE">
 <span id="_CPPv3N4stag5GraphE"></span><span id="_CPPv2N4stag5GraphE"></span><span id="stag::Graph"></span><span class="target" id="classstag_1_1Graph"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Graph</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">stag</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N4stag10LocalGraphE" title="stag::LocalGraph"><span class="n"><span class="pre">LocalGraph</span></span></a><a class="headerlink" href="#_CPPv4N4stag5GraphE" title="Permalink to this definition">#</a><br /></dt>
@@ -263,7 +261,13 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 <dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph9laplacianEv">
 <span id="_CPPv3N4stag5Graph9laplacianEv"></span><span id="_CPPv2N4stag5Graph9laplacianEv"></span><span id="stag::Graph::laplacian"></span><span class="target" id="classstag_1_1Graph_1a6fa1e7a53dc61ee5f37b3a4c08ebe957"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="types.html#_CPPv47SprsMat" title="SprsMat"><span class="n"><span class="pre">SprsMat</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">laplacian</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag5Graph9laplacianEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Construct the Laplacian matrix of the graph.</p>
-<p>The Laplacian matrix is defined by L = D - A where D is the diagonal matrix of vertex degrees and A is the adjacency matrix of the graph.</p>
+<p>The Laplacian matrix is defined by</p>
+<p><div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[ L = D - A \]</div>
+</div>
+</p>
+<p>where D is the diagonal matrix of vertex degrees and A is the adjacency matrix of the graph.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>a sparse Eigen matrix representing the graph Laplacian </p>
@@ -539,6 +543,7 @@ This file is provided as part of the STAG library and released under the MIT lic
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/custom.js"></script>
     </body>
 </html>

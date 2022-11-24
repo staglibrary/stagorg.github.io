@@ -219,8 +219,113 @@ algorithms for graphs.
 The library is based on the STAG C++ library.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
-<p>Begin by installing STAG via pip:</p>
+<p>Begin by installing STAG via pip, the python package manager.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">stag</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-graphs">
+<h2>Creating Graphs<a class="headerlink" href="#creating-graphs" title="Permalink to this heading">#</a></h2>
+<p>The core graph object is <a class="reference internal" href="generated/stag.graph.Graph.html#stag.graph.Graph" title="stag.graph.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">stag.graph.Graph</span></code></a> which can be created using
+a sparse adjacency matrix.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.graph</span>
+<span class="kn">import</span> <span class="nn">scipy.sparse</span>
+<span class="n">adj_mat</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csc_matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">adj_mat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also create a variety of standard graphs using the <a class="reference internal" href="generated/stag.graph.html#module-stag.graph" title="stag.graph"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stag.graph</span></code></a> module.
+For example, to create a complete graph on <span class="math notranslate nohighlight">\(5\)</span> vertices, use the following
+code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.graph</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">complete_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can see the adjacency matrix of your constructed graphs with the following.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.sparse</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">adjacency</span><span class="p">()</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Notice that the <a class="reference internal" href="generated/stag.graph.Graph.html#stag.graph.Graph.adjacency" title="stag.graph.Graph.adjacency"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stag.graph.Graph.adjacency()</span></code></a> method returns a sparse <code class="docutils literal notranslate"><span class="pre">scipy</span></code>
+matrix and we make this dense with the <code class="docutils literal notranslate"><span class="pre">todense()</span></code> method.</p>
+</section>
+<section id="reading-graphs-from-disk">
+<h2>Reading Graphs from Disk<a class="headerlink" href="#reading-graphs-from-disk" title="Permalink to this heading">#</a></h2>
+<p>STAG supports the edgelist file format for reading graphs from disk and the
+<a class="reference internal" href="generated/stag.graphio.html#module-stag.graphio" title="stag.graphio"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stag.graphio</span></code></a> module provides methods for reading and writing them.</p>
+<p>Suppose you have a simple edgelist file like this one.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">graph.edgelist</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">1</span>
+<span class="mi">1</span> <span class="mi">2</span>
+<span class="mi">0</span> <span class="mi">2</span>
+<span class="mi">2</span> <span class="mi">3</span>
+<span class="mi">3</span> <span class="mi">4</span>
+<span class="mi">4</span> <span class="mi">5</span>
+<span class="mi">3</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<p>Then, we can read it as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">stag.graphio</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">graphio</span><span class="o">.</span><span class="n">load_edgelist</span><span class="p">(</span><span class="s2">&quot;graph.edgelist&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">agjacency</span><span class="p">()</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span>
+<span class="go">[[0. 1. 1. 0. 0. 0.]</span>
+<span class="go"> [1. 0. 1. 0. 0. 0.]</span>
+<span class="go"> [1. 1. 0. 1. 0. 0.]</span>
+<span class="go"> [0. 0. 1. 0. 1. 1.]</span>
+<span class="go"> [0. 0. 0. 1. 0. 1.]</span>
+<span class="go"> [0. 0. 0. 1. 1. 0.]]</span>
+</pre></div>
+</div>
+<p>We can also save graphs as an edgelist.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.graph</span>
+<span class="kn">import</span> <span class="nn">stag.graphio</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">star_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">stag</span><span class="o">.</span><span class="n">graphio</span><span class="o">.</span><span class="n">save_edgelist</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s2">&quot;star.edgelist&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Edgelist files can also include edge weights as a third parameter - notice that
+the generated <code class="docutils literal notranslate"><span class="pre">star.edgelist</span></code> file specifies an edge weight of <span class="math notranslate nohighlight">\(1\)</span> for
+every edge.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">star.edgelist</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">2</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">3</span> <span class="mi">1</span>
+<span class="mi">0</span> <span class="mi">4</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="finding-clusters">
+<h2>Finding Clusters<a class="headerlink" href="#finding-clusters" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference internal" href="generated/stag.cluster.html#module-stag.cluster" title="stag.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stag.cluster</span></code></a> module provides methods for finding clusters in graphs
+using local clustering algorithms.
+The main method provided by this module is <a class="reference internal" href="generated/stag.cluster.html#stag.cluster.local_cluster" title="stag.cluster.local_cluster"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stag.cluster.local_cluster()</span></code></a> .
+This method takes three arguments:</p>
+<ul class="simple">
+<li><p><strong>g</strong> - a STAG graph object;</p></li>
+<li><p><strong>seed_vertex</strong> - the ID of a vertex in the graph;</p></li>
+<li><p><strong>target_volume</strong> - an estimate of the volume of the cluster to find.
+To estimate the target volume, you could first estimate the number of vertices
+in the cluster you would like to find, and then multiply by the degree of the
+seed vertex.</p></li>
+</ul>
+<p>Given these arguments, <a class="reference internal" href="generated/stag.cluster.html#stag.cluster.local_cluster" title="stag.cluster.local_cluster"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stag.cluster.local_cluster()</span></code></a> will return a list
+of vertices which form a cluster around the seed vertex, and whose total volume
+is close to the target volume.</p>
+<p>For example, to find the clusters in a barbell graph:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">stag.graph</span>
+<span class="kn">import</span> <span class="nn">stag.cluster</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">barbell_graph</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">local_cluster</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+<span class="n">cluster</span> <span class="o">=</span> <span class="n">stag</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">local_cluster</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -285,6 +390,9 @@ The library is based on the STAG C++ library.</p>
             <ul>
 <li><a class="reference internal" href="#">Getting Started</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#creating-graphs">Creating Graphs</a></li>
+<li><a class="reference internal" href="#reading-graphs-from-disk">Reading Graphs from Disk</a></li>
+<li><a class="reference internal" href="#finding-clusters">Finding Clusters</a></li>
 </ul>
 </li>
 </ul>
@@ -303,6 +411,7 @@ The library is based on the STAG C++ library.</p>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/custom.js"></script>
     </body>
 </html>

@@ -144,20 +144,20 @@
       <div class="container">
 
         <div class="row justify-content-between">
-          <div class="col-lg-9 pt-5 pt-lg-0">
+          <div class="col-lg-10 pt-5 pt-lg-0">
             <h3 data-aos="fade-up">Local Graph Clustering</h3> <br>
             <p data-aos="fade-up" data-aos-delay="100">
-                Given a vertex of some underlying graph as input,  a local graph clustering algorithm is to find some low-conductance set around the input vertex, while the algorithm runs in time proportional to the size of the target cluster and independent of the size of the entire graph. As one of the key components in designing nearly-linear time graph algorithms, local graph clustering algorithms have been extensively studied in algorithmic spectral graph theory.
+                Given a vertex of some underlying graph as input,  a local graph clustering algorithm is to find some low-conductance set around the input vertex, while the algorithm runs in time proportional to the size of the target cluster and independent of the size of the entire graph. As one of the key components in designing nearly-linear time graph algorithms, local graph clustering  has  been extensively studied in algorithmic spectral graph theory.
             </p>
-              
+                
              <p data-aos="fade-up" data-aos-delay="100">
-                Generally speaking, there are two techniques for designing local clustering algorithms: one is based on PageRank, and the other is based on evolving sets. We have included the implementation of a PageRank based algorithm (the ACL algorithm) in STAG, and will publish our implementation of an evolving set based algorithm later this year.
-            </p>
+                The GitHub page contains our implemention of the local graph clustering based on   PageRank (the ACL algorithm). Comparing with several existing open-source implementation for local graph clustering, our code connects to a  <a href="https://neo4j.com"> Neo4j</a>  database running in the AuraDB cloud service, or a database running locally. With this   feature, one can run local graph clustering on the entire Wikipedia graph of more than 20GB with a single PC. 
+            </p> <br>
           </div>
          
-        <div class="col-lg-3 order-1 order-lg-2 hero-img img-fluid" alt="" data-aos="zoom-in" >
+        <div class="col-lg-2 order-1 order-lg-2 hero-img img-fluid" alt="" data-aos="zoom-in" >
              <br> <br> <br>
-                   <img src="assets/img/clustering.png" class="img-fluid animated" alt="">
+                   <img src="assets/img/clustering.jpeg" class="img-fluid animated" alt="">
                  </div>
         </div>
           
@@ -166,9 +166,6 @@
                 <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
                         <i class="bx bx-receipt"></i>
                         <h4>Reference</h4>
-                          <p data-aos="fade-up" data-aos-delay="100">
-                        Reid Andersen, Shayan Oveis Gharan, Yuval Peres, Luca Trevisan: Almost Optimal Local Graph Clustering Using Evolving Sets. J. ACM 63(2): 15:1-15:31 (2016)
-                          </p>
                           
                           <p data-aos="fade-up" data-aos-delay="100">
                             Reid Andersen, Fan R. K. Chung, Kevin J. Lang: Local Graph Partitioning using PageRank Vectors. FOCS 2006: 475-486

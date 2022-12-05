@@ -230,7 +230,7 @@ This ‘intermediate’ class is included for possible future python-specific fu
 call this constructor. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyLocalGraph</span><span class="p">(</span><span class="n">stag</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">LocalGraph</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="c1"># Add custom initialisation for MyLocalGraph</span>
 </pre></div>

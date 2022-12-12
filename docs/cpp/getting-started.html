@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="STAG Reference" href="reference.html" /><link rel="prev" title="STAG 0.3.0 documentation" href="index.html" />
 
-    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Getting Started - STAG 0.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/vendor/bootstrap-icons/bootstrap-icons.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
@@ -153,7 +153,7 @@
   
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -218,14 +218,16 @@ so it may be useful to also refer to the <a class="reference external" href="htt
 <li><p>copy the <code class="docutils literal notranslate"><span class="pre">stag_lib</span></code> and <code class="docutils literal notranslate"><span class="pre">eigen-3.3.9</span></code> directories into your project</p></li>
 <li><p>add the following to your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">include_directories</span><span class="p">(</span><span class="n">eigen</span><span class="o">-</span><span class="mf">3.3.9</span><span class="p">)</span> <span class="c1"># Eigen - header-only</span>
-<span class="linenos">2</span><span class="n">include_directories</span><span class="p">(</span><span class="n">stag_lib</span><span class="p">)</span>
-<span class="linenos">3</span><span class="n">add_subdirectory</span><span class="p">(</span><span class="n">stag_lib</span> <span class="n">stag_lib</span><span class="p">)</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="n">target_link_libraries</span><span class="p">(</span>
-<span class="linenos">6</span>        <span class="n">YOUR_PROJECT</span>
-<span class="linenos">7</span>        <span class="n">stag</span>
-<span class="linenos">8</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">set</span><span class="p">(</span><span class="n">CMAKE_CXX_STANDARD</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># STAG requires at least C++20.</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">include_directories</span><span class="p">(</span><span class="n">eigen</span><span class="o">-</span><span class="mf">3.3.9</span><span class="p">)</span> <span class="c1"># Eigen - header-only</span>
+<span class="linenos"> 4</span><span class="n">include_directories</span><span class="p">(</span><span class="n">stag_lib</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="n">add_subdirectory</span><span class="p">(</span><span class="n">stag_lib</span> <span class="n">stag_lib</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">target_link_libraries</span><span class="p">(</span>
+<span class="linenos"> 8</span>        <span class="n">YOUR_PROJECT</span>
+<span class="linenos"> 9</span>        <span class="n">stag</span>
+<span class="linenos">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -268,9 +270,7 @@ so it may be useful to also refer to the <a class="reference external" href="htt
             
           </div>
           <div class="right-details">
-            <div class="icons">
-              
-            </div>
+            
           </div>
         </div>
         

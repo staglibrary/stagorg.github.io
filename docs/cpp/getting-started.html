@@ -218,16 +218,30 @@ so it may be useful to also refer to the <a class="reference external" href="htt
 <li><p>copy the <code class="docutils literal notranslate"><span class="pre">stag_lib</span></code> and <code class="docutils literal notranslate"><span class="pre">eigen-3.3.9</span></code> directories into your project</p></li>
 <li><p>add the following to your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nb">set</span><span class="p">(</span><span class="n">CMAKE_CXX_STANDARD</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># STAG requires at least C++20.</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="n">include_directories</span><span class="p">(</span><span class="n">eigen</span><span class="o">-</span><span class="mf">3.3.9</span><span class="p">)</span> <span class="c1"># Eigen - header-only</span>
-<span class="linenos"> 4</span><span class="n">include_directories</span><span class="p">(</span><span class="n">stag_lib</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">add_subdirectory</span><span class="p">(</span><span class="n">stag_lib</span> <span class="n">stag_lib</span><span class="p">)</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="n">target_link_libraries</span><span class="p">(</span>
-<span class="linenos"> 8</span>        <span class="n">YOUR_PROJECT</span>
-<span class="linenos"> 9</span>        <span class="n">stag</span>
-<span class="linenos">10</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">(</span><span class="n">CMAKE_CXX_STANDARD</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># STAG requires at least C++20.</span>
+
+<span class="n">include_directories</span><span class="p">(</span><span class="n">eigen</span><span class="o">-</span><span class="mf">3.3.9</span><span class="p">)</span> <span class="c1"># Eigen - header-only</span>
+<span class="n">include_directories</span><span class="p">(</span><span class="n">stag_lib</span><span class="p">)</span>
+<span class="n">add_subdirectory</span><span class="p">(</span><span class="n">stag_lib</span> <span class="n">stag_lib</span><span class="p">)</span>
+
+<span class="n">target_link_libraries</span><span class="p">(</span>
+        <span class="n">YOUR_PROJECT</span>
+        <span class="n">stag</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, you can construct a graph in your project with the following code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;iostream&gt;</span>
+<span class="c1">#include &quot;graph.h&quot;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">stag</span><span class="p">::</span><span class="n">Graph</span> <span class="n">myGraph</span> <span class="o">=</span> <span class="n">stag</span><span class="p">::</span><span class="n">cycle_graph</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+  <span class="o">//</span> <span class="n">Display</span> <span class="n">the</span> <span class="n">adjacency</span> <span class="n">matrix</span> <span class="n">of</span> <span class="n">the</span> <span class="n">graph</span>
+  <span class="n">std</span><span class="p">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">myGraph</span><span class="o">.</span><span class="n">adjacency</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="p">::</span><span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

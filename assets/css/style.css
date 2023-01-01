@@ -256,7 +256,7 @@ h6,
 }
 
 .mobile-nav-toggle.bi-x {
-  color: #f9f4ef;
+  color: #8c7851;
 }
 
 @media (max-width: 991px) {
@@ -276,7 +276,7 @@ h6,
   right: 0;
   left: 0;
   bottom: 0;
-  background: #f9f4ef;
+  background: #8c7851;
   transition: 0.3s;
 }
 

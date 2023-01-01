@@ -55,10 +55,10 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li class="dropdown"><a href="#"><span>Components</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto active" href="#hero"><strong>Home </strong></a></li>
+          <li class="dropdown"><a href="#"><span><strong>Components</strong></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li class="dropdown"><a href="#"><span> Clustering</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span> <strong>Clustering</strong></span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#local">Local Graph Clustering</a></li>
                   <li><a class="nav-link scrollto" href="clustering-demo.html">Demo</a></li>
@@ -66,15 +66,14 @@
               </li>
              </ul>
           </li>
-          <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span><strong>Documentation</strong></span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="docs/cpp/index.html">C++</a></li>
                   <li><a href="docs/python/index.html">Python</a></li>
                 </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#about"><strong>About Us</strong></a></li>
+          <li><a class="nav-link scrollto" href="#contact"><strong>Contact</strong> </a></li>
           </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -89,15 +88,18 @@
 
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-9 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>STAG Library </h1> <br>
-          <h3>Spectral Toolkit of Algorithms for Graphs</h3> 
-            <h2> STAG is an open-source library for efficient spectral algorithms. It is the first such algorithmic library mainly written in C++, with a python wrapper STAGPy around the underlying C++ library for python users. Our project starts in September 2022, and is under active development. </h2>
-           
+             <h1>STAG: Spectral Toolkit of Algorithms for Graphs </h1> <br> <br>
+                  
+        <div class="col-lg-8">
+          <h2> STAG is an open-source library for 
+              efficient spectral algorithms. It is the first such algorithmic library mainly written in C++, with a python wrapper STAGPy around the underlying C++ library for python users. Our project starts in September 2022, and is under active development.  </h2>
+                
+        </div> 
+                     
+        <div class="col-lg-3 d-flex align-items-center justify-content-center stag-logo">
+                <img src="assets/img/logo/ginger.png" class="img-fluid" alt="" data-aos="zoom-in">
         </div>
-        <div class="col-lg-3 order-1 order-lg-2">
-          <img src="assets/img/logo/ginger.png" class="img-fluid animated stag-logo" alt="">
-        </div>
+                            
       </div>
     </div>
 
@@ -105,44 +107,33 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row justify-content-between">
-          <div class="col-lg-4 d-flex align-items-center justify-content-center about-img">
-            <img src="assets/img/informatics.jpg" class="img-fluid" alt="" data-aos="zoom-in">
+ <!-- ======= Update Section ======= -->
+        <section id="update" class="update">
+          <div class="container">
+    
+        <h3 data-aos="fade-up">Estimate Timeline</h3> <br>
+  
+     <div class="row justify-content-between">
+              <div class="row">
+                  <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                            
+                    <p data-aos="fade-up" data-aos-delay="100">
+                        STAG's Github page contains the implementation of local graph clustering based on PageRank. We are aiming at finishing the documentation and releasing the technical report of this component by 31st March, 2023.
+                    </p>
+                          
+                            
+                  </div>
+              </div>   
           </div>
-          <div class="col-lg-7 pt-5 pt-lg-0">
-            <h3 data-aos="fade-up">About Us</h3>
-            <p data-aos="fade-up" data-aos-delay="100">
-                This project is part of He Sun's  5-year EPSRC Fellowship titled "Efficient Spectral Algorithms for Massive and Dynamic Graphs" with a total award of 1.5 million pounds. 
-               The STAG team  is based in the School of Informatics, University of Edinburgh, United Kingdom. 
-                
-                
-            </p>
-            <div class="row">
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                <i class="bx bx-receipt"></i>
-                <h4>Code</h4>
-                <p>You can find STAG's source code  from our <a href="https://github.com/staglibrary"> Github page </a>.</p>
-              </div>
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <i class="bx bx-cube-alt"></i>
-                <h4>Funding Information</h4>
-                <p>UK Engineering and Physical Sciences Research Council, EP/T00729X/1</p>
-              </div>
-            </div>
+  
           </div>
-        </div>
+        </section><!-- End Update Section -->
 
-      </div>
-    </section><!-- End About Section -->
-
+   
     <!-- ======= Local Graph Clustering Section ======= -->
-    <section id="local" class="about section-bg">
+    <section id="local" class="about">
       <div class="container">
- <h3 data-aos="fade-up">Local Graph Clustering</h3> <br>
+ <h3 data-aos="fade-up">1st Component: Local Graph Clustering</h3> <br>
           
         <div class="row justify-content-between">
           <div class="col-lg-9 pt-5 pt-lg-0">
@@ -151,21 +142,23 @@
             </p>
                 
              <p data-aos="fade-up" data-aos-delay="100">
-                The GitHub page contains our implemention of the local graph clustering based on   PageRank (the ACL algorithm). Comparing with several existing open-source implementation for local graph clustering, our code connects to a  <a href="https://neo4j.com"> Neo4j</a>  database running in the AuraDB cloud service, or a database running locally. With this   feature, one can run local graph clustering on the entire Wikipedia graph of more than 20GB with a single PC. <br>
+                The GitHub page contains our implemention of the local graph clustering based on   PageRank (the ACL algorithm). Comparing with several existing open-source implementation for local graph clustering, our code connects to a  <a href="https://neo4j.com"> Neo4j</a>  database running in the AuraDB cloud service, or a database running locally. With this   feature, one can run local graph clustering on the entire Wikipedia graph of more than 20GB with a single PC. <br> 
             </p>  
           </div>
          
         <div class="col-lg-3 order-1 order-lg-2 hero-img img-fluid" alt="" data-aos="zoom-in" >
              <br>    
-                   <img src="assets/img/graphswithDB.svg" class="img-fluid animated" alt="">
+                   <img src="assets/img/graphswithDB.svg" class="img-fluid animated" alt=""> 
                  </div>
         </div>
+        
+        
           
         <div class="row justify-content-between">
             <div class="row">
                 <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
                         <i class="bx bx-receipt"></i>
-                        <h4>Reference</h4>
+                        <h4>Reference<br></h4> 
                           
                           <p data-aos="fade-up" data-aos-delay="100">
                             Reid Andersen, Fan R. K. Chung, Kevin J. Lang: Local Graph Partitioning using PageRank Vectors. FOCS 2006: 475-486
@@ -182,48 +175,42 @@
     </section><!-- End Local Graph Clustering Section -->
   
   
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>FAQ</h2>
-          <p>Frequently Asked Questions</p>
-        </div>
-
-        <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
-
-            <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What will be included in STAG? Why does it take 2 years to develop?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-              <p>
-               Our objective is to develop an open-source library that includes the classical algorithms in algorithmic spectral graph theory, like local graph clustering, spectral sparsification, and Laplacian solvers. In particular, we are very interested to see the practical performance of a sequence of nearly-linear time algorithms developed in the Theoretical Computer Science community over the past 20 years. Such experimental studies of nearly-linear time algorithms would require detailed planning of the algorithms to be implemented, and appropriately choosing the real-world datasets on which our developed codes are evaluated. That is why the first phase of our development would take 2 years.
-              </p>
+      <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+          <div class="container">
+    
+    
+     <h3 data-aos="fade-up">About Us</h3> <br>
+                   
+            <div class="row justify-content-between">
+              <div class="col-lg-4 d-flex align-items-center justify-content-center about-img">
+                <img src="assets/img/informatics.jpg" class="img-fluid" alt="" data-aos="zoom-in">
+              </div>
+              <div class="col-lg-7 pt-5 pt-lg-0">
+                <p data-aos="fade-up" data-aos-delay="100">
+                    This project is part of He Sun's  5-year EPSRC Fellowship titled "Efficient Spectral Algorithms for Massive and Dynamic Graphs" with a total award of 1.5 million pounds. 
+                   We are based in the School of Informatics, University of Edinburgh, United Kingdom. 
+                    
+                    
+                </p>
+                <div class="row">
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Code</h4>
+                    <p>You can find STAG's source code  from our <a href="https://github.com/staglibrary"> Github page
+                    </a>.</p>
+                  </div>
+                  <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Funding Information</h4>
+                    <p>UK Engineering and Physical Sciences Research Council, EP/T00729X/1 </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            </li>
-            
-          <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">Which programming language is used to develop STAG? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                STAG is mainly written in C++. However, it contains a  python wrapper STAGPy around the underlying C++ library which provides convenient methods for learning on graphs in python.
-              </p>
-            </div>
-           </li>
-            
-          <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq3">Do you have more information for your implemented algorithms? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-              <p>
-              Yes, that's why we have this website. We will publish a series of technical reports to detail our implementation, choice of algorithms, datasets on which our codes are evaluated, and our findings. We expect to publish such technical reports every 2-3 months.
-              </p>
-            </div>
-          </li>
-
-        </ul>
-
-      </div>
-    </section><!-- End F.A.Q Section -->
+    
+          </div>
+        </section><!-- End About Section -->
 
   <!-- ======= Contact Us Section ======= -->
     <section id="contact" class="contact section-bg">
@@ -256,7 +243,7 @@
               <div class="email">
                 <i class="bi bi-person"></i>
                 <h4>He Sun</h4>
-                <p> Reader in Algorithms and Complexity <br>
+                <p> Reader <br>
                     School of Informatics <br>
                     University of Edinburgh <br>        
                     h.sun@ed.ac.uk</p>
@@ -279,6 +266,7 @@
 
       </div>
 
+    </div>
         
           
     </section><!-- End Contact Us Section -->

@@ -10,7 +10,8 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #fff3ec;
+  color: #f9f4ef;
+  background: #f9f4ef;
 }
 
 a {
@@ -483,8 +484,9 @@ word-spacing: 2px;
 
 .section-title {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 0px;
   padding-bottom: 0px;
+  background: : #f9f4ef;
 }
 
 .section-title h2 {
@@ -574,7 +576,7 @@ word-spacing: 2px;
  
 .about {
    background: #f9f4ef;
-   padding: 0px 0;
+  /* padding: 10px 20px*/;
  }
  
 .about h3 {
@@ -592,7 +594,7 @@ word-spacing: 2px;
   font-weight: 700;
   margin-top: 0px;
   color: #020826;
-  margin-bottom: 15px;
+ /* margin-bottom: 15px;*/
 }
 
 .about i {
@@ -693,7 +695,7 @@ word-spacing: 2px;
 --------------------------------------------------------------*/
 .team {
   background: #f9f4ef;
-  padding: 60px 0;
+  padding: 0px 0;
 }
 
 .team .member {
@@ -814,12 +816,20 @@ word-spacing: 2px;
 
 #contact {
   width: 100%;
-  /*height: 36vh;*/ /* Setting this height here causes the margins to look weird */
   background: #f9f4ef; 
    
-  border-bottom: 0px solid #f9f4ef; /*reset border-bottom as 0px, it was 2px displaying a brighter line between a bright line */
-  margin: 0px 20 -0px 0;
 }
+
+.contact-title h2 {
+text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 30px;
+  margin-bottom: 20px;
+  margin-top: 35px;
+  color: #020826;
+}
+
 .contact .info {
  
     
@@ -869,8 +879,8 @@ word-spacing: 2px;
 .contact .info .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #fff3ec;
-  color: #fff3ec;
+  background: #f9f4ef;
+  color: #f9f4ef;
   line-height: 1;
   padding: 8px 0;
   border-radius: 50%;
@@ -893,61 +903,7 @@ word-spacing: 2px;
   color: #f2f2f2;
 }
 
-.contact .php-email-form {
-  width: 100%;
-  border-top: 3px solid #f25042;
-  border-bottom: 3px solid #f25042;
-  padding: 30px;
-  background: #f9f4ef;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-}
 
-.contact .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #f9f4ef;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .error-message br+br {
-  margin-top: 25px;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #f9f4ef;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #f9f4ef;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0
-  
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
 
 .contact .php-email-form input,
 .contact .php-email-form textarea {
@@ -986,7 +942,7 @@ word-spacing: 2px;
 #footer {
   background: #f9f4ef;
   padding: 20 20 30px 0;
-  color: #fff3ec;
+  color: #f9f4ef;
   font-size: 18px;
   background: #f9f4ef;
 }

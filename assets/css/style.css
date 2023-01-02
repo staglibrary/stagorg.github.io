@@ -574,12 +574,12 @@ word-spacing: 2px;
  
 .about {
    background: #f9f4ef;
-   padding: 0px 0;
+   padding: 30px 0;
  }
  
 .about h3 {
   font-weight: 700;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
   font-size: 30px;
   color: #020826;

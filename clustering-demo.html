@@ -60,28 +60,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-                <li class="dropdown active"><a href="#"><span>Components</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li class="dropdown"><a href=""><span> Clustering</span> <i
-                                class="bi bi-chevron-right"></i></a>
-                            <ul>
-                                <li><a href="index.html#local">Local Graph Clustering</a></li>
-                                <li><a href="clustering-demo.html">Demo</a></li>
-                                <li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Documentation</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="docs/cpp/index.html">C++</a></li>
-                        <li><a href="docs/python/index.html">Python</a></li>
-                    </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="index.html#about">About Us</a></li>
-                <li><a class="nav-link scrollto" href="index.html#faq">FAQ</a></li>
-                <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="index.html"> <strong>Back to Home Page </strong></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -134,15 +113,13 @@
                 
                  <p data-aos="fade-up" data-aos-delay="100">
                     The input behind this demo is the Correlates of War Dyadic Militarised Interstae Dispute Dataset. The dataset contains a record of very militarised dispute between 1816 and 2014, and includes information of involved countries and the severity of the dispute. The dataset can be found 
-                        <a href="https://correlatesofwar.org/data-sets/mids/">here</a>. <br> 
+                        <a href="https://correlatesofwar.org/data-sets/mids/">here</a>. <br> <br>
                 </p>  
               </div>
              
-           
-            
-              
             
     
+          </div>
           </div>
         </section><!-- End Local Graph Clustering Section -->
       
@@ -153,7 +130,7 @@
             
 
             <div class="row justify-content-between">
-                <div class="col-lg-8 pt-5 pt-lg-0">
+                <div class="col-lg-12 pt-5 pt-lg-0">
 
                     <!-- Start of conflict app -->
                     <div data-aos="fade-up" class="mapcontainer">
@@ -172,42 +149,47 @@
                     <!-- End of conflict app -->
                 </div>
 
-                <div class="col-lg-4 order-1 order-lg-2 hero-img img-fluid">
-                    <h4 data-aos="fade-up">Instructions</h4>
-                    <p data-aos="fade-up" data-aos-delay="100">
-                        Use the sliders to select a time period and cluster size.
-                        Then, click a country in the map to see two groups of countries (the blue group and the yellow
-                        one) which often have conflicts
-                        with each other between the chosen data range.
-                    </p>
-
-                    <p data-aos="fade-up" data-aos-delay="100">
-                        <b>Date range</b> specifies the range between which the conflict data is used for the algorithm.
-                    </p>
-
-                    <p data-aos="fade-up" data-aos-delay="100">
-                        <b>Cluster size factor</b> is the key parameter of the
-                        clustering algorithm: a smaller factor forces the algorithm to find smaller groups more closely
-                        related to the selected country.
-                    </p>
-
-                    <h5 data-aos="fade-up" data-aos-delay="100">The coloured countries</h5>
-                    <p data-aos="fade-up" data-aos-delay="100">
-                        <span class="key-elem key-elem-selected"></span>
-                        - the selected country
-                    </p>
-                    <p data-aos="fade-up" data-aos-delay="100">
-                        <span class="key-elem key-elem-this-cluster"></span>
-                        - the countries in the same group as the selected country
-                    </p>
-                    <p data-aos="fade-up" data-aos-delay="100">
-                        <span class="key-elem key-elem-that-cluster"></span>
-                        - the countries in the other group
-                    </p>
+                
+            </div>
+            <br> <br>
+            
+            
+            <div class="col-lg-12 order-1 order-lg-2 hero-img img-fluid">
+                                <h4 data-aos="fade-up">Instruction <br></h4>
+                                <p data-aos="fade-up" data-aos-delay="100">
+                                    The <strong>data range</strong> specifies the time interval during which the conflict data is used in the algorithm; the <strong> cluster size factor </strong> is part of the algorithm's input, and roughly defines the size of clusters to be returned: a lower value of cluster size factor would allow the algorithm to find more localised clusters.  </p>
+                                    
+                                    <p data-aos="fade-up" data-aos-delay="100">
+                                    In addition to setting up these two parameters, you need to click a country in the map, and this picked country (coloured as dark blue) is served as the seed of the algorithm. The output of the algorithm is two sets of countries that tend to have conflicts during the chosen time range; these two sets are coloured in blue and yellow respectively, and your picked country is part of the blue cluster. 
+                                </p>
+            
+                               <p data-aos="fade-up" data-aos-delay="100">
+                                    <span class="key-elem key-elem-selected"></span>
+                                     the selected country
+                                </p>
+                                <p data-aos="fade-up" data-aos-delay="100">
+                                    <span class="key-elem key-elem-this-cluster"></span>
+                                     the countries in the same group as the selected country
+                                </p>
+                                <p data-aos="fade-up" data-aos-delay="100">
+                                    <span class="key-elem key-elem-that-cluster"></span>
+                                     the countries in the other group
+                                </p>
+                            </div>
+            
+            <div class="row justify-content-between">
+                <div class="row">
+                    <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-data"></i>
+                        <h4>Dataset</h4>
+                        <p data-aos="fade-up" data-aos-delay="100">
+                             Correlates of War Dyadic Militarised Interstate
+                            Disputes Dataset.                              <a
+                                    href="https://correlatesofwar.org/data-sets/mids/">Link</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <br>
-            
             <div class="row justify-content-between">
                 <div class="row">
                     <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
@@ -228,7 +210,6 @@
                     </div>
                 </div>
             </div>
-            <br>
             <div class="row justify-content-between">
                 <div class="row">
                     <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
@@ -243,8 +224,7 @@
                     </div>
                 </div>
             </div>
-            <br>
-
+      
             <div id="faq" class="faq ">
                 <div class="row">
                     <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">
@@ -283,7 +263,6 @@
                     </div>
                 </div>
             </div>
-            <br>
             <div class="row justify-content-between">
                 <div class="row">
                     <div class="col-md-12" data-aos="fade-up" data-aos-delay="100">

@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Reading and Writing to Disk" href="graphio.html" /><link rel="prev" title="Data Types" href="types.html" />
 
     <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
-        <title>Constructing Graphs - STAG 0.3.0 documentation</title>
+        <title>Constructing Graphs - STAG 0.4.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">STAG 0.3.0 documentation</div></a>
+      <a href="index.html"><div class="brand">STAG 0.4.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -390,6 +390,35 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 </dl>
 </dd></dl>
 
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph7degreesENSt6vectorI8stag_intEE">
+<span id="_CPPv3N4stag5Graph7degreesENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag5Graph7degreesENSt6vectorI8stag_intEE"></span><span id="stag::Graph::degrees__std::vector:stag_int:"></span><span class="target" id="classstag_1_1Graph_1a0d585615f4adc926f13ce97087165ab0"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph7degreesENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Given a list of vertices, return the degrees of each vertex in the list.</p>
+<p>Providing a method for computing the degrees ‘in bulk’ increases the efficiency of algorithms on graphs which are not stored directly in memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> – a vector of ints representing the vertices to be queried. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a vector of degrees </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4stag5Graph18degrees_unweightedENSt6vectorI8stag_intEE">
+<span id="_CPPv3N4stag5Graph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag5Graph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="stag::Graph::degrees_unweighted__std::vector:stag_int:"></span><span class="target" id="classstag_1_1Graph_1a10324cb46d61ba4fa2637cc03fb186a7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees_unweighted</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N4stag5Graph18degrees_unweightedENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
+<dd><p>Given a list of vertices, return their unweighted degrees.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vertices</strong> – a vector of ints representing the vertices to be queried. </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a vector of integer degrees </p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </dd></dl>
 
@@ -445,24 +474,22 @@ Eigen matrix. This class implements and extends the <a class="reference internal
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE">
-<span id="_CPPv3N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a60c3ef54ce4d67f64f7311da3871787d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a07795bf994a1b901e51ff582e2605b49"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph7degreesENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a list of vertices, return the degrees of each vertex in the list.</p>
 <p>Providing a method for computing the degrees ‘in bulk’ increases the efficiency of algorithms on graphs which are not stored directly in memory.</p>
-<p>
-This file is provided as part of the STAG library and released under the MIT license. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>vertices</strong> – a vector of ints representing the vertices to be queried. </p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a vector of degrees</p>
+<dd class="field-even"><p>a vector of degrees </p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE">
-<span id="_CPPv3N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees_unweighted__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a0a9e2b8fdf5939e1ee873c45c316994f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees_unweighted</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
+<span id="_CPPv3N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="_CPPv2N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE"></span><span id="stag::LocalGraph::degrees_unweighted__std::vector:stag_int:"></span><span class="target" id="classstag_1_1LocalGraph_1a1c9bba97985c40afe9bdac6a824d145e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">degrees_unweighted</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv48stag_int" title="stag_int"><span class="n"><span class="pre">stag_int</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">vertices</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N4stag10LocalGraph18degrees_unweightedENSt6vectorI8stag_intEE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Given a list of vertices, return their unweighted degrees.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

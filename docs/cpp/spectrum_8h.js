@@ -1,7 +1,6 @@
 var spectrum_8h =
 [
     [ "EigenSystem", "spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a", null ],
-    [ "SprsMatOp", "spectrum_8h.html#a53052ee26d95fe76646e70d26261d10d", null ],
     [ "compute_eigensystem", "spectrum_8h.html#a0e3a0f5955c83d6bb3f112d50685456d", null ],
     [ "compute_eigensystem", "spectrum_8h.html#afd51aec2981fe69ede9de1432609c98c", null ],
     [ "compute_eigenvalues", "spectrum_8h.html#a2ec1a1494e09fa478e832b53a390f316", null ],

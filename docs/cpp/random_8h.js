@@ -1,7 +1,7 @@
 var random_8h =
 [
-    [ "erdos_renyi", "random_8h.html#a4b8ba61ff6154edf9ddb52043338088a", null ],
-    [ "erdos_renyi", "random_8h.html#ad7b3cf12ef625fb5967e714ba32bd4db", null ],
-    [ "sbm", "random_8h.html#a4908e7fd8583e7a2eb2aa0eb1c95e6e7", null ],
-    [ "sbm", "random_8h.html#ab1cce3e972f5ce04ac3a8b626f489247", null ]
+    [ "erdos_renyi", "random_8h.html#a1a6abeb447bf4bacdc0349143d76da31", null ],
+    [ "erdos_renyi", "random_8h.html#ad5354ef7e767e8651e5269d52a504402", null ],
+    [ "sbm", "random_8h.html#a24f8df0e3faaccd4d7a04713ca9666a9", null ],
+    [ "sbm", "random_8h.html#a8cf095d277fbb9d2f08b8b228ca71aed", null ]
 ];

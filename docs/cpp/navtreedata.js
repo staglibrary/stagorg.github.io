@@ -22,7 +22,7 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "STAG C++ Documentation", "index.html", [
+  [ "STAG C++", "index.html", [
     [ "Getting Started", "getting-started.html", [
       [ "Installation", "getting-started.html#autotoc_md0", null ],
       [ "Constructing Graphs", "getting-started.html#autotoc_md1", null ]

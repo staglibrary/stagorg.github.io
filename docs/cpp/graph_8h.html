@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STAG C++ Documentation: /home/runner/work/stag/stag/stag_lib/graph.h File Reference</title>
+<title>STAG C++: /home/runner/work/stag/stag/stag_lib/graph.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -36,9 +43,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ginger.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">STAG C++ Documentation
+   <div id="projectname">STAG C++
    </div>
+   <div id="projectbrief">Spectral Toolkit of Algorithms for Graphs</div>
   </td>
  </tr>
  </tbody>
@@ -117,22 +126,36 @@ Typedefs</h2></td></tr>
 <tr class="separator:a0c328014088200f0b1217356fad00372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6a866d72ff20e19e40c84774c534375"><td class="memItemLeft" align="right" valign="top">typedef Eigen::SparseMatrix&lt; double, Eigen::ColMajor, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></td></tr>
 <tr class="separator:ae6a866d72ff20e19e40c84774c534375"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca13b09c6034bbb7c05b5d378d857cc"><td class="memItemLeft" align="right" valign="top"><a id="a2ca13b09c6034bbb7c05b5d378d857cc"></a>
-typedef Eigen::Triplet&lt; double, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>EdgeTriplet</b></td></tr>
+<tr class="memitem:a2ca13b09c6034bbb7c05b5d378d857cc"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Triplet&lt; double, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a2ca13b09c6034bbb7c05b5d378d857cc">EdgeTriplet</a></td></tr>
 <tr class="separator:a2ca13b09c6034bbb7c05b5d378d857cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adc447e54da0329917ea42e01862bb25b"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#adc447e54da0329917ea42e01862bb25b">stag::cycle_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
-<tr class="separator:adc447e54da0329917ea42e01862bb25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5401b2f9afaa6a4ad3dd08269d78af1"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#aa5401b2f9afaa6a4ad3dd08269d78af1">stag::complete_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
-<tr class="separator:aa5401b2f9afaa6a4ad3dd08269d78af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23688a31795b7c3bbe617e0b846a5c10"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a23688a31795b7c3bbe617e0b846a5c10">stag::barbell_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
-<tr class="separator:a23688a31795b7c3bbe617e0b846a5c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb3d5cb66d9a7c62de34da139d42093e"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#aeb3d5cb66d9a7c62de34da139d42093e">stag::star_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
-<tr class="separator:aeb3d5cb66d9a7c62de34da139d42093e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d12f19e138a0f3b869dcd4e16cb984"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#ae2d12f19e138a0f3b869dcd4e16cb984">stag::cycle_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
+<tr class="separator:ae2d12f19e138a0f3b869dcd4e16cb984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03542723d42b547c2591c98e238b6a23"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a03542723d42b547c2591c98e238b6a23">stag::complete_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
+<tr class="separator:a03542723d42b547c2591c98e238b6a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28873c9e017a780fcd9e2c763a790bdc"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a28873c9e017a780fcd9e2c763a790bdc">stag::barbell_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
+<tr class="separator:a28873c9e017a780fcd9e2c763a790bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc00ed863e65b3ededd1d670ed5e02ab"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#afc00ed863e65b3ededd1d670ed5e02ab">stag::star_graph</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n)</td></tr>
+<tr class="separator:afc00ed863e65b3ededd1d670ed5e02ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2ca13b09c6034bbb7c05b5d378d857cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca13b09c6034bbb7c05b5d378d857cc">&#9670;&nbsp;</a></span>EdgeTriplet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::Triplet&lt;double, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; <a class="el" href="graph_8h.html#a2ca13b09c6034bbb7c05b5d378d857cc">EdgeTriplet</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An Eigen::Triplet representing an edge in a graph. Stores the row, column, and value of an entry in a graph adjacency matrix. </p>
+
+</div>
+</div>
 <a id="ae6a866d72ff20e19e40c84774c534375"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6a866d72ff20e19e40c84774c534375">&#9670;&nbsp;</a></span>SprsMat</h2>
 
@@ -164,14 +187,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a23688a31795b7c3bbe617e0b846a5c10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23688a31795b7c3bbe617e0b846a5c10">&#9670;&nbsp;</a></span>barbell_graph()</h2>
+<a id="a28873c9e017a780fcd9e2c763a790bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28873c9e017a780fcd9e2c763a790bdc">&#9670;&nbsp;</a></span>barbell_graph()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> stag::barbell_graph </td>
+          <td class="memname">Graph stag::barbell_graph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -182,22 +205,22 @@ Functions</h2></td></tr>
 <p>Construct a barbell graph. The barbell graph consists of 2 cliques on n vertices, connected by a single edge.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td></td></tr>
+    <tr><td class="paramname">n</td><td>the number of vertices in the constructed graph </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object represengint the barbell graph </dd></dl>
 
 </div>
 </div>
-<a id="aa5401b2f9afaa6a4ad3dd08269d78af1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5401b2f9afaa6a4ad3dd08269d78af1">&#9670;&nbsp;</a></span>complete_graph()</h2>
+<a id="a03542723d42b547c2591c98e238b6a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03542723d42b547c2591c98e238b6a23">&#9670;&nbsp;</a></span>complete_graph()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> stag::complete_graph </td>
+          <td class="memname">Graph stag::complete_graph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -208,22 +231,22 @@ Functions</h2></td></tr>
 <p>Construct a complete graph on n vertices.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td></td></tr>
+    <tr><td class="paramname">n</td><td>the number of vertices in the constructed graph </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a graph object </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object representing a complete graph </dd></dl>
 
 </div>
 </div>
-<a id="adc447e54da0329917ea42e01862bb25b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc447e54da0329917ea42e01862bb25b">&#9670;&nbsp;</a></span>cycle_graph()</h2>
+<a id="ae2d12f19e138a0f3b869dcd4e16cb984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d12f19e138a0f3b869dcd4e16cb984">&#9670;&nbsp;</a></span>cycle_graph()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> stag::cycle_graph </td>
+          <td class="memname">Graph stag::cycle_graph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -234,22 +257,22 @@ Functions</h2></td></tr>
 <p>Construct a cycle graph on n vertices.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td></td></tr>
+    <tr><td class="paramname">n</td><td>the number of vertices in the constructed graph </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a graph object representing the n-cycle </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object representing a cycle graph </dd></dl>
 
 </div>
 </div>
-<a id="aeb3d5cb66d9a7c62de34da139d42093e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb3d5cb66d9a7c62de34da139d42093e">&#9670;&nbsp;</a></span>star_graph()</h2>
+<a id="afc00ed863e65b3ededd1d670ed5e02ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc00ed863e65b3ededd1d670ed5e02ab">&#9670;&nbsp;</a></span>star_graph()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> stag::star_graph </td>
+          <td class="memname">Graph stag::star_graph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -260,11 +283,11 @@ Functions</h2></td></tr>
 <p>Construct a star graph. The star graph consists of one central vertex connected by an edge to n-1 outer vertices.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td></td></tr>
+    <tr><td class="paramname">n</td><td>the number of vertices in the constructed graph </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a graph object </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object representing the star graph </dd></dl>
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['addvectors_64',['addVectors',['../utility_8h.html#a041e890d5213b413c616baf6d3881dd7',1,'stag']]],
-  ['adjacency_65',['adjacency',['../classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90',1,'stag::Graph']]],
-  ['approximate_5fpagerank_66',['approximate_pagerank',['../cluster_8h.html#aff04898668cea9bc9fa473fb7d491457',1,'stag']]]
+  ['addvectors_69',['addVectors',['../utility_8h.html#a041e890d5213b413c616baf6d3881dd7',1,'stag']]],
+  ['adjacency_70',['adjacency',['../classstag_1_1Graph.html#aad2874ff0be3da0bc5eb940e43c27160',1,'stag::Graph']]],
+  ['approximate_5fpagerank_71',['approximate_pagerank',['../cluster_8h.html#aaad903d32861afcf81c976afa9ea8c1a',1,'stag']]]
 ];

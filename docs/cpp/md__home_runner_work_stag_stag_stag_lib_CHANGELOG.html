@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STAG C++ Documentation: Changelog</title>
+<title>STAG C++: Changelog</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -36,9 +43,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ginger.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">STAG C++ Documentation
+   <div id="projectname">STAG C++
    </div>
+   <div id="projectbrief">Spectral Toolkit of Algorithms for Graphs</div>
   </td>
  </tr>
  </tbody>
@@ -166,8 +175,8 @@ Added</h2>
 <li><a href="https://github.com/staglibrary/stag/issues/5">Issue #5</a>: <code>Graph::normalised_laplacian()</code> method</li>
 <li><a href="https://github.com/staglibrary/stag/issues/5">Issue #5</a>: <code>Graph::number_of_vertices()</code> method</li>
 <li><a href="https://github.com/staglibrary/stag/issues/5">Issue #5</a>: <code>Graph::number_of_edges()</code> method</li>
-<li><a href="https://github.com/staglibrary/stag/issues/4">Issue #4</a>: Add <code><a class="el" href="graphio_8h.html#aa6cdd0b9a8c33d6bf7ff0376292bc80a">load_edgelist()</a></code> method to read graphs from edgelist files</li>
-<li><a href="https://github.com/staglibrary/stag/issues/4">Issue #4</a>: Add <code><a class="el" href="graphio_8h.html#a8acef831e0200fc7e0db80e194fb56db">save_edgelist()</a></code> method to save graphs to edgelist files</li>
+<li><a href="https://github.com/staglibrary/stag/issues/4">Issue #4</a>: Add <code><a class="el" href="graphio_8h.html#aa6cdd0b9a8c33d6bf7ff0376292bc80a" title="Load a graph from an edgelist file.">load_edgelist()</a></code> method to read graphs from edgelist files</li>
+<li><a href="https://github.com/staglibrary/stag/issues/4">Issue #4</a>: Add <code><a class="el" href="graphio_8h.html#a8acef831e0200fc7e0db80e194fb56db" title="Save the given graph as an edgelist file.">save_edgelist()</a></code> method to save graphs to edgelist files</li>
 <li>Add graph equality operators <code>==</code> and <code>!=</code></li>
 <li><a href="https://github.com/staglibrary/stag/issues/6">Issue #6</a>: Add <code>LocalGraph</code> abstract class for providing local graph access</li>
 <li><a href="https://github.com/staglibrary/stag/issues/15">Issue #15</a>: Add methods for generating random graphs from the stochastic block model</li>

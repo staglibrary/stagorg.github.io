@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STAG C++ Documentation: Getting Started</title>
+<title>STAG C++: Getting Started</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -36,9 +43,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ginger.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">STAG C++ Documentation
+   <div id="projectname">STAG C++
    </div>
+   <div id="projectbrief">Spectral Toolkit of Algorithms for Graphs</div>
   </td>
  </tr>
  </tbody>
@@ -152,20 +161,20 @@ Constructing Graphs</h1>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">  <a class="code" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = <a class="code" href="graph_8h.html#adc447e54da0329917ea42e01862bb25b">stag::cycle_graph</a>(10);</div>
+<div class="line">  <a class="code" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = <a class="code" href="graph_8h.html#ae2d12f19e138a0f3b869dcd4e16cb984">stag::cycle_graph</a>(10);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Display the adjacency matrix of the graph</span></div>
-<div class="line">  std::cout &lt;&lt; *myGraph.<a class="code" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">adjacency</a>() &lt;&lt; std::endl;</div>
+<div class="line">  std::cout &lt;&lt; *myGraph.<a class="code" href="classstag_1_1Graph.html#aad2874ff0be3da0bc5eb940e43c27160">adjacency</a>() &lt;&lt; std::endl;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
-<div class="ttc" id="agraph_8h_html_adc447e54da0329917ea42e01862bb25b"><div class="ttname"><a href="graph_8h.html#adc447e54da0329917ea42e01862bb25b">stag::cycle_graph</a></div><div class="ttdeci">Graph cycle_graph(stag_int n)</div><div class="ttdef"><b>Definition:</b> graph.cpp:322</div></div>
-<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdef"><b>Definition:</b> graph.h:143</div></div>
-<div class="ttc" id="aclassstag_1_1Graph_html_a1e9cb4cac7ffc06d64ba3cfdefe08d90"><div class="ttname"><a href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div><div class="ttdef"><b>Definition:</b> graph.cpp:56</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html_aad2874ff0be3da0bc5eb940e43c27160"><div class="ttname"><a href="classstag_1_1Graph.html#aad2874ff0be3da0bc5eb940e43c27160">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdef"><b>Definition:</b> graph.h:147</div></div>
 <div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div></div>
+<div class="ttc" id="agraph_8h_html_ae2d12f19e138a0f3b869dcd4e16cb984"><div class="ttname"><a href="graph_8h.html#ae2d12f19e138a0f3b869dcd4e16cb984">stag::cycle_graph</a></div><div class="ttdeci">Graph cycle_graph(stag_int n)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

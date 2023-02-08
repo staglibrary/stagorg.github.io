@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STAG C++ Documentation: /home/runner/work/stag/stag/stag_lib/graphio.h File Reference</title>
+<title>STAG C++: /home/runner/work/stag/stag/stag_lib/graphio.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -36,9 +43,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ginger.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">STAG C++ Documentation
+   <div id="projectname">STAG C++
    </div>
+   <div id="projectbrief">Spectral Toolkit of Algorithms for Graphs</div>
   </td>
  </tr>
  </tbody>
@@ -103,8 +112,10 @@ $(document).ready(function(){initNavTree('graphio_8h.html',''); initResizable();
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa6cdd0b9a8c33d6bf7ff0376292bc80a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphio_8h.html#aa6cdd0b9a8c33d6bf7ff0376292bc80a">stag::load_edgelist</a> (std::string &amp;filename)</td></tr>
+<tr class="memdesc:aa6cdd0b9a8c33d6bf7ff0376292bc80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a graph from an edgelist file.  <a href="graphio_8h.html#aa6cdd0b9a8c33d6bf7ff0376292bc80a">More...</a><br /></td></tr>
 <tr class="separator:aa6cdd0b9a8c33d6bf7ff0376292bc80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8acef831e0200fc7e0db80e194fb56db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphio_8h.html#a8acef831e0200fc7e0db80e194fb56db">stag::save_edgelist</a> (<a class="el" href="classstag_1_1Graph.html">stag::Graph</a> &amp;graph, std::string &amp;filename)</td></tr>
+<tr class="memdesc:a8acef831e0200fc7e0db80e194fb56db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the given graph as an edgelist file.  <a href="graphio_8h.html#a8acef831e0200fc7e0db80e194fb56db">More...</a><br /></td></tr>
 <tr class="separator:a8acef831e0200fc7e0db80e194fb56db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -123,20 +134,36 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Load a graph from an edgelist file.</p>
+
+<p>Load a graph from an edgelist file. </p>
 <p>We define an edgelist file in the following way.</p><ul>
 <li>Any lines beginning with '#' or '//' are ignored</li>
 <li>Any blank lines are ignored</li>
-<li>All other lines are of some format: <u>, &lt;v&gt;, &lt;weight&gt; <u>, &lt;v&gt; <u> &lt;v&gt; &lt;weight&gt; <u> &lt;v&gt; where <u> and &lt;v&gt; can be parsed as integers, and &lt;weight&gt; can be parsed as a double. If the weight is ommitted, it is taken to be 1. The data lines of the edgelist file should all have the same format.</u></u></u></u></u></li>
+<li>All other lines are of one of the formats<ul>
+<li><code>&lt;u&gt;, &lt;v&gt;, &lt;weight&gt;</code></li>
+<li><code>&lt;u&gt;, &lt;v&gt;</code></li>
+<li><code>&lt;u&gt; &lt;v&gt; &lt;weight&gt;</code></li>
+<li><code>&lt;u&gt; &lt;v&gt;</code> where <code>&lt;u&gt;</code> and <code>&lt;v&gt;</code> can be parsed as integers, and <code>&lt;weight&gt;</code> can be parsed as a double. If the weight is omitted, it is taken to be 1. The data lines of the edgelist file should all have the same format.</li>
 </ul>
-<p><u><u><u><u><u></p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object </dd></dl>
+</li>
+</ul>
+<p>Here is an example edgelist file. </p><pre class="fragment"># This line is ignored
+0, 1, 0.5
+1, 2, 1
+2, 0, 0.5
+</pre><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>the name of the edgelist file to be loaded </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::runtime_error</td><td>if the file cannot be parsed as an edgelist </td></tr>
   </table>
   </dd>
 </dl>
-<p></u></u></u></u></u></p>
 
 </div>
 </div>
@@ -165,7 +192,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Save the given graph as an edgelist file.</p>
+
+<p>Save the given graph as an edgelist file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>the graph object to be saved </td></tr>

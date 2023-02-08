@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STAG C++ Documentation: /home/runner/work/stag/stag/stag_lib/cluster.h File Reference</title>
+<title>STAG C++: /home/runner/work/stag/stag/stag_lib/cluster.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -17,6 +17,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
@@ -36,9 +43,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="ginger.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">STAG C++ Documentation
+   <div id="projectname">STAG C++
    </div>
+   <div id="projectbrief">Spectral Toolkit of Algorithms for Graphs</div>
   </td>
  </tr>
  </tbody>
@@ -102,30 +111,29 @@ $(document).ready(function(){initNavTree('cluster_8h.html',''); initResizable();
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a92240a6d68323b538fd245077eb3e432"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a92240a6d68323b538fd245077eb3e432">stag::spectral_cluster</a> (<a class="el" href="classstag_1_1Graph.html">stag::Graph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k)</td></tr>
-<tr class="memdesc:a92240a6d68323b538fd245077eb3e432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spectral clustering algorithm.  <a href="cluster_8h.html#a92240a6d68323b538fd245077eb3e432">More...</a><br /></td></tr>
-<tr class="separator:a92240a6d68323b538fd245077eb3e432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa95a665cefc95f9ff516ccce911a2892"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double target_volume)</td></tr>
-<tr class="separator:aa95a665cefc95f9ff516ccce911a2892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6aed6f2be1a504ed3de8b806f451884a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a6aed6f2be1a504ed3de8b806f451884a">stag::local_cluster_acl</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality)</td></tr>
-<tr class="separator:a6aed6f2be1a504ed3de8b806f451884a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af86a294bd0fc57a2ce251242ff41c454"><td class="memItemLeft" align="right" valign="top"><a id="af86a294bd0fc57a2ce251242ff41c454"></a>
-std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stag::local_cluster_acl</b> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality, double error)</td></tr>
-<tr class="separator:af86a294bd0fc57a2ce251242ff41c454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff04898668cea9bc9fa473fb7d491457"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aff04898668cea9bc9fa473fb7d491457">stag::approximate_pagerank</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;seed_vector, double alpha, double epsilon)</td></tr>
-<tr class="separator:aff04898668cea9bc9fa473fb7d491457"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a9556a1160d25765f67b6bc5a5b2cac35">stag::sweep_set_conductance</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;vec)</td></tr>
-<tr class="separator:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec275e84b427e85829037664945ab3f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a7ec275e84b427e85829037664945ab3f">stag::spectral_cluster</a> (<a class="el" href="classstag_1_1Graph.html">stag::Graph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k)</td></tr>
+<tr class="memdesc:a7ec275e84b427e85829037664945ab3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spectral clustering algorithm.  <a href="cluster_8h.html#a7ec275e84b427e85829037664945ab3f">More...</a><br /></td></tr>
+<tr class="separator:a7ec275e84b427e85829037664945ab3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea870fc7d2ec9e263b2f53ebb9619d94"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aea870fc7d2ec9e263b2f53ebb9619d94">stag::local_cluster</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double target_volume)</td></tr>
+<tr class="separator:aea870fc7d2ec9e263b2f53ebb9619d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8064a0a4943321f71932d297b74426"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#afb8064a0a4943321f71932d297b74426">stag::local_cluster_acl</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality, double error)</td></tr>
+<tr class="separator:afb8064a0a4943321f71932d297b74426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c8a63a0ab72bb2bca9603d92b3f106"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a73c8a63a0ab72bb2bca9603d92b3f106">stag::local_cluster_acl</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality)</td></tr>
+<tr class="separator:a73c8a63a0ab72bb2bca9603d92b3f106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad903d32861afcf81c976afa9ea8c1a"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aaad903d32861afcf81c976afa9ea8c1a">stag::approximate_pagerank</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;seed_vector, double alpha, double epsilon)</td></tr>
+<tr class="separator:aaad903d32861afcf81c976afa9ea8c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a3937566c50544e5d71bedad7adb5b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a93a3937566c50544e5d71bedad7adb5b">stag::sweep_set_conductance</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;vec)</td></tr>
+<tr class="separator:a93a3937566c50544e5d71bedad7adb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aff04898668cea9bc9fa473fb7d491457"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff04898668cea9bc9fa473fb7d491457">&#9670;&nbsp;</a></span>approximate_pagerank()</h2>
+<a id="aaad903d32861afcf81c976afa9ea8c1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad903d32861afcf81c976afa9ea8c1a">&#9670;&nbsp;</a></span>approximate_pagerank()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &gt; stag::approximate_pagerank </td>
+          <td class="memname">std::tuple&lt;<a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>&gt; stag::approximate_pagerank </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -169,18 +177,23 @@ std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A tuple of sparse column vectors corresponding to p - the approximate pagerank vector r - the residual vector By the definition of approximate pagerank, it is the case that p + pr(r, alpha) = pr(s, alpha)</dd></dl>
-<p>@raises ArgumentError if the provided seed_vector is not a column vector. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if the provided seed_vector is not a column vector. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="aa95a665cefc95f9ff516ccce911a2892"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa95a665cefc95f9ff516ccce911a2892">&#9670;&nbsp;</a></span>local_cluster()</h2>
+<a id="aea870fc7d2ec9e263b2f53ebb9619d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea870fc7d2ec9e263b2f53ebb9619d94">&#9670;&nbsp;</a></span>local_cluster()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; stag::local_cluster </td>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -219,14 +232,14 @@ std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00
 
 </div>
 </div>
-<a id="a6aed6f2be1a504ed3de8b806f451884a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6aed6f2be1a504ed3de8b806f451884a">&#9670;&nbsp;</a></span>local_cluster_acl()</h2>
+<a id="a73c8a63a0ab72bb2bca9603d92b3f106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c8a63a0ab72bb2bca9603d92b3f106">&#9670;&nbsp;</a></span>local_cluster_acl() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; stag::local_cluster_acl </td>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster_acl </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -242,6 +255,47 @@ std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>locality</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="afb8064a0a4943321f71932d297b74426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8064a0a4943321f71932d297b74426">&#9670;&nbsp;</a></span>local_cluster_acl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster_acl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>seed_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>locality</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -266,14 +320,14 @@ std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00
 
 </div>
 </div>
-<a id="a92240a6d68323b538fd245077eb3e432"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92240a6d68323b538fd245077eb3e432">&#9670;&nbsp;</a></span>spectral_cluster()</h2>
+<a id="a7ec275e84b427e85829037664945ab3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec275e84b427e85829037664945ab3f">&#9670;&nbsp;</a></span>spectral_cluster()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; stag::spectral_cluster </td>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::spectral_cluster </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>
@@ -309,8 +363,8 @@ int main() {
   return 0;
 }
 </pre><p>The spectral clustering algorithm has the following steps.</p><ul>
-<li>Compute the <img class="formulaInl" alt="$k$" src="form_0.png"/> smallest eigenvectors of the normalised Laplacian matrix.</li>
-<li>Embed the vertices into <img class="formulaInl" alt="$\mathbb{R}^k$" src="form_1.png"/> according to the eigenvectors.</li>
+<li>Compute the \(k\) smallest eigenvectors of the normalised Laplacian matrix.</li>
+<li>Embed the vertices into \(\mathbb{R}^k\) according to the eigenvectors.</li>
 <li>Cluster the vertices into k clusters using a k-means clustering algorithm.</li>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -325,14 +379,14 @@ int main() {
 
 </div>
 </div>
-<a id="a9556a1160d25765f67b6bc5a5b2cac35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9556a1160d25765f67b6bc5a5b2cac35">&#9670;&nbsp;</a></span>sweep_set_conductance()</h2>
+<a id="a93a3937566c50544e5d71bedad7adb5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a3937566c50544e5d71bedad7adb5b">&#9670;&nbsp;</a></span>sweep_set_conductance()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; stag::sweep_set_conductance </td>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::sweep_set_conductance </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
           <td class="paramname"><em>graph</em>, </td>

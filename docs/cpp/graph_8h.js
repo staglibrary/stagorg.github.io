@@ -6,8 +6,8 @@ var graph_8h =
     [ "EdgeTriplet", "graph_8h.html#a2ca13b09c6034bbb7c05b5d378d857cc", null ],
     [ "SprsMat", "graph_8h.html#ae6a866d72ff20e19e40c84774c534375", null ],
     [ "stag_int", "graph_8h.html#a0c328014088200f0b1217356fad00372", null ],
-    [ "barbell_graph", "graph_8h.html#a23688a31795b7c3bbe617e0b846a5c10", null ],
-    [ "complete_graph", "graph_8h.html#aa5401b2f9afaa6a4ad3dd08269d78af1", null ],
-    [ "cycle_graph", "graph_8h.html#adc447e54da0329917ea42e01862bb25b", null ],
-    [ "star_graph", "graph_8h.html#aeb3d5cb66d9a7c62de34da139d42093e", null ]
+    [ "barbell_graph", "graph_8h.html#a28873c9e017a780fcd9e2c763a790bdc", null ],
+    [ "complete_graph", "graph_8h.html#a03542723d42b547c2591c98e238b6a23", null ],
+    [ "cycle_graph", "graph_8h.html#ae2d12f19e138a0f3b869dcd4e16cb984", null ],
+    [ "star_graph", "graph_8h.html#afc00ed863e65b3ededd1d670ed5e02ab", null ]
 ];

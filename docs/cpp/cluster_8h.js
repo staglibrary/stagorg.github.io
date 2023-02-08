@@ -1,9 +1,9 @@
 var cluster_8h =
 [
-    [ "approximate_pagerank", "cluster_8h.html#aff04898668cea9bc9fa473fb7d491457", null ],
-    [ "local_cluster", "cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892", null ],
-    [ "local_cluster_acl", "cluster_8h.html#a6aed6f2be1a504ed3de8b806f451884a", null ],
-    [ "local_cluster_acl", "cluster_8h.html#af86a294bd0fc57a2ce251242ff41c454", null ],
-    [ "spectral_cluster", "cluster_8h.html#a92240a6d68323b538fd245077eb3e432", null ],
-    [ "sweep_set_conductance", "cluster_8h.html#a9556a1160d25765f67b6bc5a5b2cac35", null ]
+    [ "approximate_pagerank", "cluster_8h.html#aaad903d32861afcf81c976afa9ea8c1a", null ],
+    [ "local_cluster", "cluster_8h.html#aea870fc7d2ec9e263b2f53ebb9619d94", null ],
+    [ "local_cluster_acl", "cluster_8h.html#a73c8a63a0ab72bb2bca9603d92b3f106", null ],
+    [ "local_cluster_acl", "cluster_8h.html#afb8064a0a4943321f71932d297b74426", null ],
+    [ "spectral_cluster", "cluster_8h.html#a7ec275e84b427e85829037664945ab3f", null ],
+    [ "sweep_set_conductance", "cluster_8h.html#a93a3937566c50544e5d71bedad7adb5b", null ]
 ];

@@ -135,53 +135,14 @@ Functions</h2></td></tr>
 <tr class="separator:a9bd2a9dba963399ae3398d77e04a3d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a041e890d5213b413c616baf6d3881dd7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a041e890d5213b413c616baf6d3881dd7">&#9670;&nbsp;</a></span>addVectors()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;T&gt; stag::addVectors </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Add two vectors together element-wise.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v1</td><td></td></tr>
-    <tr><td class="paramname">v2</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a419dcbb4f442a29267c374b3d28786f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a419dcbb4f442a29267c374b3d28786f4">&#9670;&nbsp;</a></span>isSymmetric()</h2>
+<a id="a35df691aca0ecb9384d13607be504dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35df691aca0ecb9384d13607be504dca">&#9670;&nbsp;</a></span>sprsMatValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool stag::isSymmetric </td>
+          <td class="memname">std::vector&lt;double&gt; stag::sprsMatValues </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
           <td class="paramname"><em>matrix</em></td><td>)</td>
@@ -189,85 +150,10 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Check whether a sparse matrix is symmetric. </p>
-
-</div>
-</div>
-<a id="a9bd2a9dba963399ae3398d77e04a3d41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bd2a9dba963399ae3398d77e04a3d41">&#9670;&nbsp;</a></span>safeGetline()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::istream&amp; stag::safeGetline </td>
-          <td>(</td>
-          <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>is</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Get the next line from an input stream, while safely handling all types of line endings (CR, LF, CRLF).</p>
+<p>Given a sparse matrix, return the values vector, compatible with the CSR format of other libraries.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">is</td><td>the input stream to process </td></tr>
-    <tr><td class="paramname">t</td><td>the string variable in which to store the returned line </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a77247bbb60bd38e55b2ada1a543101cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77247bbb60bd38e55b2ada1a543101cd">&#9670;&nbsp;</a></span>sprsMatFromVectors()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> stag::sprsMatFromVectors </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>column_starts</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>row_indices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>values</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Construct a sparse matrix from the CSC data vectors.</p>
-<p>For documentation on the format of the data vectors, please see the documentation for the Eigen sparse matrix object.</p>
-<p>For now, this method does not perform any error checking on the provided vectors. The caller is responsible for ensuring that the provided data vectors are well-formed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">column_starts</td><td></td></tr>
-    <tr><td class="paramname">row_indices</td><td></td></tr>
-    <tr><td class="paramname">values</td><td></td></tr>
+    <tr><td class="paramname">matrix</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -327,27 +213,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aa3ebba49294a7f63460cd10badcbb92b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3ebba49294a7f63460cd10badcbb92b">&#9670;&nbsp;</a></span>sprsMatToVec() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; stag::sprsMatToVec </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
-          <td class="paramname"><em>matrix</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
 <a id="a202abd19b606fd8f497e2f5aa68d75a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a202abd19b606fd8f497e2f5aa68d75a9">&#9670;&nbsp;</a></span>sprsMatToVec() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a202abd19b606fd8f497e2f5aa68d75a9">&#9670;&nbsp;</a></span>sprsMatToVec() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,14 +250,14 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a35df691aca0ecb9384d13607be504dca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35df691aca0ecb9384d13607be504dca">&#9670;&nbsp;</a></span>sprsMatValues()</h2>
+<a id="aa3ebba49294a7f63460cd10badcbb92b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3ebba49294a7f63460cd10badcbb92b">&#9670;&nbsp;</a></span>sprsMatToVec() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; stag::sprsMatValues </td>
+          <td class="memname">std::vector&lt;double&gt; stag::sprsMatToVec </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
           <td class="paramname"><em>matrix</em></td><td>)</td>
@@ -398,14 +265,111 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Given a sparse matrix, return the values vector, compatible with the CSR format of other libraries.</p>
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a77247bbb60bd38e55b2ada1a543101cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77247bbb60bd38e55b2ada1a543101cd">&#9670;&nbsp;</a></span>sprsMatFromVectors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> stag::sprsMatFromVectors </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>column_starts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>row_indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct a sparse matrix from the CSC data vectors.</p>
+<p>For documentation on the format of the data vectors, please see the documentation for the Eigen sparse matrix object.</p>
+<p>For now, this method does not perform any error checking on the provided vectors. The caller is responsible for ensuring that the provided data vectors are well-formed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">matrix</td><td></td></tr>
+    <tr><td class="paramname">column_starts</td><td></td></tr>
+    <tr><td class="paramname">row_indices</td><td></td></tr>
+    <tr><td class="paramname">values</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a041e890d5213b413c616baf6d3881dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a041e890d5213b413c616baf6d3881dd7">&#9670;&nbsp;</a></span>addVectors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;T&gt; stag::addVectors </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add two vectors together element-wise.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v1</td><td></td></tr>
+    <tr><td class="paramname">v2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a419dcbb4f442a29267c374b3d28786f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419dcbb4f442a29267c374b3d28786f4">&#9670;&nbsp;</a></span>isSymmetric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool stag::isSymmetric </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
+          <td class="paramname"><em>matrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check whether a sparse matrix is symmetric. </p>
 
 </div>
 </div>
@@ -427,6 +391,42 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Print a vector to stderr. </p>
+
+</div>
+</div>
+<a id="a9bd2a9dba963399ae3398d77e04a3d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd2a9dba963399ae3398d77e04a3d41">&#9670;&nbsp;</a></span>safeGetline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream&amp; stag::safeGetline </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the next line from an input stream, while safely handling all types of line endings (CR, LF, CRLF).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>the input stream to process </td></tr>
+    <tr><td class="paramname">t</td><td>the string variable in which to store the returned line </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

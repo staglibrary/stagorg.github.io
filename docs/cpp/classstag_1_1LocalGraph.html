@@ -225,79 +225,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a07795bf994a1b901e51ff582e2605b49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07795bf994a1b901e51ff582e2605b49">&#9670;&nbsp;</a></span>degrees()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::vector&lt;double&gt; stag::LocalGraph::degrees </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
-          <td class="paramname"><em>vertices</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Given a list of vertices, return the degrees of each vertex in the list.</p>
-<p>Providing a method for computing the degrees 'in bulk' increases the efficiency of algorithms on graphs which are not stored directly in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector of degrees </dd></dl>
-
-<p>Implemented in <a class="el" href="classstag_1_1Graph.html#ac8a1a3c513276d44f001ca72a249e062">stag::Graph</a>.</p>
-
-</div>
-</div>
-<a id="a1c9bba97985c40afe9bdac6a824d145e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c9bba97985c40afe9bdac6a824d145e">&#9670;&nbsp;</a></span>degrees_unweighted()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::LocalGraph::degrees_unweighted </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
-          <td class="paramname"><em>vertices</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Given a list of vertices, return their unweighted degrees.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector of integer degrees </dd></dl>
-
-<p>Implemented in <a class="el" href="classstag_1_1Graph.html#a3a597b115d377174f8055b2038aae651">stag::Graph</a>.</p>
-
-</div>
-</div>
 <a id="a2044d3ab29b60e5b15f6abb9a69277c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2044d3ab29b60e5b15f6abb9a69277c5">&#9670;&nbsp;</a></span>neighbors()</h2>
 
@@ -369,6 +296,79 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>an int vector giving the neighbors of v </dd></dl>
 
 <p>Implemented in <a class="el" href="classstag_1_1Graph.html#a0c94f44b1a0b86e18a4c1dd026ba8362">stag::Graph</a>.</p>
+
+</div>
+</div>
+<a id="a07795bf994a1b901e51ff582e2605b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07795bf994a1b901e51ff582e2605b49">&#9670;&nbsp;</a></span>degrees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt;double&gt; stag::LocalGraph::degrees </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Given a list of vertices, return the degrees of each vertex in the list.</p>
+<p>Providing a method for computing the degrees 'in bulk' increases the efficiency of algorithms on graphs which are not stored directly in memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector of degrees </dd></dl>
+
+<p>Implemented in <a class="el" href="classstag_1_1Graph.html#ac8a1a3c513276d44f001ca72a249e062">stag::Graph</a>.</p>
+
+</div>
+</div>
+<a id="a1c9bba97985c40afe9bdac6a824d145e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9bba97985c40afe9bdac6a824d145e">&#9670;&nbsp;</a></span>degrees_unweighted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::LocalGraph::degrees_unweighted </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Given a list of vertices, return their unweighted degrees.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector of integer degrees </dd></dl>
+
+<p>Implemented in <a class="el" href="classstag_1_1Graph.html#a3a597b115d377174f8055b2038aae651">stag::Graph</a>.</p>
 
 </div>
 </div>

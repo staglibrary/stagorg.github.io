@@ -126,6 +126,199 @@ Functions</h2></td></tr>
 <tr class="separator:a93a3937566c50544e5d71bedad7adb5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a7ec275e84b427e85829037664945ab3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ec275e84b427e85829037664945ab3f">&#9670;&nbsp;</a></span>spectral_cluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::spectral_cluster </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> *&#160;</td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spectral clustering algorithm. </p>
+<p>This is a simple graph clustering method, which provides a clustering of the entire graph. To use spectral clustering, simply pass a <code><a class="el" href="classstag_1_1Graph.html">stag::Graph</a></code> object and the number of clusters you would like to find. </p><pre class="fragment">#include &lt;iostream&gt;
+#include "graph.h"
+#include "cluster.h"
+
+int main() {
+  stag::Graph myGraph = stag::barbell_graph(10);
+  std::vector&lt;stag_int&gt; clusters = stag::spectral_cluster(&amp;myGraph, 2);
+
+  for (auto c : clusters) {
+    std::cout &lt;&lt; c &lt;&lt; ", ";
+  }
+  std::cout &lt;&lt; std::endl;
+
+  return 0;
+}
+</pre><p>The spectral clustering algorithm has the following steps.</p><ul>
+<li>Compute the \(k\) smallest eigenvectors of the normalised Laplacian matrix.</li>
+<li>Embed the vertices into \(\mathbb{R}^k\) according to the eigenvectors.</li>
+<li>Cluster the vertices into k clusters using a k-means clustering algorithm.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>the graph object to be clustered </td></tr>
+    <tr><td class="paramname">k</td><td>the number of clusters to find </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector giving the cluster membership for each vertex in the graph</dd></dl>
+<dl class="section user"><dt>References</dt><dd>Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." FOCS'06. </dd></dl>
+
+</div>
+</div>
+<a id="aea870fc7d2ec9e263b2f53ebb9619d94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea870fc7d2ec9e263b2f53ebb9619d94">&#9670;&nbsp;</a></span>local_cluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>seed_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>target_volume</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Default local clustering algorithm. Given a graph and starting vertex, return a cluster which is close to the starting vertex.</p>
+<p>This method defaults to use the ACL local clustering algorithm.</p>
+<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). IEEE, 2006.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>- a graph object implementing the LocalGraph interface </td></tr>
+    <tr><td class="paramname">seed_vertex</td><td>- the starting vertex in the graph </td></tr>
+    <tr><td class="paramname">target_volume</td><td>- the approximate volume of the cluster you would like to find </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex. </dd></dl>
+
+</div>
+</div>
+<a id="afb8064a0a4943321f71932d297b74426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb8064a0a4943321f71932d297b74426">&#9670;&nbsp;</a></span>local_cluster_acl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster_acl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>seed_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>locality</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The ACL local clustering algorithm. Given a graph and starting vertex, returns a cluster close to the starting vertex, constructed in a local way.</p>
+<p>The locality parameter is passed as the alpha parameter in the personalised pagerank calculation.</p>
+<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). IEEE, 2006.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>- a graph object implementing the LocalGraph interface </td></tr>
+    <tr><td class="paramname">seed_vertex</td><td>- the starting vertex in the graph </td></tr>
+    <tr><td class="paramname">locality</td><td>- a value in [0, 1] indicating how 'local' the cluster should be. A value of '1' will return the return only the seed vertex and a value of '0' will explore the whole graph. </td></tr>
+    <tr><td class="paramname">error</td><td>(optional) - the acceptable error in the calculation of the approximate pagerank. Default 0.001. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex. </dd></dl>
+
+</div>
+</div>
+<a id="a73c8a63a0ab72bb2bca9603d92b3f106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c8a63a0ab72bb2bca9603d92b3f106">&#9670;&nbsp;</a></span>local_cluster_acl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster_acl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>seed_vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>locality</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
 <a id="aaad903d32861afcf81c976afa9ea8c1a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaad903d32861afcf81c976afa9ea8c1a">&#9670;&nbsp;</a></span>approximate_pagerank()</h2>
 
@@ -183,199 +376,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aea870fc7d2ec9e263b2f53ebb9619d94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea870fc7d2ec9e263b2f53ebb9619d94">&#9670;&nbsp;</a></span>local_cluster()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
-          <td class="paramname"><em>graph</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>seed_vertex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>target_volume</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Default local clustering algorithm. Given a graph and starting vertex, return a cluster which is close to the starting vertex.</p>
-<p>This method defaults to use the ACL local clustering algorithm.</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). IEEE, 2006.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">graph</td><td>- a graph object implementing the LocalGraph interface </td></tr>
-    <tr><td class="paramname">seed_vertex</td><td>- the starting vertex in the graph </td></tr>
-    <tr><td class="paramname">target_volume</td><td>- the approximate volume of the cluster you would like to find </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex. </dd></dl>
-
-</div>
-</div>
-<a id="a73c8a63a0ab72bb2bca9603d92b3f106"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73c8a63a0ab72bb2bca9603d92b3f106">&#9670;&nbsp;</a></span>local_cluster_acl() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster_acl </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
-          <td class="paramname"><em>graph</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>seed_vertex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>locality</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
-<a id="afb8064a0a4943321f71932d297b74426"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb8064a0a4943321f71932d297b74426">&#9670;&nbsp;</a></span>local_cluster_acl() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::local_cluster_acl </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
-          <td class="paramname"><em>graph</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>seed_vertex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>locality</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>error</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The ACL local clustering algorithm. Given a graph and starting vertex, returns a cluster close to the starting vertex, constructed in a local way.</p>
-<p>The locality parameter is passed as the alpha parameter in the personalised pagerank calculation.</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). IEEE, 2006.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">graph</td><td>- a graph object implementing the LocalGraph interface </td></tr>
-    <tr><td class="paramname">seed_vertex</td><td>- the starting vertex in the graph </td></tr>
-    <tr><td class="paramname">locality</td><td>- a value in [0, 1] indicating how 'local' the cluster should be. A value of '1' will return the return only the seed vertex and a value of '0' will explore the whole graph. </td></tr>
-    <tr><td class="paramname">error</td><td>(optional) - the acceptable error in the calculation of the approximate pagerank. Default 0.001. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex. </dd></dl>
-
-</div>
-</div>
-<a id="a7ec275e84b427e85829037664945ab3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ec275e84b427e85829037664945ab3f">&#9670;&nbsp;</a></span>spectral_cluster()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::spectral_cluster </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a> *&#160;</td>
-          <td class="paramname"><em>graph</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>k</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Spectral clustering algorithm. </p>
-<p>This is a simple graph clustering method, which provides a clustering of the entire graph. To use spectral clustering, simply pass a <code><a class="el" href="classstag_1_1Graph.html">stag::Graph</a></code> object and the number of clusters you would like to find. </p><pre class="fragment">#include &lt;iostream&gt;
-#include "graph.h"
-#include "cluster.h"
-
-int main() {
-  stag::Graph myGraph = stag::barbell_graph(10);
-  std::vector&lt;stag_int&gt; clusters = stag::spectral_cluster(&amp;myGraph, 2);
-
-  for (auto c : clusters) {
-    std::cout &lt;&lt; c &lt;&lt; ", ";
-  }
-  std::cout &lt;&lt; std::endl;
-
-  return 0;
-}
-</pre><p>The spectral clustering algorithm has the following steps.</p><ul>
-<li>Compute the \(k\) smallest eigenvectors of the normalised Laplacian matrix.</li>
-<li>Embed the vertices into \(\mathbb{R}^k\) according to the eigenvectors.</li>
-<li>Cluster the vertices into k clusters using a k-means clustering algorithm.</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">graph</td><td>the graph object to be clustered </td></tr>
-    <tr><td class="paramname">k</td><td>the number of clusters to find </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector giving the cluster membership for each vertex in the graph</dd></dl>
-<dl class="section user"><dt>References</dt><dd>Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." FOCS'06. </dd></dl>
 
 </div>
 </div>

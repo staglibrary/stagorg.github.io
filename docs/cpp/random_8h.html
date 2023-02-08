@@ -121,124 +121,8 @@ Functions</h2></td></tr>
 <tr class="separator:a1a6abeb447bf4bacdc0349143d76da31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a1a6abeb447bf4bacdc0349143d76da31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a6abeb447bf4bacdc0349143d76da31">&#9670;&nbsp;</a></span>erdos_renyi() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Graph stag::erdos_renyi </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
-<a id="ad5354ef7e767e8651e5269d52a504402"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5354ef7e767e8651e5269d52a504402">&#9670;&nbsp;</a></span>erdos_renyi() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Graph stag::erdos_renyi </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>exact</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Generate a graph from the Erdos-Renyi model.</p>
-<p>For large values of n, this method will use an approximate version of the random model with running time O(nnz) where nnz is the number of edges in the sampled graph.</p>
-<p>If the 'exact' parameter is true, then the true Erdos-Renyi distribution will be used, with running time O(n^2).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">n</td><td>- the number of vertices in the graph </td></tr>
-    <tr><td class="paramname">p</td><td>- the probability of including each edge </td></tr>
-    <tr><td class="paramname">exact</td><td>(optional) - whether to sample from the exact model </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the randomly generated graph </dd></dl>
-
-</div>
-</div>
-<a id="a24f8df0e3faaccd4d7a04713ca9666a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24f8df0e3faaccd4d7a04713ca9666a9">&#9670;&nbsp;</a></span>sbm() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Graph stag::sbm </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>q</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
 <a id="a8cf095d277fbb9d2f08b8b228ca71aed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cf095d277fbb9d2f08b8b228ca71aed">&#9670;&nbsp;</a></span>sbm() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf095d277fbb9d2f08b8b228ca71aed">&#9670;&nbsp;</a></span>sbm() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,6 +178,122 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the randomly generated graph </dd></dl>
+
+</div>
+</div>
+<a id="a24f8df0e3faaccd4d7a04713ca9666a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f8df0e3faaccd4d7a04713ca9666a9">&#9670;&nbsp;</a></span>sbm() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Graph stag::sbm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>q</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="ad5354ef7e767e8651e5269d52a504402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5354ef7e767e8651e5269d52a504402">&#9670;&nbsp;</a></span>erdos_renyi() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Graph stag::erdos_renyi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>exact</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Generate a graph from the Erdos-Renyi model.</p>
+<p>For large values of n, this method will use an approximate version of the random model with running time O(nnz) where nnz is the number of edges in the sampled graph.</p>
+<p>If the 'exact' parameter is true, then the true Erdos-Renyi distribution will be used, with running time O(n^2).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>- the number of vertices in the graph </td></tr>
+    <tr><td class="paramname">p</td><td>- the probability of including each edge </td></tr>
+    <tr><td class="paramname">exact</td><td>(optional) - whether to sample from the exact model </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the randomly generated graph </dd></dl>
+
+</div>
+</div>
+<a id="a1a6abeb447bf4bacdc0349143d76da31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6abeb447bf4bacdc0349143d76da31">&#9670;&nbsp;</a></span>erdos_renyi() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Graph stag::erdos_renyi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 
 </div>
 </div>

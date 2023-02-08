@@ -109,10 +109,9 @@ $(document).ready(function(){initNavTree('spectrum_8h.html',''); initResizable()
 <div class="title">spectrum.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Methods for computing eigenvalues and eigenvectors of sparse matrices.  
-<a href="#details">More...</a></p>
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<div class="textblock"><p>Methods for computing eigenvalues and eigenvectors of sparse matrices. </p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:afdc477f11de43a0af17c9e25167b555a"><td class="memItemLeft" align="right" valign="top">typedef std::tuple&lt; Eigen::VectorXd, Eigen::MatrixXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a></td></tr>
@@ -153,37 +152,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0e3a0f5955c83d6bb3f112d50685456d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e3a0f5955c83d6bb3f112d50685456d">&#9670;&nbsp;</a></span>compute_eigensystem() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a> stag::compute_eigensystem </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
-          <td class="paramname"><em>mat</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
-          <td class="paramname"><em>num</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
-
-</div>
-</div>
 <a id="afd51aec2981fe69ede9de1432609c98c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd51aec2981fe69ede9de1432609c98c">&#9670;&nbsp;</a></span>compute_eigensystem() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afd51aec2981fe69ede9de1432609c98c">&#9670;&nbsp;</a></span>compute_eigensystem() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,29 +189,29 @@ Functions</h2></td></tr>
 <li><code>Spectra::SortRule::SmallestMagn</code> will return the eigenvalues with smallest magnitude</li>
 <li><code>Spectra::SortRule::LargestMagn</code> will return the eigenvalues with largest magnitude</li>
 </ul>
-<p>The following example demonstrates how to compute the 3 largest eigenvectors and eigenvalues of a cycle graph. </p><pre class="fragment">#include &lt;iostream&gt;
-#include &lt;Spectra/SymEigsSolver.h&gt;
-#include "graph.h"
-#include "spectrum.h"
-
-int main() {
-  // Create a cycle graph
-  stag::Graph myGraph = stag::cycle_graph(10);
-
-  // Extract the normalised laplacian matrix
-  const SprsMat* lap = testGraph.normalised_laplacian();
-
-  // Compute a few eigenvalues and eigenvectors
-  stag_int k = 3;
-  stag::EigenSystem eigensystem = stag::compute_eigensystem(
-      lap, k, Spectra::SortRule::LargestMagn);
-
-  Eigen::VectorXd eigenvalues = get&lt;0&gt;(eigensystem);
-  Eigen::MatrixXd eigenvectors = get&lt;1&gt;(eigensystem);
-
-  return 0;
-}
-</pre><dl class="params"><dt>Parameters</dt><dd>
+<p>The following example demonstrates how to compute the 3 largest eigenvectors and eigenvalues of a cycle graph.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;Spectra/SymEigsSolver.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="spectrum_8h.html">spectrum.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  <span class="comment">// Create a cycle graph</span></div>
+<div class="line">  <a class="code" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = <a class="code" href="graph_8h.html#ae2d12f19e138a0f3b869dcd4e16cb984">stag::cycle_graph</a>(10);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Extract the normalised laplacian matrix</span></div>
+<div class="line">  <span class="keyword">const</span> <a class="code" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* lap = testGraph.normalised_laplacian();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Compute a few eigenvalues and eigenvectors</span></div>
+<div class="line">  <a class="code" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k = 3;</div>
+<div class="line">  <a class="code" href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a> eigensystem = <a class="code" href="spectrum_8h.html#a0e3a0f5955c83d6bb3f112d50685456d">stag::compute_eigensystem</a>(</div>
+<div class="line">      lap, k, Spectra::SortRule::LargestMagn);</div>
+<div class="line"> </div>
+<div class="line">  Eigen::VectorXd eigenvalues = get&lt;0&gt;(eigensystem);</div>
+<div class="line">  Eigen::MatrixXd eigenvectors = get&lt;1&gt;(eigensystem);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mat</td><td>the matrix on which to operate </td></tr>
     <tr><td class="paramname">num</td><td>the number of eigenvalues and eigenvectors to compute </td></tr>
@@ -259,14 +229,14 @@ int main() {
 
 </div>
 </div>
-<a id="a2ec1a1494e09fa478e832b53a390f316"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ec1a1494e09fa478e832b53a390f316">&#9670;&nbsp;</a></span>compute_eigenvalues() <span class="overload">[1/2]</span></h2>
+<a id="a0e3a0f5955c83d6bb3f112d50685456d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e3a0f5955c83d6bb3f112d50685456d">&#9670;&nbsp;</a></span>compute_eigensystem() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::VectorXd stag::compute_eigenvalues </td>
+          <td class="memname"><a class="el" href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a> stag::compute_eigensystem </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
           <td class="paramname"><em>mat</em>, </td>
@@ -289,7 +259,7 @@ int main() {
 </div>
 </div>
 <a id="af99a071225cc0380a84b4f0f893b5b1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af99a071225cc0380a84b4f0f893b5b1a">&#9670;&nbsp;</a></span>compute_eigenvalues() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af99a071225cc0380a84b4f0f893b5b1a">&#9670;&nbsp;</a></span>compute_eigenvalues() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,14 +314,14 @@ int main() {
 
 </div>
 </div>
-<a id="a1660df16d6aaac24753cad2b5879cff9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1660df16d6aaac24753cad2b5879cff9">&#9670;&nbsp;</a></span>compute_eigenvectors() <span class="overload">[1/2]</span></h2>
+<a id="a2ec1a1494e09fa478e832b53a390f316"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ec1a1494e09fa478e832b53a390f316">&#9670;&nbsp;</a></span>compute_eigenvalues() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::MatrixXd stag::compute_eigenvectors </td>
+          <td class="memname">Eigen::VectorXd stag::compute_eigenvalues </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
           <td class="paramname"><em>mat</em>, </td>
@@ -374,7 +344,7 @@ int main() {
 </div>
 </div>
 <a id="a0e42e09fdcfe0688297577a4d07ce05c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e42e09fdcfe0688297577a4d07ce05c">&#9670;&nbsp;</a></span>compute_eigenvectors() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e42e09fdcfe0688297577a4d07ce05c">&#9670;&nbsp;</a></span>compute_eigenvectors() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -429,8 +399,45 @@ int main() {
 
 </div>
 </div>
+<a id="a1660df16d6aaac24753cad2b5879cff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1660df16d6aaac24753cad2b5879cff9">&#9670;&nbsp;</a></span>compute_eigenvectors() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::MatrixXd stag::compute_eigenvectors </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="agraph_8h_html_ae6a866d72ff20e19e40c84774c534375"><div class="ttname"><a href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></div><div class="ttdeci">Eigen::SparseMatrix&lt; double, Eigen::ColMajor, stag_int &gt; SprsMat</div><div class="ttdef"><b>Definition:</b> graph.h:30</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdef"><b>Definition:</b> graph.h:147</div></div>
+<div class="ttc" id="aspectrum_8h_html_afdc477f11de43a0af17c9e25167b555a"><div class="ttname"><a href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a></div><div class="ttdeci">std::tuple&lt; Eigen::VectorXd, Eigen::MatrixXd &gt; EigenSystem</div><div class="ttdef"><b>Definition:</b> spectrum.h:39</div></div>
+<div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div></div>
+<div class="ttc" id="agraph_8h_html_ae2d12f19e138a0f3b869dcd4e16cb984"><div class="ttname"><a href="graph_8h.html#ae2d12f19e138a0f3b869dcd4e16cb984">stag::cycle_graph</a></div><div class="ttdeci">Graph cycle_graph(stag_int n)</div></div>
+<div class="ttc" id="aspectrum_8h_html"><div class="ttname"><a href="spectrum_8h.html">spectrum.h</a></div></div>
+<div class="ttc" id="agraph_8h_html_a0c328014088200f0b1217356fad00372"><div class="ttname"><a href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></div><div class="ttdeci">long long stag_int</div><div class="ttdef"><b>Definition:</b> graph.h:23</div></div>
+<div class="ttc" id="aspectrum_8h_html_a0e3a0f5955c83d6bb3f112d50685456d"><div class="ttname"><a href="spectrum_8h.html#a0e3a0f5955c83d6bb3f112d50685456d">stag::compute_eigensystem</a></div><div class="ttdeci">stag::EigenSystem compute_eigensystem(const SprsMat *mat, stag_int num)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

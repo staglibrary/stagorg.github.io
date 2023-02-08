@@ -141,18 +141,18 @@ Functions</h2></td></tr>
 <tr class="separator:afc00ed863e65b3ededd1d670ed5e02ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="a2ca13b09c6034bbb7c05b5d378d857cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ca13b09c6034bbb7c05b5d378d857cc">&#9670;&nbsp;</a></span>EdgeTriplet</h2>
+<a id="a0c328014088200f0b1217356fad00372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c328014088200f0b1217356fad00372">&#9670;&nbsp;</a></span>stag_int</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eigen::Triplet&lt;double, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; <a class="el" href="graph_8h.html#a2ca13b09c6034bbb7c05b5d378d857cc">EdgeTriplet</a></td>
+          <td class="memname">typedef long long <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>An Eigen::Triplet representing an edge in a graph. Stores the row, column, and value of an entry in a graph adjacency matrix. </p>
+<p>The integer type used throughout the library. </p>
 
 </div>
 </div>
@@ -171,30 +171,30 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0c328014088200f0b1217356fad00372"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c328014088200f0b1217356fad00372">&#9670;&nbsp;</a></span>stag_int</h2>
+<a id="a2ca13b09c6034bbb7c05b5d378d857cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca13b09c6034bbb7c05b5d378d857cc">&#9670;&nbsp;</a></span>EdgeTriplet</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef long long <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></td>
+          <td class="memname">typedef Eigen::Triplet&lt;double, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; <a class="el" href="graph_8h.html#a2ca13b09c6034bbb7c05b5d378d857cc">EdgeTriplet</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The integer type used throughout the library. </p>
+<p>An Eigen::Triplet representing an edge in a graph. Stores the row, column, and value of an entry in a graph adjacency matrix. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a28873c9e017a780fcd9e2c763a790bdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28873c9e017a780fcd9e2c763a790bdc">&#9670;&nbsp;</a></span>barbell_graph()</h2>
+<a id="ae2d12f19e138a0f3b869dcd4e16cb984"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d12f19e138a0f3b869dcd4e16cb984">&#9670;&nbsp;</a></span>cycle_graph()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Graph stag::barbell_graph </td>
+          <td class="memname">Graph stag::cycle_graph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -202,14 +202,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Construct a barbell graph. The barbell graph consists of 2 cliques on n vertices, connected by a single edge.</p>
+<p>Construct a cycle graph on n vertices.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>the number of vertices in the constructed graph </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object represengint the barbell graph </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object representing a cycle graph </dd></dl>
 
 </div>
 </div>
@@ -239,14 +239,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae2d12f19e138a0f3b869dcd4e16cb984"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2d12f19e138a0f3b869dcd4e16cb984">&#9670;&nbsp;</a></span>cycle_graph()</h2>
+<a id="a28873c9e017a780fcd9e2c763a790bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28873c9e017a780fcd9e2c763a790bdc">&#9670;&nbsp;</a></span>barbell_graph()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Graph stag::cycle_graph </td>
+          <td class="memname">Graph stag::barbell_graph </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -254,14 +254,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Construct a cycle graph on n vertices.</p>
+<p>Construct a barbell graph. The barbell graph consists of 2 cliques on n vertices, connected by a single edge.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>the number of vertices in the constructed graph </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object representing a cycle graph </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object represengint the barbell graph </dd></dl>
 
 </div>
 </div>

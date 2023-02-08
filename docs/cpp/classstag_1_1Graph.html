@@ -259,6 +259,167 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a7c4b11ab8bcf7f9b88b9325e85a18362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c4b11ab8bcf7f9b88b9325e85a18362">&#9670;&nbsp;</a></span>laplacian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::laplacian </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct the Laplacian matrix of the graph.</p>
+<p>The Laplacian matrix is defined by</p>
+<p class="formulaDsp">
+\[ L = D - A \]
+</p>
+<p>where D is the diagonal matrix of vertex degrees and A is the adjacency matrix of the graph.</p>
+<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the graph Laplacian </dd></dl>
+
+</div>
+</div>
+<a id="aefc78dbbf5e3787cb1cddfe83113786b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefc78dbbf5e3787cb1cddfe83113786b">&#9670;&nbsp;</a></span>normalised_laplacian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::normalised_laplacian </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct the normalised Laplacian matrix of the graph.</p>
+<p>The normalised Laplacian matrix is defined by Ln = D^{-1/2} L D^{-1/2} where D is the diagonal matrix of vertex degrees and L is the Laplacian matrix of the graph.</p>
+<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the normalised Laplacian </dd></dl>
+
+</div>
+</div>
+<a id="ae33fbbec63ba6646d69ef11fe20c5682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae33fbbec63ba6646d69ef11fe20c5682">&#9670;&nbsp;</a></span>degree_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::degree_matrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The degree matrix of the graph.</p>
+<p>The degree matrix is an n x n matrix such that each diagonal entry is the degree of the corresponding node.</p>
+<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix </dd></dl>
+
+</div>
+</div>
+<a id="aba233c69e5febacb20f8377d0c0bba1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba233c69e5febacb20f8377d0c0bba1c">&#9670;&nbsp;</a></span>inverse_degree_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::inverse_degree_matrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The inverse degree matrix of the graph.</p>
+<p>The inverse degree matrix is an n x n matrix such that each diagonal entry is the inverse of the degree of the corresponding node, or 0 if the node has degree 0.</p>
+<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix </dd></dl>
+
+</div>
+</div>
+<a id="a7708c09915dd00d8464ca413b29411b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7708c09915dd00d8464ca413b29411b3">&#9670;&nbsp;</a></span>lazy_random_walk_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::lazy_random_walk_matrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The lazy random walk matrix of the graph.</p>
+<p>The lazy random walk matrix is defined to be 1/2 I + 1/2 A D^{-1} where I is the identity matrix, A is the graph adjacency matrix and D is the degree matrix of the graph.</p>
+<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix </dd></dl>
+
+</div>
+</div>
+<a id="ae9d2d6c8cd34f5a822b459fe309fa88a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d2d6c8cd34f5a822b459fe309fa88a">&#9670;&nbsp;</a></span>total_volume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double stag::Graph::total_volume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The total volume of the graph.</p>
+<p>The volume is defined as the sum of the node degrees.</p>
+<dl class="section return"><dt>Returns</dt><dd>the graph's volume. </dd></dl>
+
+</div>
+</div>
+<a id="ad0e08bf08ddbfc3876a6c67135bdae37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e08bf08ddbfc3876a6c67135bdae37">&#9670;&nbsp;</a></span>number_of_vertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> stag::Graph::number_of_vertices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The number of vertices in the graph. </p>
+
+</div>
+</div>
+<a id="a2c7040223e494b5ef24d581a74ae71c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7040223e494b5ef24d581a74ae71c1">&#9670;&nbsp;</a></span>number_of_edges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> stag::Graph::number_of_edges </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The number of edges in the graph.</p>
+<p>This is defined based on the number of non-zero elements in the adjacency matrix, and ignores the weights of the edges. </p>
+
+</div>
+</div>
 <a id="a43416f58768a67c87baf9220ff370084"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43416f58768a67c87baf9220ff370084">&#9670;&nbsp;</a></span>degree()</h2>
 
@@ -288,26 +449,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae33fbbec63ba6646d69ef11fe20c5682"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae33fbbec63ba6646d69ef11fe20c5682">&#9670;&nbsp;</a></span>degree_matrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::degree_matrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The degree matrix of the graph.</p>
-<p>The degree matrix is an n x n matrix such that each diagonal entry is the degree of the corresponding node.</p>
-<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix </dd></dl>
-
-</div>
-</div>
 <a id="a3a525658e1efbf3ed6ea6e74bf84b038"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a525658e1efbf3ed6ea6e74bf84b038">&#9670;&nbsp;</a></span>degree_unweighted()</h2>
 
@@ -334,143 +475,6 @@ Public Member Functions</h2></td></tr>
 <p>Given a vertex v, return its unweighted degree. That is, the number of neighbors of v, ignoring the edge weights. </p>
 
 <p>Implements <a class="el" href="classstag_1_1LocalGraph.html#a12a8bc595fc1f138ccccff417ac12e25">stag::LocalGraph</a>.</p>
-
-</div>
-</div>
-<a id="ac8a1a3c513276d44f001ca72a249e062"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8a1a3c513276d44f001ca72a249e062">&#9670;&nbsp;</a></span>degrees()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; stag::Graph::degrees </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
-          <td class="paramname"><em>vertices</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Given a list of vertices, return the degrees of each vertex in the list.</p>
-<p>Providing a method for computing the degrees 'in bulk' increases the efficiency of algorithms on graphs which are not stored directly in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector of degrees </dd></dl>
-
-<p>Implements <a class="el" href="classstag_1_1LocalGraph.html#a07795bf994a1b901e51ff582e2605b49">stag::LocalGraph</a>.</p>
-
-</div>
-</div>
-<a id="a3a597b115d377174f8055b2038aae651"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a597b115d377174f8055b2038aae651">&#9670;&nbsp;</a></span>degrees_unweighted()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::Graph::degrees_unweighted </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
-          <td class="paramname"><em>vertices</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Given a list of vertices, return their unweighted degrees.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector of integer degrees </dd></dl>
-
-<p>Implements <a class="el" href="classstag_1_1LocalGraph.html#a1c9bba97985c40afe9bdac6a824d145e">stag::LocalGraph</a>.</p>
-
-</div>
-</div>
-<a id="aba233c69e5febacb20f8377d0c0bba1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba233c69e5febacb20f8377d0c0bba1c">&#9670;&nbsp;</a></span>inverse_degree_matrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::inverse_degree_matrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The inverse degree matrix of the graph.</p>
-<p>The inverse degree matrix is an n x n matrix such that each diagonal entry is the inverse of the degree of the corresponding node, or 0 if the node has degree 0.</p>
-<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix </dd></dl>
-
-</div>
-</div>
-<a id="a7c4b11ab8bcf7f9b88b9325e85a18362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c4b11ab8bcf7f9b88b9325e85a18362">&#9670;&nbsp;</a></span>laplacian()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::laplacian </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Construct the Laplacian matrix of the graph.</p>
-<p>The Laplacian matrix is defined by</p>
-<p class="formulaDsp">
-\[ L = D - A \]
-</p>
-<p>where D is the diagonal matrix of vertex degrees and A is the adjacency matrix of the graph.</p>
-<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the graph Laplacian </dd></dl>
-
-</div>
-</div>
-<a id="a7708c09915dd00d8464ca413b29411b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7708c09915dd00d8464ca413b29411b3">&#9670;&nbsp;</a></span>lazy_random_walk_matrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::lazy_random_walk_matrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The lazy random walk matrix of the graph.</p>
-<p>The lazy random walk matrix is defined to be 1/2 I + 1/2 A D^{-1} where I is the identity matrix, A is the graph adjacency matrix and D is the degree matrix of the graph.</p>
-<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix </dd></dl>
 
 </div>
 </div>
@@ -548,80 +552,76 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aefc78dbbf5e3787cb1cddfe83113786b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefc78dbbf5e3787cb1cddfe83113786b">&#9670;&nbsp;</a></span>normalised_laplacian()</h2>
+<a id="ac8a1a3c513276d44f001ca72a249e062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a1a3c513276d44f001ca72a249e062">&#9670;&nbsp;</a></span>degrees()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>* stag::Graph::normalised_laplacian </td>
+          <td class="memname">std::vector&lt;double&gt; stag::Graph::degrees </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Construct the normalised Laplacian matrix of the graph.</p>
-<p>The normalised Laplacian matrix is defined by Ln = D^{-1/2} L D^{-1/2} where D is the diagonal matrix of vertex degrees and L is the Laplacian matrix of the graph.</p>
-<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the normalised Laplacian </dd></dl>
+<p>Given a list of vertices, return the degrees of each vertex in the list.</p>
+<p>Providing a method for computing the degrees 'in bulk' increases the efficiency of algorithms on graphs which are not stored directly in memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector of degrees </dd></dl>
+
+<p>Implements <a class="el" href="classstag_1_1LocalGraph.html#a07795bf994a1b901e51ff582e2605b49">stag::LocalGraph</a>.</p>
 
 </div>
 </div>
-<a id="a2c7040223e494b5ef24d581a74ae71c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c7040223e494b5ef24d581a74ae71c1">&#9670;&nbsp;</a></span>number_of_edges()</h2>
+<a id="a3a597b115d377174f8055b2038aae651"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a597b115d377174f8055b2038aae651">&#9670;&nbsp;</a></span>degrees_unweighted()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> stag::Graph::number_of_edges </td>
+          <td class="memname">std::vector&lt;<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&gt; stag::Graph::degrees_unweighted </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The number of edges in the graph.</p>
-<p>This is defined based on the number of non-zero elements in the adjacency matrix, and ignores the weights of the edges. </p>
-
-</div>
-</div>
-<a id="ad0e08bf08ddbfc3876a6c67135bdae37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0e08bf08ddbfc3876a6c67135bdae37">&#9670;&nbsp;</a></span>number_of_vertices()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> stag::Graph::number_of_vertices </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The number of vertices in the graph. </p>
-
-</div>
-</div>
-<a id="ae9d2d6c8cd34f5a822b459fe309fa88a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9d2d6c8cd34f5a822b459fe309fa88a">&#9670;&nbsp;</a></span>total_volume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double stag::Graph::total_volume </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>The total volume of the graph.</p>
-<p>The volume is defined as the sum of the node degrees.</p>
-<dl class="section return"><dt>Returns</dt><dd>the graph's volume. </dd></dl>
+<p>Given a list of vertices, return their unweighted degrees.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>a vector of ints representing the vertices to be queried. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector of integer degrees </dd></dl>
+
+<p>Implements <a class="el" href="classstag_1_1LocalGraph.html#a1c9bba97985c40afe9bdac6a824d145e">stag::LocalGraph</a>.</p>
 
 </div>
 </div>

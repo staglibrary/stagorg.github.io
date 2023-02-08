@@ -122,12 +122,14 @@ Functions</h2></td></tr>
 <tr class="memdesc:a92240a6d68323b538fd245077eb3e432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spectral clustering algorithm.  <br /></td></tr>
 <tr class="separator:a92240a6d68323b538fd245077eb3e432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa95a665cefc95f9ff516ccce911a2892"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double target_volume)</td></tr>
+<tr class="memdesc:aa95a665cefc95f9ff516ccce911a2892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local clustering algorithm based on personalised Pagerank.  <br /></td></tr>
 <tr class="separator:aa95a665cefc95f9ff516ccce911a2892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af86a294bd0fc57a2ce251242ff41c454"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#af86a294bd0fc57a2ce251242ff41c454">stag::local_cluster_acl</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality, double error)</td></tr>
 <tr class="separator:af86a294bd0fc57a2ce251242ff41c454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aed6f2be1a504ed3de8b806f451884a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a6aed6f2be1a504ed3de8b806f451884a">stag::local_cluster_acl</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality)</td></tr>
 <tr class="separator:a6aed6f2be1a504ed3de8b806f451884a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff04898668cea9bc9fa473fb7d491457"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aff04898668cea9bc9fa473fb7d491457">stag::approximate_pagerank</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;seed_vector, double alpha, double epsilon)</td></tr>
+<tr class="memdesc:aff04898668cea9bc9fa473fb7d491457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the approximate pagerank vector.  <br /></td></tr>
 <tr class="separator:aff04898668cea9bc9fa473fb7d491457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a9556a1160d25765f67b6bc5a5b2cac35">stag::sweep_set_conductance</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;vec)</td></tr>
 <tr class="separator:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,7 +194,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a vector giving the cluster membership for each vertex in the graph</dd></dl>
-<dl class="section user"><dt>References</dt><dd>Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." FOCS'06. </dd></dl>
+<dl class="section user"><dt>References</dt><dd>A. Ng, M. Jordan, Y. Weiss. On spectral clustering: Analysis and an algorithm. NeurIPS'01 </dd></dl>
 
 </div>
 </div>
@@ -227,9 +229,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Default local clustering algorithm. Given a graph and starting vertex, return a cluster which is close to the starting vertex.</p>
-<p>This method defaults to use the ACL local clustering algorithm.</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). IEEE, 2006.</p>
+
+<p>Local clustering algorithm based on personalised Pagerank. </p>
+<p>Given a graph and starting vertex, return a cluster which is close to the starting vertex.</p>
+<p>This method uses the ACL local clustering algorithm.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>- a graph object implementing the LocalGraph interface </td></tr>
@@ -238,7 +241,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex.</dd></dl>
+<dl class="section user"><dt>References</dt><dd>R. Andersen, F. Chung, K. Lang. Local graph partitioning using pagerank vectors. FOCS'06 </dd></dl>
 
 </div>
 </div>
@@ -281,7 +285,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>The ACL local clustering algorithm. Given a graph and starting vertex, returns a cluster close to the starting vertex, constructed in a local way.</p>
 <p>The locality parameter is passed as the alpha parameter in the personalised pagerank calculation.</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). IEEE, 2006.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>- a graph object implementing the LocalGraph interface </td></tr>
@@ -291,7 +294,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vectors considered to be in the same cluster as the seed_vertex.</dd></dl>
+<dl class="section user"><dt>References</dt><dd>R. Andersen, F. Chung, K. Lang. Local graph partitioning using pagerank vectors. FOCS'06 </dd></dl>
 
 </div>
 </div>
@@ -367,9 +371,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Compute the approximate pagerank vector as described in ACL:</p>
-<p>[ACL] Andersen, Reid, Fan Chung, and Kevin Lang. "Local graph partitioning using pagerank vectors." 2006 47th Annual IEEE Symposium on Foundations of Computer Science (FOCS'06). IEEE, 2006.</p>
-<p>The parameters s, alpha, and epsilon are used as described in the paper.</p>
+
+<p>Compute the approximate pagerank vector. </p>
+<p>The parameters s, alpha, and epsilon are used as described in the ACL paper.</p>
 <p>Note that the dimension of the returned vectors may not match the true number of vertices in the graph provided since the approximate pagerank is computed locally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -383,10 +387,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A tuple of sparse column vectors corresponding to p - the approximate pagerank vector r - the residual vector By the definition of approximate pagerank, it is the case that p + pr(r, alpha) = pr(s, alpha)</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::invalid_argument</td><td>if the provided seed_vector is not a column vector. </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>if the provided seed_vector is not a column vector.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>References</dt><dd>R. Andersen, F. Chung, K. Lang. Local graph partitioning using pagerank vectors. FOCS'06 </dd></dl>
 
 </div>
 </div>

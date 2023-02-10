@@ -13,7 +13,7 @@ var searchData=
   ['sprsmatvalues_10',['sprsMatValues',['../utility_8h.html#ae3debfcea4d6e081559c6a8c7a85ada7',1,'stag']]],
   ['stag_20c_2b_2b_11',['STAG C++',['../index.html',1,'']]],
   ['stag_5fint_12',['stag_int',['../graph_8h.html#a0c328014088200f0b1217356fad00372',1,'graph.h']]],
-  ['star_5fgraph_13',['star_graph',['../graph_8h.html#afc00ed863e65b3ededd1d670ed5e02ab',1,'stag']]],
+  ['star_5fgraph_13',['star_graph',['../graph_8h.html#aeb3d5cb66d9a7c62de34da139d42093e',1,'stag']]],
   ['stderrvec_14',['stdErrVec',['../utility_8h.html#ab661f1ce474ae3160c5ce9a60176270a',1,'stag']]],
   ['sweep_5fset_5fconductance_15',['sweep_set_conductance',['../cluster_8h.html#a9556a1160d25765f67b6bc5a5b2cac35',1,'stag']]]
 ];

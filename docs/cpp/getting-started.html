@@ -115,7 +115,12 @@ $(document).ready(function(){initNavTree('getting-started.html',''); initResizab
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#autotoc_md0">Installation</a></li>
-<li class="level1"><a href="#autotoc_md1">Constructing Graphs</a></li>
+<li class="level1"><a href="#autotoc_md1">Constructing Graphs</a><ul><li class="level2"><a href="#autotoc_md2">Named Graphs</a></li>
+<li class="level2"><a href="#autotoc_md3">Adjacency Matrices</a></li>
+<li class="level2"><a href="#autotoc_md4">Loading Graphs from Disk</a></li>
+<li class="level2"><a href="#autotoc_md5">Random Graphs</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="md__home_runner_work_stag_stag_docs_getting_started"></a></p>
@@ -151,7 +156,9 @@ Installation</h1>
 <div class="line">cmake ..</div>
 <div class="line">sudo make install</div>
 <div class="line">cd ../..</div>
-</div><!-- fragment --><p>Then, download STAG from github and copy the <code>stag_lib</code> directory into you project. Adding the following to your <code>CMakeLists.txt</code> will compile STAG and make it available to the code in your project.</p>
+</div><!-- fragment --><p>Then, download STAG from GitHub with</p>
+<div class="fragment"><div class="line">git clone git@github.com:staglibrary/stag.git</div>
+</div><!-- fragment --><p>and copy the <code>stag_lib</code> directory into you project. Adding the following to your <code>CMakeLists.txt</code> will compile STAG and make it available to the code in your project.</p>
 <div class="fragment"><div class="line">set(CMAKE_CXX_STANDARD 20) # STAG requires at least C++20.</div>
 <div class="line"> </div>
 <div class="line">include_directories(stag_lib)</div>
@@ -163,8 +170,17 @@ Installation</h1>
 <div class="line">)</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md1"></a>
 Constructing Graphs</h1>
-<p>There are several methods for constructing graphs in STAG.</p>
-<p>You can construct a graph in your project with the following code.</p>
+<p>There are four methods for creating a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object:</p>
+<ol type="1">
+<li>Constructing a standard named graph.</li>
+<li>Constructing a graph with a sparse adjacency matrix.</li>
+<li>Loading a graph from an edgelist file.</li>
+<li>Generating a random graph.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Named Graphs</h2>
+<p>The STAG library can easily construct several standard graphs such as the cycle graph, the complete graph, and the barbell graph. See <a class="el" href="graph_8h.html">graph.h</a> for the full list and their documentation.</p>
+<p>You can construct a named graph with the following code.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
 <div class="line"> </div>
@@ -176,9 +192,106 @@ Constructing Graphs</h1>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdef"><b>Definition:</b> graph.h:147</div></div>
-<div class="ttc" id="aclassstag_1_1Graph_html_a1e9cb4cac7ffc06d64ba3cfdefe08d90"><div class="ttname"><a href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdef"><b>Definition:</b> graph.h:150</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html_a1e9cb4cac7ffc06d64ba3cfdefe08d90"><div class="ttname"><a href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div><div class="ttdoc">Return the sparse adjacency matrix of the graph.</div></div>
 <div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Adjacency Matrices</h2>
+<p>You can construct a <a class="el" href="classstag_1_1Graph.html">stag::Graph</a> object with any sparse adjacency matrix using the default constructor.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="comment">// Construct a sparse matrix representing the</span></div>
+<div class="line">    <span class="comment">// triangle graph adjacency matrix.</span></div>
+<div class="line">    <a class="code hl_typedef" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n = 3;</div>
+<div class="line">    <a class="code hl_typedef" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> adj(n, n);</div>
+<div class="line">    adj.coeffRef(0, 1) = 1;</div>
+<div class="line">    adj.coeffRef(0, 2) = 1;</div>
+<div class="line">    adj.coeffRef(1, 0) = 1;</div>
+<div class="line">    adj.coeffRef(1, 2) = 1;</div>
+<div class="line">    adj.coeffRef(2, 0) = 1;</div>
+<div class="line">    adj.coeffRef(2, 1) = 1;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create a new STAG graph</span></div>
+<div class="line">    <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph(adj);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Display the adjacency matrix of the graph</span></div>
+<div class="line">    std::cout &lt;&lt; *myGraph.<a class="code hl_function" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">adjacency</a>() &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agraph_8h_html_a0c328014088200f0b1217356fad00372"><div class="ttname"><a href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></div><div class="ttdeci">long long stag_int</div><div class="ttdef"><b>Definition:</b> graph.h:23</div></div>
+<div class="ttc" id="agraph_8h_html_ae6a866d72ff20e19e40c84774c534375"><div class="ttname"><a href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></div><div class="ttdeci">Eigen::SparseMatrix&lt; double, Eigen::ColMajor, stag_int &gt; SprsMat</div><div class="ttdef"><b>Definition:</b> graph.h:30</div></div>
+</div><!-- fragment --><p>There are many other ways to construct the sparse adjacency matrix. Please refer to the <a href="https://eigen.tuxfamily.org/dox/group__TutorialSparse.html">Eigen Documentation</a>.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Loading Graphs from Disk</h2>
+<p>The STAG library can read and write graphs to a simple edgelist file format. In an edgelist file, each row corresponds to one edge in the graph and lists the indices of the edges endpoints, and optionally the weight of the edge.</p>
+<p>For example, here is a simple edgelist file.</p>
+<div class="fragment"><div class="line"># This line is ignored</div>
+<div class="line">0, 1, 0.5</div>
+<div class="line">1, 2, 1</div>
+<div class="line">2, 0, 0.5</div>
+</div><!-- fragment --><p>This represents a graph on three vertices with three edges. For example, the first row corresponds to an edge between vertices 0 and 1 with weight 0.5.</p>
+<p>To load a STAG graph from an edgelist file, you can use the following code.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graphio_8h.html">graphio.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="comment">// Load the graph from the file</span></div>
+<div class="line">    std::string filename = <span class="stringliteral">&quot;mygraph.edgelist&quot;</span>;</div>
+<div class="line">    <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = stag::load_edgelist(filename);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Display the adjacency matrix of the graph</span></div>
+<div class="line">    std::cout &lt;&lt; *myGraph.<a class="code hl_function" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">adjacency</a>() &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agraphio_8h_html"><div class="ttname"><a href="graphio_8h.html">graphio.h</a></div></div>
+</div><!-- fragment --><p>The STAG library can also save a graph to an edgelist file.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graphio_8h.html">graphio.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="comment">// Create a cycle graph</span></div>
+<div class="line">    <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = stag::cycle_graph(10);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Save the graph as an edgelist file</span></div>
+<div class="line">    std::string filename = <span class="stringliteral">&quot;mygraph.edgelist&quot;</span>;</div>
+<div class="line">    stag::save_edgelist(myGraph, filename);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+Random Graphs</h2>
+<p>The <a class="el" href="random_8h.html">random.h</a> module provides several methods for generating Erdos-Renyi graphs and random graphs drawn from the stochastic block model.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="random_8h.html">random.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="comment">// Create an Erdos-Renyi random graph with</span></div>
+<div class="line">    <span class="comment">// 100 vertices and edge pobability 0.1.</span></div>
+<div class="line">    <span class="keywordtype">double</span> p = 0.1;</div>
+<div class="line">    <a class="code hl_typedef" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n = 100;</div>
+<div class="line">    <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = stag::erdos_renyi(n, p);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Display the adjacency matrix of the graph</span></div>
+<div class="line">    std::cout &lt;&lt; *myGraph.<a class="code hl_function" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">adjacency</a>() &lt;&lt; std::endl;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Create a graph drawn from the stochastic block model</span></div>
+<div class="line">    <span class="comment">// with two clusters of size 100, internal edge probability 0.1</span></div>
+<div class="line">    <span class="comment">// and external edge probability 0.01</span></div>
+<div class="line">    n = 200;</div>
+<div class="line">    <a class="code hl_typedef" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k = 2</div>
+<div class="line">    <span class="keywordtype">double</span> q = 0.01;</div>
+<div class="line">    <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> sbmGraph = stag::sbm(n, k, p, q);</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="arandom_8h_html"><div class="ttname"><a href="random_8h.html">random.h</a></div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -116,6 +116,8 @@ $(document).ready(function(){initNavTree('classstag_1_1Graph.html',''); initResi
   <div class="headertitle"><div class="title">stag::Graph Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;graph.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for stag::Graph:</div>
 <div class="dyncontent">
@@ -126,7 +128,7 @@ Inheritance diagram for stag::Graph:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The core object used to represent a graph for use with the library. Graphs are always constructed from sparse matrices, and this is the internal representation used as well. </p>
+<div class="textblock"><p>The core object used to represent a graph for use with the library. Graphs are always constructed from sparse matrices, and this is the internal representation used as well. Vertices of the graph are always referred to by their unique integer index. This index corresponds to the position of the vertex in the stored adjacency matrix of the graph. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -135,10 +137,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bb06162029cc8ac146a5171d3169fdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#a2bb06162029cc8ac146a5171d3169fdc">Graph</a> (std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;outerStarts, std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;innerIndices, std::vector&lt; double &gt; &amp;values)</td></tr>
 <tr class="separator:a2bb06162029cc8ac146a5171d3169fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e9cb4cac7ffc06d64ba3cfdefe08d90"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">adjacency</a> () const</td></tr>
+<tr class="memdesc:a1e9cb4cac7ffc06d64ba3cfdefe08d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sparse adjacency matrix of the graph.  <br /></td></tr>
 <tr class="separator:a1e9cb4cac7ffc06d64ba3cfdefe08d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fa1e7a53dc61ee5f37b3a4c08ebe957"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#a6fa1e7a53dc61ee5f37b3a4c08ebe957">laplacian</a> ()</td></tr>
+<tr class="memdesc:a6fa1e7a53dc61ee5f37b3a4c08ebe957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the Laplacian matrix of the graph.  <br /></td></tr>
 <tr class="separator:a6fa1e7a53dc61ee5f37b3a4c08ebe957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a669332afb62778ef7b8419e671f9992b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#a669332afb62778ef7b8419e671f9992b">normalised_laplacian</a> ()</td></tr>
+<tr class="memdesc:a669332afb62778ef7b8419e671f9992b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the normalised Laplacian matrix of the graph.  <br /></td></tr>
 <tr class="separator:a669332afb62778ef7b8419e671f9992b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacde5e369670d54817b995472717c806"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#aacde5e369670d54817b995472717c806">degree_matrix</a> ()</td></tr>
 <tr class="separator:aacde5e369670d54817b995472717c806"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,8 +250,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create a graph from raw arrays describing a CSR sparse matrix.</p>
-<p>To use this constructor, you should understand the CSR sparse matrix format. Note that this library uses the RowMajor format from the Eigen library.</p>
+<p>Create a graph from raw arrays describing a CSC sparse matrix.</p>
+<p>To use this constructor, you should understand the CSC sparse matrix format. Note that this library uses the ColMajor format from the Eigen library. For more information, refer to the <a href="https://eigen.tuxfamily.org/dox/group__TopicStorageOrders.html">Eigen Documentation</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">outerStarts</td><td>the indices of the start of each row in the CSR matrix </td></tr>
@@ -273,7 +278,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the sparse adjacency matrix of the graph</p>
+
+<p>Return the sparse adjacency matrix of the graph. </p>
 <dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the graph adjacency matrix. </dd></dl>
 
 </div>
@@ -292,14 +298,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Construct the Laplacian matrix of the graph.</p>
+
+<p>Return the Laplacian matrix of the graph. </p>
 <p>The Laplacian matrix is defined by</p>
 <p class="formulaDsp">
 \[
   L = D - A
 \]
 </p>
-<p>where D is the diagonal matrix of vertex degrees and A is the adjacency matrix of the graph.</p>
+<p>where \(D\) is the diagonal matrix of vertex degrees (<a class="el" href="classstag_1_1Graph.html#aacde5e369670d54817b995472717c806">stag::Graph::degree_matrix</a>) and A is the adjacency matrix of the graph (<a class="el" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90" title="Return the sparse adjacency matrix of the graph.">stag::Graph::adjacency</a>).</p>
 <dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the graph Laplacian </dd></dl>
 
 </div>
@@ -318,8 +325,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Construct the normalised Laplacian matrix of the graph.</p>
-<p>The normalised Laplacian matrix is defined by Ln = D^{-1/2} L D^{-1/2} where D is the diagonal matrix of vertex degrees and L is the Laplacian matrix of the graph.</p>
+
+<p>Return the normalised Laplacian matrix of the graph. </p>
+<p>The normalised Laplacian matrix is defined by</p>
+<p class="formulaDsp">
+\[
+  \mathcal{L} = D^{-1/2} L D^{-1/2}
+\]
+</p>
+<p>where \(D\) is the diagonal matrix of vertex degrees (<a class="el" href="classstag_1_1Graph.html#aacde5e369670d54817b995472717c806">stag::Graph::degree_matrix</a>) and \(L\) is the Laplacian matrix of the graph (<a class="el" href="classstag_1_1Graph.html#a6fa1e7a53dc61ee5f37b3a4c08ebe957" title="Return the Laplacian matrix of the graph.">stag::Graph::laplacian</a>).</p>
 <dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the normalised Laplacian </dd></dl>
 
 </div>
@@ -646,9 +660,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/runner/work/stag/stag/stag_lib/<a class="el" href="graph_8h.html">graph.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

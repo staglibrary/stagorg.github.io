@@ -127,17 +127,14 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afd51aec2981fe69ede9de1432609c98c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#afd51aec2981fe69ede9de1432609c98c">stag::compute_eigensystem</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num, Spectra::SortRule sort)</td></tr>
-<tr class="memdesc:afd51aec2981fe69ede9de1432609c98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the eigenvalues and eigenvectors of a given matrix.  <br /></td></tr>
 <tr class="separator:afd51aec2981fe69ede9de1432609c98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3a0f5955c83d6bb3f112d50685456d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a0e3a0f5955c83d6bb3f112d50685456d">stag::compute_eigensystem</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num)</td></tr>
 <tr class="separator:a0e3a0f5955c83d6bb3f112d50685456d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af99a071225cc0380a84b4f0f893b5b1a"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#af99a071225cc0380a84b4f0f893b5b1a">stag::compute_eigenvalues</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num, Spectra::SortRule sort)</td></tr>
-<tr class="memdesc:af99a071225cc0380a84b4f0f893b5b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the eigenvalues of a given matrix.  <br /></td></tr>
 <tr class="separator:af99a071225cc0380a84b4f0f893b5b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ec1a1494e09fa478e832b53a390f316"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a2ec1a1494e09fa478e832b53a390f316">stag::compute_eigenvalues</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num)</td></tr>
 <tr class="separator:a2ec1a1494e09fa478e832b53a390f316"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e42e09fdcfe0688297577a4d07ce05c"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a0e42e09fdcfe0688297577a4d07ce05c">stag::compute_eigenvectors</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num, Spectra::SortRule sort)</td></tr>
-<tr class="memdesc:a0e42e09fdcfe0688297577a4d07ce05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the eigenvectors of a given matrix.  <br /></td></tr>
 <tr class="separator:a0e42e09fdcfe0688297577a4d07ce05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1660df16d6aaac24753cad2b5879cff9"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a1660df16d6aaac24753cad2b5879cff9">stag::compute_eigenvectors</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num)</td></tr>
 <tr class="separator:a1660df16d6aaac24753cad2b5879cff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,8 +187,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Compute the eigenvalues and eigenvectors of a given matrix. </p>
+<p>Compute the eigenvalues and eigenvectors of a given matrix.</p>
 <p>By default, this will compute the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a Spectra::SortRule object. This is likely to be one of the following.</p><ul>
 <li><code>Spectra::SortRule::SmallestMagn</code> will return the eigenvalues with smallest magnitude</li>
 <li><code>Spectra::SortRule::LargestMagn</code> will return the eigenvalues with largest magnitude</li>
@@ -302,13 +298,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Compute the eigenvalues of a given matrix. </p>
+<p>Compute the eigenvalues of a given matrix.</p>
 <p>By default, this will compute the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a Spectra::SortRule object. This is likely to be one of the following.</p><ul>
 <li><code>Spectra::SortRule::SmallestMagn</code> will return the eigenvalues with smallest magnitude</li>
 <li><code>Spectra::SortRule::LargestMagn</code> will return the eigenvalues with largest magnitude</li>
 </ul>
-<p>If you would like to calculate the eigenvectors and eigenvalues together, then you should instead use <a class="el" href="spectrum_8h.html#afd51aec2981fe69ede9de1432609c98c" title="Compute the eigenvalues and eigenvectors of a given matrix.">stag::compute_eigensystem</a>.</p>
+<p>If you would like to calculate the eigenvectors and eigenvalues together, then you should instead use <a class="el" href="spectrum_8h.html#afd51aec2981fe69ede9de1432609c98c">stag::compute_eigensystem</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mat</td><td>the matrix on which to operate </td></tr>
@@ -387,13 +382,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Compute the eigenvectors of a given matrix. </p>
+<p>Compute the eigenvectors of a given matrix.</p>
 <p>By default, this will compute the eigenvectors corresponding to the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a Spectra::SortRule object. This is likely to be one of the following.</p><ul>
 <li><code>Spectra::SortRule::SmallestMagn</code> will return the eigenvalues with smallest magnitude</li>
 <li><code>Spectra::SortRule::LargestMagn</code> will return the eigenvalues with largest magnitude</li>
 </ul>
-<p>If you would like to calculate the eigenvectors and eigenvalues together, then you should instead use <a class="el" href="spectrum_8h.html#afd51aec2981fe69ede9de1432609c98c" title="Compute the eigenvalues and eigenvectors of a given matrix.">stag::compute_eigensystem</a>.</p>
+<p>If you would like to calculate the eigenvectors and eigenvalues together, then you should instead use <a class="el" href="spectrum_8h.html#afd51aec2981fe69ede9de1432609c98c">stag::compute_eigensystem</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">mat</td><td>the matrix on which to operate </td></tr>

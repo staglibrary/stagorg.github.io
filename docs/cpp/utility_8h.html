@@ -137,11 +137,6 @@ Functions</h2></td></tr>
 <tr class="separator:aca480a3717168b45529ec01585e9b8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a419dcbb4f442a29267c374b3d28786f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utility_8h.html#a419dcbb4f442a29267c374b3d28786f4">stag::isSymmetric</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *matrix)</td></tr>
 <tr class="separator:a419dcbb4f442a29267c374b3d28786f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab661f1ce474ae3160c5ce9a60176270a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab661f1ce474ae3160c5ce9a60176270a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="utility_8h.html#ab661f1ce474ae3160c5ce9a60176270a">stag::stdErrVec</a> (std::vector&lt; T &gt; &amp;vec)</td></tr>
-<tr class="separator:ab661f1ce474ae3160c5ce9a60176270a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae2bc271fb17b3c8c54f710c1a2d5b7"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utility_8h.html#abae2bc271fb17b3c8c54f710c1a2d5b7">stag::safeGetline</a> (std::istream &amp;is, std::string &amp;t)</td></tr>
-<tr class="separator:abae2bc271fb17b3c8c54f710c1a2d5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae3debfcea4d6e081559c6a8c7a85ada7" name="ae3debfcea4d6e081559c6a8c7a85ada7"></a>
@@ -159,14 +154,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Given a sparse matrix, return the values vector, compatible with the CSR format of other libraries.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">matrix</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Given a sparse matrix, return the values vector, compatible with the CSC format of other libraries. </p>
 
 </div>
 </div>
@@ -185,14 +173,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Given a sparse matrix, return the InnerIndices vector, compatible with the CSR format of other libraries.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">matrix</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Given a sparse matrix, return the InnerIndices vector, compatible with the CSC format of other libraries. </p>
 
 </div>
 </div>
@@ -211,14 +192,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Given a sparse matrix, return the OuterStarts vector, compatible with the CSR format of other libraries.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">matrix</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Given a sparse matrix, return the OuterStarts vector, compatible with the CSC format of other libraries. </p>
 
 </div>
 </div>
@@ -311,16 +285,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Construct a sparse matrix from the CSC data vectors.</p>
 <p>For documentation on the format of the data vectors, please see the documentation for the Eigen sparse matrix object.</p>
-<p>For now, this method does not perform any error checking on the provided vectors. The caller is responsible for ensuring that the provided data vectors are well-formed.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">column_starts</td><td></td></tr>
-    <tr><td class="paramname">row_indices</td><td></td></tr>
-    <tr><td class="paramname">values</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>For now, this method does not perform any error checking on the provided vectors. The caller is responsible for ensuring that the provided data vectors are well-formed. </p>
 
 </div>
 </div>
@@ -351,15 +316,7 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add two vectors together element-wise.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v1</td><td></td></tr>
-    <tr><td class="paramname">v2</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Add two vectors together element-wise. </p>
 
 </div>
 </div>
@@ -379,63 +336,6 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Check whether a sparse matrix is symmetric. </p>
-
-</div>
-</div>
-<a id="ab661f1ce474ae3160c5ce9a60176270a" name="ab661f1ce474ae3160c5ce9a60176270a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab661f1ce474ae3160c5ce9a60176270a">&#9670;&#160;</a></span>stdErrVec()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void stag::stdErrVec </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vec</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Print a vector to stderr. </p>
-
-</div>
-</div>
-<a id="abae2bc271fb17b3c8c54f710c1a2d5b7" name="abae2bc271fb17b3c8c54f710c1a2d5b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abae2bc271fb17b3c8c54f710c1a2d5b7">&#9670;&#160;</a></span>safeGetline()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::istream &amp; stag::safeGetline </td>
-          <td>(</td>
-          <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>is</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Get the next line from an input stream, while safely handling all types of line endings (CR, LF, CRLF).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">is</td><td>the input stream to process </td></tr>
-    <tr><td class="paramname">t</td><td>the string variable in which to store the returned line </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

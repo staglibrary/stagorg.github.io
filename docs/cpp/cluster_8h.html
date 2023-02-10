@@ -117,21 +117,19 @@ $(document).ready(function(){initNavTree('cluster_8h.html',''); initResizable();
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <div class="textblock"><p>Algorithms for finding clusters in graphs. </p>
+<p>The two key clustering methods provided by this module are <a class="el" href="cluster_8h.html#a92240a6d68323b538fd245077eb3e432">stag::spectral_cluster</a> and <a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a>. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a92240a6d68323b538fd245077eb3e432"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a92240a6d68323b538fd245077eb3e432">stag::spectral_cluster</a> (<a class="el" href="classstag_1_1Graph.html">stag::Graph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k)</td></tr>
-<tr class="memdesc:a92240a6d68323b538fd245077eb3e432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spectral clustering algorithm.  <br /></td></tr>
 <tr class="separator:a92240a6d68323b538fd245077eb3e432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa95a665cefc95f9ff516ccce911a2892"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double target_volume)</td></tr>
-<tr class="memdesc:aa95a665cefc95f9ff516ccce911a2892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local clustering algorithm based on personalised Pagerank.  <br /></td></tr>
 <tr class="separator:aa95a665cefc95f9ff516ccce911a2892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af86a294bd0fc57a2ce251242ff41c454"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#af86a294bd0fc57a2ce251242ff41c454">stag::local_cluster_acl</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality, double error)</td></tr>
 <tr class="separator:af86a294bd0fc57a2ce251242ff41c454"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aed6f2be1a504ed3de8b806f451884a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a6aed6f2be1a504ed3de8b806f451884a">stag::local_cluster_acl</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> seed_vertex, double locality)</td></tr>
 <tr class="separator:a6aed6f2be1a504ed3de8b806f451884a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff04898668cea9bc9fa473fb7d491457"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a>, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#aff04898668cea9bc9fa473fb7d491457">stag::approximate_pagerank</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;seed_vector, double alpha, double epsilon)</td></tr>
-<tr class="memdesc:aff04898668cea9bc9fa473fb7d491457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the approximate pagerank vector.  <br /></td></tr>
 <tr class="separator:aff04898668cea9bc9fa473fb7d491457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a9556a1160d25765f67b6bc5a5b2cac35">stag::sweep_set_conductance</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;vec)</td></tr>
 <tr class="separator:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,8 +160,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Spectral clustering algorithm. </p>
+<p>Spectral clustering algorithm.</p>
 <p>This is a simple graph clustering method, which provides a clustering of the entire graph. To use spectral clustering, simply pass a <code><a class="el" href="classstag_1_1Graph.html" title="The core object used to represent graphs for use with the library.">stag::Graph</a></code> object and the number of clusters you would like to find.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
@@ -231,8 +228,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Local clustering algorithm based on personalised Pagerank. </p>
+<p>Local clustering algorithm based on personalised Pagerank.</p>
 <p>Given a graph and starting vertex, return a cluster which is close to the starting vertex.</p>
 <p>This method uses the ACL local clustering algorithm.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -373,8 +369,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Compute the approximate pagerank vector. </p>
+<p>Compute the approximate pagerank vector.</p>
 <p>The parameters s, alpha, and epsilon are used as described in the ACL paper.</p>
 <p>Note that the dimension of the returned vectors may not match the true number of vertices in the graph provided since the approximate pagerank is computed locally.</p>
 <dl class="params"><dt>Parameters</dt><dd>

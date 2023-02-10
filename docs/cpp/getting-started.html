@@ -197,7 +197,7 @@ Named Graphs</h2>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:152</div></div>
-<div class="ttc" id="aclassstag_1_1Graph_html_a1e9cb4cac7ffc06d64ba3cfdefe08d90"><div class="ttname"><a href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div><div class="ttdoc">Return the sparse adjacency matrix of the graph.</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html_a1e9cb4cac7ffc06d64ba3cfdefe08d90"><div class="ttname"><a href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div></div>
 <div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div><div class="ttdoc">Core graph class definitions and constructors.</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 Adjacency Matrices</h2>
@@ -326,11 +326,11 @@ Spectral clustering</h2>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="acluster_8h_html"><div class="ttname"><a href="cluster_8h.html">cluster.h</a></div><div class="ttdoc">Algorithms for finding clusters in graphs.</div></div>
-</div><!-- fragment --><p>The <a class="el" href="cluster_8h.html#a92240a6d68323b538fd245077eb3e432" title="Spectral clustering algorithm.">stag::spectral_cluster</a> method returns a vector giving the cluster label of each vertex in the graph.</p>
+</div><!-- fragment --><p>The <a class="el" href="cluster_8h.html#a92240a6d68323b538fd245077eb3e432">stag::spectral_cluster</a> method returns a vector giving the cluster label of each vertex in the graph.</p>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Local clustering</h2>
 <p>Given a vertex of the underlying graph as input, a local clustering algorithm finds a cluster around the input vertex. The algorithm runs in time proportional to the size of the returned cluster and independent of the size of the entire graph.</p>
-<p>Local clustering is provided by the <a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892" title="Local clustering algorithm based on personalised Pagerank.">stag::local_cluster</a> method which can be used as in the following example.</p>
+<p>Local clustering is provided by the <a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a> method which can be used as in the following example.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="random_8h.html">random.h</a>&quot;</span></div>
@@ -355,7 +355,7 @@ Local clustering</h2>
 <div class="line">}</div>
 <div class="ttc" id="aclassstag_1_1Graph_html_ae9d2d6c8cd34f5a822b459fe309fa88a"><div class="ttname"><a href="classstag_1_1Graph.html#ae9d2d6c8cd34f5a822b459fe309fa88a">stag::Graph::total_volume</a></div><div class="ttdeci">double total_volume()</div></div>
 </div><!-- fragment --><p>Notice that the local clustering method requires an estimate of the volume of the target cluster. This parameter does <em>not</em> impose a hard constraint on the algorithm and so an approximate volume is enough.</p>
-<p>The <a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892" title="Local clustering algorithm based on personalised Pagerank.">stag::local_cluster</a> method returns a vector containing the ID of each vertex in the local cluster. </p>
+<p>The <a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a> method returns a vector containing the ID of each vertex in the local cluster. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -115,7 +115,9 @@ $(document).ready(function(){initNavTree('cluster_8h.html',''); initResizable();
   <div class="headertitle"><div class="title">cluster.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<div class="textblock"><p>Algorithms for finding clusters in graphs. </p>
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a92240a6d68323b538fd245077eb3e432"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a92240a6d68323b538fd245077eb3e432">stag::spectral_cluster</a> (<a class="el" href="classstag_1_1Graph.html">stag::Graph</a> *graph, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k)</td></tr>
@@ -162,7 +164,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Spectral clustering algorithm. </p>
-<p>This is a simple graph clustering method, which provides a clustering of the entire graph. To use spectral clustering, simply pass a <code><a class="el" href="classstag_1_1Graph.html">stag::Graph</a></code> object and the number of clusters you would like to find.</p>
+<p>This is a simple graph clustering method, which provides a clustering of the entire graph. To use spectral clustering, simply pass a <code><a class="el" href="classstag_1_1Graph.html" title="The core object used to represent graphs for use with the library.">stag::Graph</a></code> object and the number of clusters you would like to find.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="graph_8h.html">graph.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cluster_8h.html">cluster.h</a>&quot;</span></div>
@@ -178,9 +180,9 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdef"><b>Definition:</b> graph.h:150</div></div>
-<div class="ttc" id="acluster_8h_html"><div class="ttname"><a href="cluster_8h.html">cluster.h</a></div></div>
-<div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:152</div></div>
+<div class="ttc" id="acluster_8h_html"><div class="ttname"><a href="cluster_8h.html">cluster.h</a></div><div class="ttdoc">Algorithms for finding clusters in graphs.</div></div>
+<div class="ttc" id="agraph_8h_html"><div class="ttname"><a href="graph_8h.html">graph.h</a></div><div class="ttdoc">Core graph class definitions and constructors.</div></div>
 </div><!-- fragment --><p>The spectral clustering algorithm has the following steps.</p><ul>
 <li>Compute the \(k\) smallest eigenvectors of the normalised Laplacian matrix.</li>
 <li>Embed the vertices into \(\mathbb{R}^k\) according to the eigenvectors.</li>
@@ -377,7 +379,7 @@ Functions</h2></td></tr>
 <p>Note that the dimension of the returned vectors may not match the true number of vertices in the graph provided since the approximate pagerank is computed locally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">graph</td><td>a <a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> object </td></tr>
+    <tr><td class="paramname">graph</td><td>a <a class="el" href="classstag_1_1LocalGraph.html" title="An abstract class which defines methods for exploring the local neighborhood of vertices in a graph.">stag::LocalGraph</a> object </td></tr>
     <tr><td class="paramname">seed_vector</td><td>the seed vector of the personalised pagerank </td></tr>
     <tr><td class="paramname">alpha</td><td>the locality parameter of the personalised pagerank </td></tr>
     <tr><td class="paramname">epsilon</td><td>the error parameter of the personalised pagerank </td></tr>
@@ -443,7 +445,7 @@ Functions</h2></td></tr>
 <p>Note that the caller is responsible for any required normalisation of the input vector. In particular, this method does not normalise the vector by the node degrees.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">graph</td><td>a <a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> object </td></tr>
+    <tr><td class="paramname">graph</td><td>a <a class="el" href="classstag_1_1LocalGraph.html" title="An abstract class which defines methods for exploring the local neighborhood of vertices in a graph.">stag::LocalGraph</a> object </td></tr>
     <tr><td class="paramname">vec</td><td>the vector to sweep over </td></tr>
   </table>
   </dd>

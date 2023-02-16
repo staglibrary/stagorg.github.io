@@ -26,41 +26,46 @@ var NAVTREE =
 [
   [ "STAG C++", "index.html", [
     [ "Getting Started", "getting-started.html", [
-      [ "Installation", "getting-started.html#autotoc_md0", null ],
-      [ "Constructing Graphs", "getting-started.html#autotoc_md1", [
-        [ "Named Graphs", "getting-started.html#autotoc_md2", null ],
-        [ "Adjacency Matrices", "getting-started.html#autotoc_md3", null ],
-        [ "Loading Graphs from Disk", "getting-started.html#autotoc_md4", null ],
-        [ "Random Graphs", "getting-started.html#autotoc_md5", null ]
+      [ "Installation", "getting-started.html#autotoc_md0", [
+        [ "Dependencies", "getting-started.html#autotoc_md1", null ],
+        [ "Installing STAG", "getting-started.html#autotoc_md2", null ]
       ] ],
-      [ "Clustering", "getting-started.html#autotoc_md6", [
-        [ "Spectral clustering", "getting-started.html#autotoc_md7", null ],
-        [ "Local clustering", "getting-started.html#autotoc_md8", null ]
+      [ "Constructing Graphs", "getting-started.html#autotoc_md3", [
+        [ "Named Graphs", "getting-started.html#autotoc_md4", null ],
+        [ "Adjacency Matrices", "getting-started.html#autotoc_md5", null ],
+        [ "Loading Graphs from Disk", "getting-started.html#autotoc_md6", null ],
+        [ "Random Graphs", "getting-started.html#autotoc_md7", null ]
+      ] ],
+      [ "Clustering", "getting-started.html#autotoc_md8", [
+        [ "Spectral clustering", "getting-started.html#autotoc_md9", null ],
+        [ "Local clustering", "getting-started.html#autotoc_md10", null ]
       ] ]
     ] ],
     [ "Changelog", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html", [
-      [ "[Unreleased]", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md10", [
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md11", null ]
+      [ "[1.0.0] - 2023-02-16", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md12", [
+        [ "Changed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md13", null ],
+        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md14", null ],
+        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md15", null ]
       ] ],
-      [ "[0.4.0] - 2023-01-16", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md12", [
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md13", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md14", null ]
+      [ "[0.4.0] - 2023-01-16", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md16", [
+        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md17", null ],
+        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md18", null ]
       ] ],
-      [ "[0.3.0] - 2022-11-18", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md15", [
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md16", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md17", null ]
+      [ "[0.3.0] - 2022-11-18", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md19", [
+        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md20", null ],
+        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md21", null ]
       ] ],
-      [ "[0.2.1] - 2022-10-19", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md18", [
-        [ "Changed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md19", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md20", null ],
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md21", null ]
-      ] ],
-      [ "[0.2.0] - 2022-10-15", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md22", [
+      [ "[0.2.1] - 2022-10-19", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md22", [
         [ "Changed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md23", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md24", null ]
+        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md24", null ],
+        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md25", null ]
       ] ],
-      [ "[0.1.6] - 2022-10-10", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md25", [
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md26", null ]
+      [ "[0.2.0] - 2022-10-15", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md26", [
+        [ "Changed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md27", null ],
+        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md28", null ]
+      ] ],
+      [ "[0.1.6] - 2022-10-10", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md29", [
+        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md30", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", "annotated" ],

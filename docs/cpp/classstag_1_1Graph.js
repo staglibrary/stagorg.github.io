@@ -9,6 +9,7 @@ var classstag_1_1Graph =
     [ "inverse_degree_matrix", "classstag_1_1Graph.html#a81fad4968af133222c6225df701d0633", null ],
     [ "lazy_random_walk_matrix", "classstag_1_1Graph.html#ac5c452838b81ba1bc7a93b4c32196aab", null ],
     [ "total_volume", "classstag_1_1Graph.html#ae9d2d6c8cd34f5a822b459fe309fa88a", null ],
+    [ "average_degree", "classstag_1_1Graph.html#acbeb0fcb9a25f75091d16927c7b13628", null ],
     [ "number_of_vertices", "classstag_1_1Graph.html#ad0e08bf08ddbfc3876a6c67135bdae37", null ],
     [ "number_of_edges", "classstag_1_1Graph.html#a2c7040223e494b5ef24d581a74ae71c1", null ],
     [ "degree", "classstag_1_1Graph.html#a43416f58768a67c87baf9220ff370084", null ],
@@ -16,5 +17,6 @@ var classstag_1_1Graph =
     [ "neighbors", "classstag_1_1Graph.html#ab490f1a3243371faa8f0fa1a3d895be7", null ],
     [ "neighbors_unweighted", "classstag_1_1Graph.html#a2cebcca3546dc35f0e2f5c522d7f090c", null ],
     [ "degrees", "classstag_1_1Graph.html#a0d585615f4adc926f13ce97087165ab0", null ],
-    [ "degrees_unweighted", "classstag_1_1Graph.html#a10324cb46d61ba4fa2637cc03fb186a7", null ]
+    [ "degrees_unweighted", "classstag_1_1Graph.html#a10324cb46d61ba4fa2637cc03fb186a7", null ],
+    [ "vertex_exists", "classstag_1_1Graph.html#ad837281ba809ef8fecd2b72a37133d7d", null ]
 ];

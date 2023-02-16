@@ -121,10 +121,8 @@ $(document).ready(function(){initNavTree('graphio_8h.html',''); initResizable();
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa6cdd0b9a8c33d6bf7ff0376292bc80a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classstag_1_1Graph.html">stag::Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphio_8h.html#aa6cdd0b9a8c33d6bf7ff0376292bc80a">stag::load_edgelist</a> (std::string &amp;filename)</td></tr>
-<tr class="memdesc:aa6cdd0b9a8c33d6bf7ff0376292bc80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a graph from an edgelist file.  <br /></td></tr>
 <tr class="separator:aa6cdd0b9a8c33d6bf7ff0376292bc80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8acef831e0200fc7e0db80e194fb56db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graphio_8h.html#a8acef831e0200fc7e0db80e194fb56db">stag::save_edgelist</a> (<a class="el" href="classstag_1_1Graph.html">stag::Graph</a> &amp;graph, std::string &amp;filename)</td></tr>
-<tr class="memdesc:a8acef831e0200fc7e0db80e194fb56db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the given graph as an edgelist file.  <br /></td></tr>
 <tr class="separator:a8acef831e0200fc7e0db80e194fb56db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -143,17 +141,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Load a graph from an edgelist file. </p>
+<p>Load a graph from an edgelist file.</p>
 <p>We define an edgelist file in the following way.</p><ul>
 <li>Any lines beginning with '#' or '//' are ignored</li>
 <li>Any blank lines are ignored</li>
-<li>All other lines are of one of the formats<ul>
+<li><p class="startli">All other lines are of one of the formats</p><ul>
 <li><code>&lt;u&gt;, &lt;v&gt;, &lt;weight&gt;</code></li>
 <li><code>&lt;u&gt;, &lt;v&gt;</code></li>
 <li><code>&lt;u&gt; &lt;v&gt; &lt;weight&gt;</code></li>
-<li><code>&lt;u&gt; &lt;v&gt;</code> where <code>&lt;u&gt;</code> and <code>&lt;v&gt;</code> can be parsed as integers, and <code>&lt;weight&gt;</code> can be parsed as a double. If the weight is omitted, it is taken to be 1. The data lines of the edgelist file should all have the same format.</li>
+<li><code>&lt;u&gt; &lt;v&gt;</code></li>
 </ul>
+<p class="startli">where <code>&lt;u&gt;</code> and <code>&lt;v&gt;</code> can be parsed as integers, and <code>&lt;weight&gt;</code> can be parsed as a double. If the weight is omitted, it is taken to be 1.</p>
 </li>
 </ul>
 <p>Here is an example edgelist file. </p><pre class="fragment"># This line is ignored
@@ -201,8 +199,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Save the given graph as an edgelist file. </p>
+<p>Save the given graph as an edgelist file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>the graph object to be saved </td></tr>

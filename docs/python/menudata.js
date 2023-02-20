@@ -24,5 +24,7 @@
 */
 var menudata={children:[
 {text:"Related Pages",url:"pages.html"},
+{text:"Namespaces",url:"namespaces.html"},
+{text:"Classes",url:"annotated.html"},
 {text:"STAG C++",url:"^https://staglibrary.io/docs/cpp"},
 {text:"STAG Website",url:"^https://staglibrary.io/"}]}

@@ -36,6 +36,8 @@ var NAVTREE =
       [ "Connecting to the Database with STAG", "md_neo4j.html#autotoc_md5", null ],
       [ "Finding Clusters in the Graph", "md_neo4j.html#autotoc_md6", null ]
     ] ],
+    [ "Namespaces", "namespaces.html", "namespaces" ],
+    [ "Classes", "annotated.html", "annotated" ],
     [ "STAG C++", "^https://staglibrary.io/docs/cpp", null ],
     [ "STAG Website", "^https://staglibrary.io/", null ]
   ] ]
@@ -43,7 +45,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"getting-started.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

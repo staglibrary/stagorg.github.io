@@ -128,24 +128,27 @@ Installation</h1>
 <div class="fragment"><div class="line">pip install stag</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md1"></a>
 Creating Graphs</h1>
-<p>The core graph object is stag.graph.Graph which can be created using a sparse adjacency matrix.</p>
-<div class="fragment"><div class="line"><span class="keyword">import</span> stag.graph</div>
+<p>The core graph object is <a class="el" href="classstag_1_1graph_1_1Graph.html" title="The core object used to represent graphs for use with the library.">stag.graph.Graph</a> which can be created using a sparse adjacency matrix.</p>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
 <div class="line"><span class="keyword">import</span> scipy.sparse</div>
 <div class="line">adj_mat = scipy.sparse.csc_matrix([[0, 1, 1, 1],</div>
 <div class="line">                                   [1, 0, 1, 1],</div>
 <div class="line">                                   [1, 1, 0, 1],</div>
 <div class="line">                                   [1, 1, 1, 0]])</div>
-<div class="line">g = stag.graph.Graph(adj_mat)</div>
-</div><!-- fragment --><p>You can also create a variety of standard graphs using the stag.graph module. For example, to create a complete graph on \(5\) vertices, use the following code.</p>
-<div class="fragment"><div class="line"><span class="keyword">import</span> stag.graph</div>
-<div class="line">g = stag.graph.complete_graph(5)</div>
+<div class="line">g = <a class="code hl_class" href="classstag_1_1graph_1_1Graph.html">stag.graph.Graph</a>(adj_mat)</div>
+<div class="ttc" id="aclassstag_1_1graph_1_1Graph_html"><div class="ttname"><a href="classstag_1_1graph_1_1Graph.html">stag.graph.Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.py:206</div></div>
+<div class="ttc" id="anamespacestag_1_1graph_html"><div class="ttname"><a href="namespacestag_1_1graph.html">stag.graph</a></div><div class="ttdef"><b>Definition:</b> graph.py:1</div></div>
+</div><!-- fragment --><p>You can also create a variety of standard graphs using the <a class="el" href="namespacestag_1_1graph.html">stag.graph</a> module. For example, to create a complete graph on \(5\) vertices, use the following code.</p>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line">g = <a class="code hl_function" href="namespacestag_1_1graph.html#adbafcad4897463458a702c2eb332a9be">stag.graph.complete_graph</a>(5)</div>
+<div class="ttc" id="anamespacestag_1_1graph_html_adbafcad4897463458a702c2eb332a9be"><div class="ttname"><a href="namespacestag_1_1graph.html#adbafcad4897463458a702c2eb332a9be">stag.graph.complete_graph</a></div><div class="ttdeci">Graph complete_graph(n)</div><div class="ttdoc">Construct a complete graph on n vertices.</div><div class="ttdef"><b>Definition:</b> graph.py:484</div></div>
 </div><!-- fragment --><p>You can see the adjacency matrix of your constructed graphs with the followin code.</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> scipy.sparse</div>
 <div class="line">print(g.adjacency().todense())</div>
-</div><!-- fragment --><p>Notice that the stag.graph.Graph.adjacency method returns a sparse <code>scipy</code> matrix and we make this dense with the <code>todense()</code> method.</p>
+</div><!-- fragment --><p>Notice that the <a class="el" href="classstag_1_1graph_1_1Graph.html#aec5c576fe19020a621c1f61154ce1148" title="Return the sparse adjacency matrix of the graph.">stag.graph.Graph.adjacency</a> method returns a sparse <code>scipy</code> matrix and we make this dense with the <code>todense()</code> method.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Reading Graphs from Disk</h1>
-<p>STAG supports the edgelist file format for reading graphs from disk and the stag.graphio module provides methods for reading and writing them.</p>
+<p>STAG supports the edgelist file format for reading graphs from disk and the <a class="el" href="namespacestag_1_1graphio.html">stag.graphio</a> module provides methods for reading and writing them.</p>
 <p>Suppose you have a simple edgelist file like this one.</p>
 <div class="fragment"><div class="line">0 1</div>
 <div class="line">1 2</div>
@@ -155,8 +158,8 @@ Reading Graphs from Disk</h1>
 <div class="line">4 5</div>
 <div class="line">3 5</div>
 </div><!-- fragment --><p>Then, we can read it as follows.</p>
-<div class="fragment"><div class="line">&gt;&gt;&gt; <span class="keyword">import</span> stag.graphio</div>
-<div class="line">&gt;&gt;&gt; g = stag.graphio.load_edgelist(<span class="stringliteral">&quot;graph.edgelist&quot;</span>)</div>
+<div class="fragment"><div class="line">&gt;&gt;&gt; <span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graphio.html">stag.graphio</a></div>
+<div class="line">&gt;&gt;&gt; g = <a class="code hl_function" href="namespacestag_1_1graphio.html#a02d082102ed9e539beb538efc7d75765">stag.graphio.load_edgelist</a>(<span class="stringliteral">&quot;graph.edgelist&quot;</span>)</div>
 <div class="line">&gt;&gt;&gt; print(g.agjacency().todense())</div>
 <div class="line">[[0. 1. 1. 0. 0. 0.]</div>
 <div class="line"> [1. 0. 1. 0. 0. 0.]</div>
@@ -164,11 +167,15 @@ Reading Graphs from Disk</h1>
 <div class="line"> [0. 0. 1. 0. 1. 1.]</div>
 <div class="line"> [0. 0. 0. 1. 0. 1.]</div>
 <div class="line"> [0. 0. 0. 1. 1. 0.]]</div>
+<div class="ttc" id="anamespacestag_1_1graphio_html"><div class="ttname"><a href="namespacestag_1_1graphio.html">stag.graphio</a></div><div class="ttdef"><b>Definition:</b> graphio.py:1</div></div>
+<div class="ttc" id="anamespacestag_1_1graphio_html_a02d082102ed9e539beb538efc7d75765"><div class="ttname"><a href="namespacestag_1_1graphio.html#a02d082102ed9e539beb538efc7d75765">stag.graphio.load_edgelist</a></div><div class="ttdeci">graph.Graph load_edgelist(str filename)</div><div class="ttdoc">Load a graph from an edgelist file.</div><div class="ttdef"><b>Definition:</b> graphio.py:37</div></div>
 </div><!-- fragment --><p>We can also save graphs as an edgelist.</p>
-<div class="fragment"><div class="line"><span class="keyword">import</span> stag.graph</div>
-<div class="line"><span class="keyword">import</span> stag.graphio</div>
-<div class="line">g = stag.graph.star_graph(5)</div>
-<div class="line">stag.graphio.save_edgelist(g, <span class="stringliteral">&quot;star.edgelist&quot;</span>)</div>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graphio.html">stag.graphio</a></div>
+<div class="line">g = <a class="code hl_function" href="namespacestag_1_1graph.html#ae1faea33014d4ea2fdfe692a3dbb2863">stag.graph.star_graph</a>(5)</div>
+<div class="line"><a class="code hl_function" href="namespacestag_1_1graphio.html#abc9c02dd6ddfc7a84a2fd8b1059fd849">stag.graphio.save_edgelist</a>(g, <span class="stringliteral">&quot;star.edgelist&quot;</span>)</div>
+<div class="ttc" id="anamespacestag_1_1graph_html_ae1faea33014d4ea2fdfe692a3dbb2863"><div class="ttname"><a href="namespacestag_1_1graph.html#ae1faea33014d4ea2fdfe692a3dbb2863">stag.graph.star_graph</a></div><div class="ttdeci">Graph star_graph(n)</div><div class="ttdoc">Construct a star graph.</div><div class="ttdef"><b>Definition:</b> graph.py:509</div></div>
+<div class="ttc" id="anamespacestag_1_1graphio_html_abc9c02dd6ddfc7a84a2fd8b1059fd849"><div class="ttname"><a href="namespacestag_1_1graphio.html#abc9c02dd6ddfc7a84a2fd8b1059fd849">stag.graphio.save_edgelist</a></div><div class="ttdeci">def save_edgelist(graph.Graph g, str filename)</div><div class="ttdoc">Save a graph as an edgelist file.</div><div class="ttdef"><b>Definition:</b> graphio.py:47</div></div>
 </div><!-- fragment --><p>Edgelist files can also include edge weights as a third parameter - notice that the generated <code>star.edgelist</code> file specifies an edge weight of \(1\) for every edge.</p>
 <div class="fragment"><div class="line">0 1 1</div>
 <div class="line">0 2 1</div>
@@ -176,21 +183,24 @@ Reading Graphs from Disk</h1>
 <div class="line">0 4 1</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
 Finding Clusters</h1>
-<p>The stag.cluster module provides methods for finding clusters in graphs using local clustering algorithms. The main method provided by this module is stag.cluster.local_cluster. This method takes three arguments:</p>
+<p>The <a class="el" href="namespacestag_1_1cluster.html">stag.cluster</a> module provides methods for finding clusters in graphs using local clustering algorithms. The main method provided by this module is <a class="el" href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e" title="Local clustering algorithm based on personalised Pagerank.">stag.cluster.local_cluster</a>. This method takes three arguments:</p>
 <ul>
 <li><b>g</b> - a STAG graph object;</li>
 <li><b>seed_vertex</b> - the ID of a vertex in the graph;</li>
 <li><b>target_volume</b> - an estimate of the volume of the cluster to find. To estimate the target volume, you could first estimate the number of vertices in the cluster you would like to find, and then multiply by the degree of the seed vertex.</li>
 </ul>
-<p>Given these arguments, stag.cluster.local_cluster will return a list of vertices which form a cluster around the seed vertex, and whose total volume is close to the target volume.</p>
+<p>Given these arguments, <a class="el" href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e" title="Local clustering algorithm based on personalised Pagerank.">stag.cluster.local_cluster</a> will return a list of vertices which form a cluster around the seed vertex, and whose total volume is close to the target volume.</p>
 <p>For example, to find the clusters in a barbell graph:</p>
-<div class="fragment"><div class="line"><span class="keyword">import</span> stag.graph</div>
-<div class="line"><span class="keyword">import</span> stag.cluster</div>
-<div class="line">g = stag.graph.barbell_graph(5)</div>
-<div class="line">cluster = stag.cluster.local_cluster(g, 0, 20)</div>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1cluster.html">stag.cluster</a></div>
+<div class="line">g = <a class="code hl_function" href="namespacestag_1_1graph.html#af1efceee2f7cd0163ab13f96531ce4bf">stag.graph.barbell_graph</a>(5)</div>
+<div class="line">cluster = <a class="code hl_function" href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e">stag.cluster.local_cluster</a>(g, 0, 20)</div>
 <div class="line">print(cluster)</div>
-<div class="line">cluster = stag.cluster.local_cluster(g, 9, 20)</div>
+<div class="line">cluster = <a class="code hl_function" href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e">stag.cluster.local_cluster</a>(g, 9, 20)</div>
 <div class="line">print(cluster)</div>
+<div class="ttc" id="anamespacestag_1_1cluster_html"><div class="ttname"><a href="namespacestag_1_1cluster.html">stag.cluster</a></div><div class="ttdef"><b>Definition:</b> cluster.py:1</div></div>
+<div class="ttc" id="anamespacestag_1_1cluster_html_af7f8a290abdd805c14934855a3e8fc6e"><div class="ttname"><a href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e">stag.cluster.local_cluster</a></div><div class="ttdeci">List[int] local_cluster(graph.LocalGraph g, int seed_vertex, float target_volume)</div><div class="ttdoc">Local clustering algorithm based on personalised Pagerank.</div><div class="ttdef"><b>Definition:</b> cluster.py:28</div></div>
+<div class="ttc" id="anamespacestag_1_1graph_html_af1efceee2f7cd0163ab13f96531ce4bf"><div class="ttname"><a href="namespacestag_1_1graph.html#af1efceee2f7cd0163ab13f96531ce4bf">stag.graph.barbell_graph</a></div><div class="ttdeci">Graph barbell_graph(n)</div><div class="ttdoc">Construct a barbell graph.</div><div class="ttdef"><b>Definition:</b> graph.py:497</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

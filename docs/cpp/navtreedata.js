@@ -41,33 +41,6 @@ var NAVTREE =
         [ "Local clustering", "getting-started.html#autotoc_md10", null ]
       ] ]
     ] ],
-    [ "Changelog", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html", [
-      [ "[1.0.0] - 2023-02-16", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md12", [
-        [ "Changed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md13", null ],
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md14", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md15", null ]
-      ] ],
-      [ "[0.4.0] - 2023-01-16", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md16", [
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md17", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md18", null ]
-      ] ],
-      [ "[0.3.0] - 2022-11-18", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md19", [
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md20", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md21", null ]
-      ] ],
-      [ "[0.2.1] - 2022-10-19", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md22", [
-        [ "Changed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md23", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md24", null ],
-        [ "Fixed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md25", null ]
-      ] ],
-      [ "[0.2.0] - 2022-10-15", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md26", [
-        [ "Changed", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md27", null ],
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md28", null ]
-      ] ],
-      [ "[0.1.6] - 2022-10-10", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md29", [
-        [ "Added", "md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html#autotoc_md30", null ]
-      ] ]
-    ] ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Modules", "files.html", "files" ],
     [ "STAG Python", "^https://staglibrary.io/docs/python", null ],

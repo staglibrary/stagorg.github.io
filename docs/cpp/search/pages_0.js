@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['changelog_0',['Changelog',['../md__home_runner_work_stag_stag_stag_lib_CHANGELOG.html',1,'']]]
+  ['getting_20started_0',['Getting Started',['../getting-started.html',1,'']]]
 ];

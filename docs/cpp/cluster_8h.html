@@ -288,7 +288,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The ACL local clustering algorithm. Given a graph and starting vertex, returns a cluster close to the starting vertex, constructed in a local way.</p>
-<p>The locality parameter is passed as the alpha parameter in the personalised pagerank calculation.</p>
+<p>The locality parameter is passed as the alpha parameter in the personalised Pagerank calculation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>a graph object implementing the LocalGraph interface </td></tr>
@@ -376,7 +376,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Compute the approximate Pagerank vector.</p>
-<p>The parameters s, alpha, and epsilon are used as described in the ACL paper.</p>
+<p>The parameters seed_vector, alpha, and epsilon are used as described in the ACL paper.</p>
 <p>Note that the dimension of the returned vectors may not match the true number of vertices in the graph provided since the approximate pagerank is computed locally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

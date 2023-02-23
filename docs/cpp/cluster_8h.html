@@ -377,22 +377,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Compute the approximate Pagerank vector.</p>
 <p>The parameters seed_vector, alpha, and epsilon are used as described in the ACL paper.</p>
-<p>Note that the dimension of the returned vectors may not match the correct number of vertices in the graph provided since the approximate pagerank is computed locally.</p>
+<p>Note that the dimension of the returned vectors may not match the correct number of vertices in the graph provided since the approximate Pagerank is computed locally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>a <a class="el" href="classstag_1_1LocalGraph.html" title="An abstract class which defines methods for exploring the local neighborhood of vertices in a graph.">stag::LocalGraph</a> object </td></tr>
-    <tr><td class="paramname">seed_vector</td><td>the seed vector of the personalised pagerank </td></tr>
-    <tr><td class="paramname">alpha</td><td>the locality parameter of the personalised pagerank </td></tr>
-    <tr><td class="paramname">epsilon</td><td>the error parameter of the personalised pagerank </td></tr>
+    <tr><td class="paramname">seed_vector</td><td>the seed vector of the personalised Pagerank </td></tr>
+    <tr><td class="paramname">alpha</td><td>the locality parameter of the personalised Pagerank </td></tr>
+    <tr><td class="paramname">epsilon</td><td>the error parameter of the personalised Pagerank </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A tuple of sparse column vectors corresponding to<ul>
-<li>p: the approximate pagerank vector</li>
+<li>p: the approximate Pagerank vector</li>
 <li>r: the residual vector</li>
 </ul>
 </dd></dl>
-<p>By the definition of approximate pagerank, it is the case that p + ppr(r, alpha) = ppr(s, alpha).</p>
+<p>By the definition of approximate Pagerank, it holds that p + ppr(r, alpha) = ppr(s, alpha).</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::invalid_argument</td><td>if the provided seed_vector is not a column vector.</td></tr>
@@ -429,7 +429,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Find the sweep set of the given vector with the minimum conductance.</p>
-<p>First, sort the vector such that \(v_1, \ldots, v_n\). Then let</p>
+<p>First, sort the vector such that \(v_1&lt;= \ldots &lt;= v_n\). Then let</p>
 <p class="formulaDsp">
 \[
     S_i = \{v_j : j &lt;= i\}
@@ -442,7 +442,7 @@ Functions</h2></td></tr>
 \]
 </p>
 <p>where \(\phi(S)\) is the conductance of \(S\).</p>
-<p>This method is expected to be run on vectors whose support is much less than the total size of the graph. If the total volume of the support of vec is larger than half of the volume of the total graph, then this method may return unexpected results.</p>
+<p>This method is expected to be run on vectors whose support is much less than the total size of the graph. If the total volume of the support of vec is larger than half of the volume of an entire graph, then this method may return unexpected results.</p>
 <p>Note that the caller is responsible for any required normalisation of the input vector. In particular, this method does not normalise the vector by the node degrees.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

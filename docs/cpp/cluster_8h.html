@@ -287,13 +287,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The ACL local clustering algorithm. Given a graph and starting vertex, returns a cluster close to the starting vertex, constructed in a local way.</p>
+<p>The ACL local clustering algorithm. Given a graph and starting vertex, return a cluster close to the starting vertex, constructed in a local way.</p>
 <p>The locality parameter is passed as the alpha parameter in the personalised Pagerank calculation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>a graph object implementing the LocalGraph interface </td></tr>
     <tr><td class="paramname">seed_vertex</td><td>the starting vertex in the graph </td></tr>
-    <tr><td class="paramname">locality</td><td>a value in \([0, 1]\) indicating how 'local' the cluster should be. A value of \(1\) will return only the seed vertex and a value of \(0\) will explore the whole graph. </td></tr>
+    <tr><td class="paramname">locality</td><td>a value in \([0, 1]\) indicating how 'local' the cluster should be. A value of \(1\) will return only the seed vertex, and a value of \(0\) will explore the whole graph. </td></tr>
     <tr><td class="paramname">error</td><td>(optional) - the acceptable error in the calculation of the approximate pagerank. Default \(0.001\). </td></tr>
   </table>
   </dd>
@@ -377,7 +377,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Compute the approximate Pagerank vector.</p>
 <p>The parameters seed_vector, alpha, and epsilon are used as described in the ACL paper.</p>
-<p>Note that the dimension of the returned vectors may not match the true number of vertices in the graph provided since the approximate pagerank is computed locally.</p>
+<p>Note that the dimension of the returned vectors may not match the correct number of vertices in the graph provided since the approximate pagerank is computed locally.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">graph</td><td>a <a class="el" href="classstag_1_1LocalGraph.html" title="An abstract class which defines methods for exploring the local neighborhood of vertices in a graph.">stag::LocalGraph</a> object </td></tr>

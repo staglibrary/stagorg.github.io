@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7elocalgraph_0',['~LocalGraph',['../classstag_1_1LocalGraph.html#a897f4ce6ea5484aa81d0d14da0e56eaa',1,'stag::LocalGraph']]]
+  ['weight_0',['weight',['../structstag_1_1edge.html#a2e64fa31365647f7352e5cd8224c37bb',1,'stag::edge']]]
 ];

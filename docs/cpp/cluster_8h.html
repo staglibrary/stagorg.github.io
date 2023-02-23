@@ -141,6 +141,8 @@ Functions</h2></td></tr>
 <tr class="separator:aff04898668cea9bc9fa473fb7d491457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a9556a1160d25765f67b6bc5a5b2cac35">stag::sweep_set_conductance</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> &amp;vec)</td></tr>
 <tr class="separator:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b7ce8f870ab46d7c7584534cbc925d4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a1b7ce8f870ab46d7c7584534cbc925d4">stag::adjusted_rand_index</a> (std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;gt_labels, std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;labels)</td></tr>
+<tr class="separator:a1b7ce8f870ab46d7c7584534cbc925d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a92240a6d68323b538fd245077eb3e432" name="a92240a6d68323b538fd245077eb3e432"></a>
@@ -185,7 +187,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:161</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:168</div></div>
 </div><!-- fragment --><p>The spectral clustering algorithm has the following steps.</p><ul>
 <li>Compute the \(k\) smallest eigenvectors of the normalised Laplacian matrix.</li>
 <li>Embed the vertices into \(\mathbb{R}^k\) according to the eigenvectors.</li>
@@ -452,6 +454,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vec which give the minimum conductance in the given graph </dd></dl>
+
+</div>
+</div>
+<a id="a1b7ce8f870ab46d7c7584534cbc925d4" name="a1b7ce8f870ab46d7c7584534cbc925d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b7ce8f870ab46d7c7584534cbc925d4">&#9670;&#160;</a></span>adjusted_rand_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double stag::adjusted_rand_index </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gt_labels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the Adjusted Rand Index between two label vectors.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gt_labels</td><td>the ground truth labels for the dataset </td></tr>
+    <tr><td class="paramname">labels</td><td>the candidate labels whose ARI should be calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the ARI between the two labels vectors</dd></dl>
+<dl class="section user"><dt>References</dt><dd>W. M. Rand. Objective criteria for the evaluation of clustering methods. Journal of the American Statistical Association. 66 (336): 846–850. 1971. </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['total_5fvolume_0',['total_volume',['../classstag_1_1Graph.html#ae9d2d6c8cd34f5a822b459fe309fa88a',1,'stag::Graph']]]
+  ['rayleigh_5fquotient_0',['rayleigh_quotient',['../spectrum_8h.html#a3916336bc10a9e2b373ecc4cb5dae5b0',1,'stag']]]
 ];

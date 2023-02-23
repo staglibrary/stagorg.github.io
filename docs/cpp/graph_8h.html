@@ -146,6 +146,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a0c328014088200f0b1217356fad00372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6a866d72ff20e19e40c84774c534375"><td class="memItemLeft" align="right" valign="top">typedef Eigen::SparseMatrix&lt; double, Eigen::ColMajor, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></td></tr>
 <tr class="separator:ae6a866d72ff20e19e40c84774c534375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a943bcf6d6853aaf2eaf921602dfa65bc"><td class="memItemLeft" align="right" valign="top">typedef Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a></td></tr>
+<tr class="separator:a943bcf6d6853aaf2eaf921602dfa65bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca13b09c6034bbb7c05b5d378d857cc"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Triplet&lt; double, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="graph_8h.html#a2ca13b09c6034bbb7c05b5d378d857cc">EdgeTriplet</a></td></tr>
 <tr class="separator:a2ca13b09c6034bbb7c05b5d378d857cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -188,6 +190,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The fundamental datatype used in this library is the sparse matrix. We use the <code>Eigen::SparseMatrix</code> class in column-major format. </p>
+
+</div>
+</div>
+<a id="a943bcf6d6853aaf2eaf921602dfa65bc" name="a943bcf6d6853aaf2eaf921602dfa65bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a943bcf6d6853aaf2eaf921602dfa65bc">&#9670;&#160;</a></span>DenseMat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Eigen::MatrixXd <a class="el" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Occasionally, it is more efficient to use a dense matrix, such as when the matrix is very small.</p>
+<p>In this case, we use the <code>Eigen::MatrixXd</code> class. </p>
 
 </div>
 </div>

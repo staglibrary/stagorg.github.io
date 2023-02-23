@@ -146,6 +146,16 @@ Functions</h2></td></tr>
 <tr class="separator:a0e42e09fdcfe0688297577a4d07ce05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1660df16d6aaac24753cad2b5879cff9"><td class="memItemLeft" align="right" valign="top">Eigen::MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a1660df16d6aaac24753cad2b5879cff9">stag::compute_eigenvectors</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num)</td></tr>
 <tr class="separator:a1660df16d6aaac24753cad2b5879cff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69196392b04317d5ff81bb3b53dfa62c"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a69196392b04317d5ff81bb3b53dfa62c">stag::power_method</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num_iterations, Eigen::VectorXd initial_vector)</td></tr>
+<tr class="separator:a69196392b04317d5ff81bb3b53dfa62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe5ec72ea04fdd245d0232fbe143087c"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#abe5ec72ea04fdd245d0232fbe143087c">stag::power_method</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> num_iterations)</td></tr>
+<tr class="separator:abe5ec72ea04fdd245d0232fbe143087c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03cc3ed33f1786678eb8fc616e141ac9"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a03cc3ed33f1786678eb8fc616e141ac9">stag::power_method</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, Eigen::VectorXd initial_vector)</td></tr>
+<tr class="separator:a03cc3ed33f1786678eb8fc616e141ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96914e5f66c6f1807501097d08c2c182"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a96914e5f66c6f1807501097d08c2c182">stag::power_method</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat)</td></tr>
+<tr class="separator:a96914e5f66c6f1807501097d08c2c182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3916336bc10a9e2b373ecc4cb5dae5b0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spectrum_8h.html#a3916336bc10a9e2b373ecc4cb5dae5b0">stag::rayleigh_quotient</a> (const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *mat, Eigen::VectorXd &amp;vec)</td></tr>
+<tr class="separator:a3916336bc10a9e2b373ecc4cb5dae5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="afdc477f11de43a0af17c9e25167b555a" name="afdc477f11de43a0af17c9e25167b555a"></a>
@@ -196,7 +206,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Compute the eigenvalues and eigenvectors of a given matrix.</p>
-<p>By default, this will compute the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a Spectra::SortRule object. This is likely to be one of the following.</p><ul>
+<p>By default, this will compute the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a <code>Spectra::SortRule</code> object. This is likely to be one of the following.</p><ul>
 <li><code>Spectra::SortRule::SmallestMagn</code> will return the eigenvalues with smallest magnitude</li>
 <li><code>Spectra::SortRule::LargestMagn</code> will return the eigenvalues with largest magnitude</li>
 </ul>
@@ -222,9 +232,9 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:161</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:168</div></div>
 <div class="ttc" id="agraph_8h_html_a0c328014088200f0b1217356fad00372"><div class="ttname"><a href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></div><div class="ttdeci">long long stag_int</div><div class="ttdef"><b>Definition:</b> graph.h:24</div></div>
-<div class="ttc" id="agraph_8h_html_ae6a866d72ff20e19e40c84774c534375"><div class="ttname"><a href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></div><div class="ttdeci">Eigen::SparseMatrix&lt; double, Eigen::ColMajor, stag_int &gt; SprsMat</div><div class="ttdef"><b>Definition:</b> graph.h:31</div></div>
+<div class="ttc" id="agraph_8h_html_ae6a866d72ff20e19e40c84774c534375"><div class="ttname"><a href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></div><div class="ttdeci">Eigen::SparseMatrix&lt; double, Eigen::ColMajor, stag_int &gt; SprsMat</div><div class="ttdef"><b>Definition:</b> graph.h:30</div></div>
 <div class="ttc" id="aspectrum_8h_html_afdc477f11de43a0af17c9e25167b555a"><div class="ttname"><a href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a></div><div class="ttdeci">std::tuple&lt; Eigen::VectorXd, Eigen::MatrixXd &gt; EigenSystem</div><div class="ttdef"><b>Definition:</b> spectrum.h:39</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -305,7 +315,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Compute the eigenvalues of a given matrix.</p>
-<p>By default, this will compute the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a Spectra::SortRule object. This is likely to be one of the following.</p><ul>
+<p>By default, this will compute the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a <code>Spectra::SortRule</code> object. This is likely to be one of the following.</p><ul>
 <li><code>Spectra::SortRule::SmallestMagn</code> will return the eigenvalues with smallest magnitude</li>
 <li><code>Spectra::SortRule::LargestMagn</code> will return the eigenvalues with largest magnitude</li>
 </ul>
@@ -389,7 +399,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Compute the eigenvectors of a given matrix.</p>
-<p>By default, this will compute the eigenvectors corresponding to the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a Spectra::SortRule object. This is likely to be one of the following.</p><ul>
+<p>By default, this will compute the eigenvectors corresponding to the eigenvalues of smallest magnitude. This default can be overridden by the sort parameter which takes a <code>Spectra::SortRule</code> object. This is likely to be one of the following.</p><ul>
 <li><code>Spectra::SortRule::SmallestMagn</code> will return the eigenvalues with smallest magnitude</li>
 <li><code>Spectra::SortRule::LargestMagn</code> will return the eigenvalues with largest magnitude</li>
 </ul>
@@ -438,6 +448,178 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a69196392b04317d5ff81bb3b53dfa62c" name="a69196392b04317d5ff81bb3b53dfa62c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69196392b04317d5ff81bb3b53dfa62c">&#9670;&#160;</a></span>power_method() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd stag::power_method </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>num_iterations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXd&#160;</td>
+          <td class="paramname"><em>initial_vector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Apply the power method to compute the dominant eigenvector of a matrix.</p>
+<p>Given a matrix \(M\), an initial vector \(v_0\), and a number of iterations \(t\), the power method calculates the vector</p>
+<p class="formulaDsp">
+\[
+   v_t = M^t v_0,
+\]
+</p>
+<p>which is close to the eigenvector of \(M\) with largest eigenvalue.</p>
+<p>The running time of the power method is \(O(t \cdot \mathrm{nnz}(M))\), where \(\mathrm{nnz}(M)\) is the number of non-zero elements in the matrix \(M\).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>the matrix \(M\) on which to operate. </td></tr>
+    <tr><td class="paramname">num_iterations</td><td>(optional) the number of iterations of the power method to apply. It this argument is omitted, \(O(\log(n))\) iterations are used which results in a vector whose Rayleigh quotient is a \((1 - \epsilon)\) approximation of the dominant eigenvalue. </td></tr>
+    <tr><td class="paramname">initial_vector</td><td>(optional) the initial vector to use for the power iteration. If this argument is omitted, a random unit vector will be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the vector \(v_t\) computed by repeated multiplication with \(M\). </dd></dl>
+
+</div>
+</div>
+<a id="abe5ec72ea04fdd245d0232fbe143087c" name="abe5ec72ea04fdd245d0232fbe143087c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe5ec72ea04fdd245d0232fbe143087c">&#9670;&#160;</a></span>power_method() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd stag::power_method </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>num_iterations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a03cc3ed33f1786678eb8fc616e141ac9" name="a03cc3ed33f1786678eb8fc616e141ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03cc3ed33f1786678eb8fc616e141ac9">&#9670;&#160;</a></span>power_method() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd stag::power_method </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXd&#160;</td>
+          <td class="paramname"><em>initial_vector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a96914e5f66c6f1807501097d08c2c182" name="a96914e5f66c6f1807501097d08c2c182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96914e5f66c6f1807501097d08c2c182">&#9670;&#160;</a></span>power_method() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::VectorXd stag::power_method </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
+          <td class="paramname"><em>mat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a3916336bc10a9e2b373ecc4cb5dae5b0" name="a3916336bc10a9e2b373ecc4cb5dae5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3916336bc10a9e2b373ecc4cb5dae5b0">&#9670;&#160;</a></span>rayleigh_quotient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double stag::rayleigh_quotient </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td>
+          <td class="paramname"><em>mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Eigen::VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the Rayleigh quotient of the given vector and matrix.</p>
+<p>Given a matrix \(M\), the Rayleigh quotient of vector \(v\) is</p>
+<p class="formulaDsp">
+\[
+   R(M, v) = \frac{v^\top M v}{v^\top v}.
+\]
+</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>a sparse matrix \(M \in \mathbb{R}^{n \times n}\). </td></tr>
+    <tr><td class="paramname">vec</td><td>a vector \(v \in \mathbb{R}^n\). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the Rayleigh quotient \(R(M, v)\). </dd></dl>
 
 </div>
 </div>

@@ -132,10 +132,18 @@ Functions</h2></td></tr>
 <tr class="separator:a8cf095d277fbb9d2f08b8b228ca71aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f8df0e3faaccd4d7a04713ca9666a9"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#a24f8df0e3faaccd4d7a04713ca9666a9">stag::sbm</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k, double p, double q)</td></tr>
 <tr class="separator:a24f8df0e3faaccd4d7a04713ca9666a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69779a5a264e77c2e97d2028361f0fa7"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#a69779a5a264e77c2e97d2028361f0fa7">stag::general_sbm</a> (std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;cluster_sizes, <a class="el" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a> &amp;probabilities, bool exact)</td></tr>
+<tr class="separator:a69779a5a264e77c2e97d2028361f0fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16e663b6330536bacdc1bc340d116b0"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#af16e663b6330536bacdc1bc340d116b0">stag::general_sbm</a> (std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;cluster_sizes, <a class="el" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a> &amp;probabilities)</td></tr>
+<tr class="separator:af16e663b6330536bacdc1bc340d116b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5354ef7e767e8651e5269d52a504402"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#ad5354ef7e767e8651e5269d52a504402">stag::erdos_renyi</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n, double p, bool exact)</td></tr>
 <tr class="separator:ad5354ef7e767e8651e5269d52a504402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a6abeb447bf4bacdc0349143d76da31"><td class="memItemLeft" align="right" valign="top">Graph&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#a1a6abeb447bf4bacdc0349143d76da31">stag::erdos_renyi</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n, double p)</td></tr>
 <tr class="separator:a1a6abeb447bf4bacdc0349143d76da31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7090c3b799d77a6522b1a2799d911792"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#a7090c3b799d77a6522b1a2799d911792">stag::sbm_gt_labels</a> (<a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n, <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k)</td></tr>
+<tr class="separator:a7090c3b799d77a6522b1a2799d911792"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e51732b2cb9ab98214d17e16ca0dcb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="random_8h.html#ab1e51732b2cb9ab98214d17e16ca0dcb">stag::general_sbm_gt_labels</a> (std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;cluster_sizes)</td></tr>
+<tr class="separator:ab1e51732b2cb9ab98214d17e16ca0dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a8cf095d277fbb9d2f08b8b228ca71aed" name="a8cf095d277fbb9d2f08b8b228ca71aed"></a>
@@ -186,7 +194,7 @@ Functions</h2></td></tr>
 <li>\(p\) if \(u\) and \(v\) are in the same cluster, and</li>
 <li>\(q\) otherwise.</li>
 </ul>
-<p>For large enough values of n, this method samples from an approximate stochastic block model by default which significantly speeds up the execution time. To sample exactly from the stochastic block model, pass the optional 'exact' parameter to the method.</p>
+<p>For large enough values of \(n\), this method samples from an approximate stochastic block model by default which significantly speeds up the execution time. To sample exactly from the stochastic block model, pass the optional 'exact' parameter to the method.</p>
 <p>The approximate sampling method has running time \(O(k^2 + \mathrm{nnz})\) where \(\mathrm{nnz}\) is the number of non-zeros in the generated graph's adjacency matrix, and the exact method has running time \(O(n^2)\).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -231,6 +239,97 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>q</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a69779a5a264e77c2e97d2028361f0fa7" name="a69779a5a264e77c2e97d2028361f0fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69779a5a264e77c2e97d2028361f0fa7">&#9670;&#160;</a></span>general_sbm() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Graph stag::general_sbm </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster_sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a> &amp;&#160;</td>
+          <td class="paramname"><em>probabilities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>exact</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Generate a graph from the general stochastic block mode.</p>
+<p>The <code>cluster_sizes</code> vector specifies the number of vertices in each generated cluster. Let \(k\) be the length of the cluster_sizes vector.</p>
+<p>Then, <code>probabilities</code> should be a \(k \times k\) matrix which specifies the edge probability between every pair of vertices. That is, for each pair of vertices \(u\) and \(v\), the probability of including the edge \(\{u, v\}\) in the graph is \(P(u, v)\), where \(P\) is the <code>probabilities</code> matrix.</p>
+<p>The approximate sampling method has running time \(O(k^2 + \mathrm{nnz})\) where \(\mathrm{nnz}\) is the number of non-zeros in the generated graph's adjacency matrix, and the exact method has running time \(O(n^2)\).</p>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stag/graph.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stag/random.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  std::vector&lt;stag_int&gt; cluster_sizes = {100, 20, 10};</div>
+<div class="line">  <a class="code hl_typedef" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a> prob_mat {{0.4, 0.1, 0.1}, {0.1, 0.7, 0}, {0.1, 0, 1}};</div>
+<div class="line">  <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = <a class="code hl_function" href="random_8h.html#a69779a5a264e77c2e97d2028361f0fa7">stag::general_sbm</a>(cluster_sizes, prob_mat);</div>
+<div class="line">  std::cout &lt;&lt; *myGraph.<a class="code hl_function" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">adjacency</a>() &lt;&lt; std::endl;</div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:168</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html_a1e9cb4cac7ffc06d64ba3cfdefe08d90"><div class="ttname"><a href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div></div>
+<div class="ttc" id="agraph_8h_html_a943bcf6d6853aaf2eaf921602dfa65bc"><div class="ttname"><a href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a></div><div class="ttdeci">Eigen::MatrixXd DenseMat</div><div class="ttdef"><b>Definition:</b> graph.h:38</div></div>
+<div class="ttc" id="arandom_8h_html_a69779a5a264e77c2e97d2028361f0fa7"><div class="ttname"><a href="random_8h.html#a69779a5a264e77c2e97d2028361f0fa7">stag::general_sbm</a></div><div class="ttdeci">Graph general_sbm(std::vector&lt; stag_int &gt; &amp;cluster_sizes, DenseMat &amp;probabilities, bool exact)</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cluster_sizes</td><td>a vector of length \(k\) with the number of vertices in each cluster. </td></tr>
+    <tr><td class="paramname">probabilities</td><td>a \(k \times k\) matrix with the inter-cluster probabilities. </td></tr>
+    <tr><td class="paramname">exact</td><td>(optional) whether to use the exact probability distribution. Default: false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the randomly generated graph </dd></dl>
+
+</div>
+</div>
+<a id="af16e663b6330536bacdc1bc340d116b0" name="af16e663b6330536bacdc1bc340d116b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af16e663b6330536bacdc1bc340d116b0">&#9670;&#160;</a></span>general_sbm() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Graph stag::general_sbm </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster_sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a> &amp;&#160;</td>
+          <td class="paramname"><em>probabilities</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -316,6 +415,101 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
+
+</div>
+</div>
+<a id="a7090c3b799d77a6522b1a2799d911792" name="a7090c3b799d77a6522b1a2799d911792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7090c3b799d77a6522b1a2799d911792">&#9670;&#160;</a></span>sbm_gt_labels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; stag::sbm_gt_labels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a>&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct a vector with the ground truth labels for a graph drawn from the symmetric stochastic block model.</p>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stag/graph.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stag/random.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  <a class="code hl_typedef" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> n = 6;</div>
+<div class="line">  <a class="code hl_typedef" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> k = 3;</div>
+<div class="line">  <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = stag::sbm(n, k, 0.8, 0.1);</div>
+<div class="line"> </div>
+<div class="line">  std::vector&lt;stag_int&gt; gt_labels = stag::sbm_gt_labels(n, k);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// gt_labels is the vector {0, 0, 1, 1, 2, 2}.</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="agraph_8h_html_a0c328014088200f0b1217356fad00372"><div class="ttname"><a href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></div><div class="ttdeci">long long stag_int</div><div class="ttdef"><b>Definition:</b> graph.h:24</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the number of vertices in the graph </td></tr>
+    <tr><td class="paramname">k</td><td>the number of clusters </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the ground truth labels for the vertices in the graph. </dd></dl>
+
+</div>
+</div>
+<a id="ab1e51732b2cb9ab98214d17e16ca0dcb" name="ab1e51732b2cb9ab98214d17e16ca0dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1e51732b2cb9ab98214d17e16ca0dcb">&#9670;&#160;</a></span>general_sbm_gt_labels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; stag::general_sbm_gt_labels </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster_sizes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Construct a vector with the ground truth labels for a graph drawn from the general stochastic block model.</p>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stag/graph.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stag/random.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  std::vector&lt;stag_int&gt; cluster_sizes = {4, 2};</div>
+<div class="line">  <a class="code hl_typedef" href="graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc">DenseMat</a> prob_mat {{0.4, 0.1}, {0.1, 0.7}};</div>
+<div class="line">  <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = <a class="code hl_function" href="random_8h.html#a69779a5a264e77c2e97d2028361f0fa7">stag::general_sbm</a>(cluster_sizes, prob_mat);</div>
+<div class="line"> </div>
+<div class="line">  std::vector&lt;stag_int&gt; gt_labels = <a class="code hl_function" href="random_8h.html#ab1e51732b2cb9ab98214d17e16ca0dcb">stag::general_sbm_gt_labels</a>(cluster_sizes);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// gt_labels is the vector {0, 0, 0, 0, 1, 1}.</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="arandom_8h_html_ab1e51732b2cb9ab98214d17e16ca0dcb"><div class="ttname"><a href="random_8h.html#ab1e51732b2cb9ab98214d17e16ca0dcb">stag::general_sbm_gt_labels</a></div><div class="ttdeci">std::vector&lt; stag_int &gt; general_sbm_gt_labels(std::vector&lt; stag_int &gt; &amp;cluster_sizes)</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cluster_sizes</td><td>a vector of length \(k\) with the number of vertices in each cluster. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the ground truth labels for the vertices in the graph. </dd></dl>
 
 </div>
 </div>

@@ -282,7 +282,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Generate a graph from the general stochastic block mode.</p>
+<p>Generate a graph from the general stochastic block model.</p>
 <p>The <code>cluster_sizes</code> vector specifies the number of vertices in each generated cluster. Let \(k\) be the length of the cluster_sizes vector.</p>
 <p>Then, <code>probabilities</code> should be a \(k \times k\) matrix which specifies the edge probability between every pair of vertices. That is, for each pair of vertices \(u\) and \(v\), the probability of including the edge \(\{u, v\}\) in the graph is \(P(u, v)\), where \(P\) is the <code>probabilities</code> matrix.</p>
 <p>The approximate sampling method has running time \(O(k^2 + \mathrm{nnz})\) where \(\mathrm{nnz}\) is the number of non-zeros in the generated graph's adjacency matrix, and the exact method has running time \(O(n^2)\).</p>

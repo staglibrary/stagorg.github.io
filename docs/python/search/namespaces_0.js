@@ -5,5 +5,6 @@ var searchData=
   ['graphio_2',['graphio',['../namespacestag_1_1graphio.html',1,'stag']]],
   ['neo4j_3',['neo4j',['../namespacestag_1_1neo4j.html',1,'stag']]],
   ['random_4',['random',['../namespacestag_1_1random.html',1,'stag']]],
-  ['stag_5',['stag',['../namespacestag.html',1,'']]]
+  ['spectrum_5',['spectrum',['../namespacestag_1_1spectrum.html',1,'stag']]],
+  ['stag_6',['stag',['../namespacestag.html',1,'']]]
 ];

@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('md_neo4j.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html" title="Represent a neo4j database as a stag.graph.LocalGraph object.">stag.neo4j.Neo4jGraph</a> object provides a convenient interface with Neo4j, a popular graph database. This allows graph algorithms to be executed directly on a graph stored in the database.</p>
-<p>This article will give a quick introduction to Neo4j and demonstrate how to run your first graph algorithms on a graph stored in Neo4j. In this aricle, we will connect to a Neo4j database running in the AuraDB cloud service. The STAG library can also connect to a database running locally.</p>
+<p>This tutorial will give a quick introduction to Neo4j and demonstrate how to run your first graph algorithms on a graph stored in Neo4j. In this tutorial, we will connect to a Neo4j database running in the AuraDB cloud service. The STAG library can also connect to a database running locally.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Setting up a Neo4j Database</h1>
 <p>You should begin by following the introductory steps in the <a href="https://neo4j.com/">Neo4j documentation</a> to set up a database in the cloud using the AuraDB service. We recommend first experimenting with the provided 'Movie' dataset. You will need to note the following information when you create the new database instance.</p>
@@ -148,7 +148,7 @@ Finding Clusters in the Graph</h1>
 <div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1cluster.html">stag.cluster</a></div>
 <div class="line">cluster = <a class="code hl_function" href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e">stag.cluster.local_cluster</a>(g, 0, 100)</div>
 <div class="ttc" id="anamespacestag_1_1cluster_html"><div class="ttname"><a href="namespacestag_1_1cluster.html">stag.cluster</a></div><div class="ttdef"><b>Definition:</b> cluster.py:1</div></div>
-<div class="ttc" id="anamespacestag_1_1cluster_html_af7f8a290abdd805c14934855a3e8fc6e"><div class="ttname"><a href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e">stag.cluster.local_cluster</a></div><div class="ttdeci">List[int] local_cluster(graph.LocalGraph g, int seed_vertex, float target_volume)</div><div class="ttdoc">Local clustering algorithm based on personalised Pagerank.</div><div class="ttdef"><b>Definition:</b> cluster.py:28</div></div>
+<div class="ttc" id="anamespacestag_1_1cluster_html_af7f8a290abdd805c14934855a3e8fc6e"><div class="ttname"><a href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e">stag.cluster.local_cluster</a></div><div class="ttdeci">List[int] local_cluster(graph.LocalGraph g, int seed_vertex, float target_volume)</div><div class="ttdoc">Local clustering algorithm based on personalised Pagerank.</div><div class="ttdef"><b>Definition:</b> cluster.py:60</div></div>
 </div><!-- fragment --><p>Then, assuming we are testing against the Neo4j movies dataset, we can display the cluster as follows.</p>
 <div class="fragment"><div class="line"><span class="keywordflow">for</span> node <span class="keywordflow">in</span> cluster:</div>
 <div class="line">    labels = g.query_node_labels(node)</div>

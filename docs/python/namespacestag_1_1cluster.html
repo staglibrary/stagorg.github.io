@@ -126,6 +126,9 @@ $(document).ready(function(){initNavTree('namespacestag_1_1cluster.html',''); in
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa5aa9cfa99063ac22ad24826840c4c3c"><td class="memItemLeft" align="right" valign="top">List[int]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1cluster.html#aa5aa9cfa99063ac22ad24826840c4c3c">spectral_cluster</a> (<a class="el" href="classstag_1_1graph_1_1Graph.html">graph.Graph</a> g, int k)</td></tr>
+<tr class="memdesc:aa5aa9cfa99063ac22ad24826840c4c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spectral clustering algorithm.  <br /></td></tr>
+<tr class="separator:aa5aa9cfa99063ac22ad24826840c4c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7f8a290abdd805c14934855a3e8fc6e"><td class="memItemLeft" align="right" valign="top">List[int]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1cluster.html#af7f8a290abdd805c14934855a3e8fc6e">local_cluster</a> (<a class="el" href="classstag_1_1graph_1_1LocalGraph.html">graph.LocalGraph</a> g, int seed_vertex, float target_volume)</td></tr>
 <tr class="memdesc:af7f8a290abdd805c14934855a3e8fc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local clustering algorithm based on personalised Pagerank.  <br /></td></tr>
 <tr class="separator:af7f8a290abdd805c14934855a3e8fc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,8 +141,65 @@ Functions</h2></td></tr>
 <tr class="memitem:a266b9d4a762e4c307eaebfdb6db15a20"><td class="memItemLeft" align="right" valign="top">List[int]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1cluster.html#a266b9d4a762e4c307eaebfdb6db15a20">sweep_set_conductance</a> (<a class="el" href="classstag_1_1graph_1_1LocalGraph.html">graph.LocalGraph</a> g, scipy.sparse.csc_matrix v)</td></tr>
 <tr class="memdesc:a266b9d4a762e4c307eaebfdb6db15a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the sweep set of the given vector with the minimum conductance.  <br /></td></tr>
 <tr class="separator:a266b9d4a762e4c307eaebfdb6db15a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a849aa0728edb2312742621e4775a5f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1cluster.html#a5a849aa0728edb2312742621e4775a5f">adjusted_rand_index</a> (List[int] gt_labels, List[int] labels)</td></tr>
+<tr class="memdesc:a5a849aa0728edb2312742621e4775a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Adjusted Rand Index between two label vectors.  <br /></td></tr>
+<tr class="separator:a5a849aa0728edb2312742621e4775a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa5aa9cfa99063ac22ad24826840c4c3c" name="aa5aa9cfa99063ac22ad24826840c4c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5aa9cfa99063ac22ad24826840c4c3c">&#9670;&#160;</a></span>spectral_cluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> List[int] stag.cluster.spectral_cluster </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1graph_1_1Graph.html">graph.Graph</a>&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spectral clustering algorithm. </p>
+<p>This is a simple graph clustering method, which provides a clustering of the entire graph. To use spectral clustering, simply pass a <code><a class="el" href="classstag_1_1graph_1_1Graph.html" title="The core object used to represent graphs for use with the library.">stag.graph.Graph</a></code> object and the number of clusters you would like to find.</p>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1cluster.html">stag.cluster</a></div>
+<div class="line"> </div>
+<div class="line">myGraph = stag.graph.Graph.barbell_graph(10)</div>
+<div class="line">labels = <a class="code hl_function" href="namespacestag_1_1cluster.html#aa5aa9cfa99063ac22ad24826840c4c3c">stag.cluster.spectral_cluster</a>(myGraph, 2)</div>
+<div class="line">print(labels)</div>
+<div class="ttc" id="anamespacestag_1_1cluster_html"><div class="ttname"><a href="namespacestag_1_1cluster.html">stag.cluster</a></div><div class="ttdef"><b>Definition:</b> cluster.py:1</div></div>
+<div class="ttc" id="anamespacestag_1_1cluster_html_aa5aa9cfa99063ac22ad24826840c4c3c"><div class="ttname"><a href="namespacestag_1_1cluster.html#aa5aa9cfa99063ac22ad24826840c4c3c">stag.cluster.spectral_cluster</a></div><div class="ttdeci">List[int] spectral_cluster(graph.Graph g, int k)</div><div class="ttdoc">Spectral clustering algorithm.</div><div class="ttdef"><b>Definition:</b> cluster.py:39</div></div>
+<div class="ttc" id="anamespacestag_1_1graph_html"><div class="ttname"><a href="namespacestag_1_1graph.html">stag.graph</a></div><div class="ttdef"><b>Definition:</b> graph.py:1</div></div>
+</div><!-- fragment --><p>The spectral clustering algorithm has the following steps.</p><ul>
+<li>Compute the \(k\) smallest eigenvectors of the normalised Laplacian matrix.</li>
+<li>Embed the vertices into \(\mathbb{R}^k\) according to the eigenvectors.</li>
+<li>Cluster the vertices into \(k\) clusters using a \(k\)-means clustering algorithm.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>the graph object to be clustered </td></tr>
+    <tr><td class="paramname">k</td><td>the number of clusters to find. Should be less than \(n/2\). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of ints giving the cluster membership for each vertex in the graph</dd></dl>
+<dl class="section user"><dt>References</dt><dd>A. Ng, M. Jordan, Y. Weiss. On spectral clustering: Analysis and an algorithm. NeurIPS'01 </dd></dl>
+
+</div>
+</div>
 <a id="af7f8a290abdd805c14934855a3e8fc6e" name="af7f8a290abdd805c14934855a3e8fc6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7f8a290abdd805c14934855a3e8fc6e">&#9670;&#160;</a></span>local_cluster()</h2>
 
@@ -360,6 +420,45 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a vector containing the indices of vec which give the minimum conductance in the given graph </dd></dl>
+
+</div>
+</div>
+<a id="a5a849aa0728edb2312742621e4775a5f" name="a5a849aa0728edb2312742621e4775a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a849aa0728edb2312742621e4775a5f">&#9670;&#160;</a></span>adjusted_rand_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> float stag.cluster.adjusted_rand_index </td>
+          <td>(</td>
+          <td class="paramtype">List[int]&#160;</td>
+          <td class="paramname"><em>gt_labels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List[int]&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the Adjusted Rand Index between two label vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gt_labels</td><td>the ground truth labels for the dataset </td></tr>
+    <tr><td class="paramname">labels</td><td>the candidate labels whose ARI should be calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the ARI between the two labels vectors</dd></dl>
+<dl class="section user"><dt>References</dt><dd>W. M. Rand. Objective criteria for the evaluation of clustering methods. Journal of the American Statistical Association. 66 (336): 846–850. 1971. </dd></dl>
 
 </div>
 </div>

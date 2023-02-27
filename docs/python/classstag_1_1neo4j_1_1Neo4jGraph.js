@@ -10,5 +10,6 @@ var classstag_1_1neo4j_1_1Neo4jGraph =
     [ "query_node_labels", "classstag_1_1neo4j_1_1Neo4jGraph.html#a573b9b93a4b3d634eead921d5eb50851", null ],
     [ "query_id", "classstag_1_1neo4j_1_1Neo4jGraph.html#a5a6bb50fc195a3a934b2dc80c3dbf312", null ],
     [ "query_property", "classstag_1_1neo4j_1_1Neo4jGraph.html#a6c9cf73a7445b289c05c374d63f1051c", null ],
+    [ "vertex_exists", "classstag_1_1neo4j_1_1Neo4jGraph.html#af2ffcb86fa9b237106b7ce1a5089516e", null ],
     [ "driver", "classstag_1_1neo4j_1_1Neo4jGraph.html#aea59c69e324c57c74e4da0a4bbc4948d", null ]
 ];

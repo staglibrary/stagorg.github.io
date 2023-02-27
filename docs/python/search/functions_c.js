@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['to_5fnetworkx_0',['to_networkx',['../classstag_1_1graph_1_1Graph.html#ad80036f95b1a27f52875056b79fa2a97',1,'stag::graph::Graph']]],
-  ['total_5fvolume_1',['total_volume',['../classstag_1_1graph_1_1Graph.html#af10aa985cc873049ff74d5fe9a4ee22a',1,'stag::graph::Graph']]]
+  ['query_5fid_0',['query_id',['../classstag_1_1neo4j_1_1Neo4jGraph.html#a5a6bb50fc195a3a934b2dc80c3dbf312',1,'stag::neo4j::Neo4jGraph']]],
+  ['query_5fnode_5flabels_1',['query_node_labels',['../classstag_1_1neo4j_1_1Neo4jGraph.html#a573b9b93a4b3d634eead921d5eb50851',1,'stag::neo4j::Neo4jGraph']]],
+  ['query_5fproperty_2',['query_property',['../classstag_1_1neo4j_1_1Neo4jGraph.html#a6c9cf73a7445b289c05c374d63f1051c',1,'stag::neo4j::Neo4jGraph']]]
 ];

@@ -172,6 +172,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c9cf73a7445b289c05c374d63f1051c"><td class="memItemLeft" align="right" valign="top">str&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#a6c9cf73a7445b289c05c374d63f1051c">query_property</a> (self, int id, str property_name)</td></tr>
 <tr class="memdesc:a6c9cf73a7445b289c05c374d63f1051c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the requested property of a Neo4j node.  <br /></td></tr>
 <tr class="separator:a6c9cf73a7445b289c05c374d63f1051c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2ffcb86fa9b237106b7ce1a5089516e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#af2ffcb86fa9b237106b7ce1a5089516e">vertex_exists</a> (self, int v)</td></tr>
+<tr class="memdesc:af2ffcb86fa9b237106b7ce1a5089516e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a vertex ID, returns true or false to indicate whether the vertex exists in the graph.  <br /></td></tr>
+<tr class="separator:af2ffcb86fa9b237106b7ce1a5089516e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a748581479b88b5ca5797a8ab8a4e58a0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1LocalGraph.html#a748581479b88b5ca5797a8ab8a4e58a0">__init__</a> (self)</td></tr>
 <tr class="memdesc:a748581479b88b5ca5797a8ab8a4e58a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default LocalGraph constructor.  <br /></td></tr>
 <tr class="separator:a748581479b88b5ca5797a8ab8a4e58a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,6 +196,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a07610abc6236ee6306345eea16d52bd3"><td class="memItemLeft" align="right" valign="top">List[int]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1LocalGraph.html#a07610abc6236ee6306345eea16d52bd3">degrees_unweighted</a> (self, List[int] vertices)</td></tr>
 <tr class="memdesc:a07610abc6236ee6306345eea16d52bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a list of vertices, return a list of their unweighted degrees.  <br /></td></tr>
 <tr class="separator:a07610abc6236ee6306345eea16d52bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59a5e11011ac6394aa5aab6123830c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1LocalGraph.html#aa59a5e11011ac6394aa5aab6123830c6">vertex_exists</a> (self, int v)</td></tr>
+<tr class="memdesc:aa59a5e11011ac6394aa5aab6123830c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a vertex ID, returns true or false to indicate whether the vertex exists in the graph.  <br /></td></tr>
+<tr class="separator:aa59a5e11011ac6394aa5aab6123830c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -537,7 +543,7 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the Neo4j node ID of a node with the given property value </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the Neo4j node ID of a node with the given property value. Returns None if there is no node in the dataabase with the requested property. </dd></dl>
 
 </div>
 </div>
@@ -585,7 +591,46 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the value of the requested property on the given node </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the value of the requested property on the given node. Returns None if the requested property is not set on the requested node, or if the node id does not exist. </dd></dl>
+
+</div>
+</div>
+<a id="af2ffcb86fa9b237106b7ce1a5089516e" name="af2ffcb86fa9b237106b7ce1a5089516e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ffcb86fa9b237106b7ce1a5089516e">&#9670;&#160;</a></span>vertex_exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> bool stag.neo4j.Neo4jGraph.vertex_exists </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Given a vertex ID, returns true or false to indicate whether the vertex exists in the graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>the vertex index to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a boolean indicating whether there exists a vertex with the given index </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classstag_1_1graph_1_1LocalGraph.html#aa59a5e11011ac6394aa5aab6123830c6">stag.graph.LocalGraph</a>.</p>
 
 </div>
 </div>

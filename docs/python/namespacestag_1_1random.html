@@ -129,9 +129,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a1dad47dbb4ab0f22bfdcf3a36bed4ca0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classstag_1_1graph_1_1Graph.html">graph.Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1random.html#a1dad47dbb4ab0f22bfdcf3a36bed4ca0">sbm</a> (int n, int k, float p, float q, bool exact=False)</td></tr>
 <tr class="memdesc:a1dad47dbb4ab0f22bfdcf3a36bed4ca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a graph from the symmetric stochastic block model.  <br /></td></tr>
 <tr class="separator:a1dad47dbb4ab0f22bfdcf3a36bed4ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36a06f9b73157cade7879df022a6500"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classstag_1_1graph_1_1Graph.html">graph.Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1random.html#ad36a06f9b73157cade7879df022a6500">general_sbm</a> (List[int] cluster_sizes, np.ndarray probabilities, bool exact=False)</td></tr>
+<tr class="memdesc:ad36a06f9b73157cade7879df022a6500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a graph from the general stochastic block model.  <br /></td></tr>
+<tr class="separator:ad36a06f9b73157cade7879df022a6500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f4ef91b58af3f057ea668c637889bf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classstag_1_1graph_1_1Graph.html">graph.Graph</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1random.html#a0f4ef91b58af3f057ea668c637889bf4">erdos_renyi</a> (int n, float p, bool exact=False)</td></tr>
 <tr class="memdesc:a0f4ef91b58af3f057ea668c637889bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a graph from the Erdos-Renyi model.  <br /></td></tr>
 <tr class="separator:a0f4ef91b58af3f057ea668c637889bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e8a19425454b2cea12c22094c39f16"><td class="memItemLeft" align="right" valign="top">List[int]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1random.html#ad7e8a19425454b2cea12c22094c39f16">sbm_gt_labels</a> (int n, int k)</td></tr>
+<tr class="memdesc:ad7e8a19425454b2cea12c22094c39f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector with the ground truth labels for a graph drawn from the symmetric stochastic block model.  <br /></td></tr>
+<tr class="separator:ad7e8a19425454b2cea12c22094c39f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f7691319072130a2cdd556f64f29956"><td class="memItemLeft" align="right" valign="top">List[int]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1random.html#a8f7691319072130a2cdd556f64f29956">general_sbm_gt_labels</a> (List[int] cluster_sizes)</td></tr>
+<tr class="memdesc:a8f7691319072130a2cdd556f64f29956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector with the ground truth labels for a graph drawn from the general stochastic block model.  <br /></td></tr>
+<tr class="separator:a8f7691319072130a2cdd556f64f29956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a1dad47dbb4ab0f22bfdcf3a36bed4ca0" name="a1dad47dbb4ab0f22bfdcf3a36bed4ca0"></a>
@@ -195,6 +204,68 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad36a06f9b73157cade7879df022a6500" name="ad36a06f9b73157cade7879df022a6500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad36a06f9b73157cade7879df022a6500">&#9670;&#160;</a></span>general_sbm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> <a class="el" href="classstag_1_1graph_1_1Graph.html">graph.Graph</a> stag.random.general_sbm </td>
+          <td>(</td>
+          <td class="paramtype">List[int]&#160;</td>
+          <td class="paramname"><em>cluster_sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">np.ndarray&#160;</td>
+          <td class="paramname"><em>probabilities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &#160;</td>
+          <td class="paramname"><em>exact</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a graph from the general stochastic block model. </p>
+<p>The <code>cluster_sizes</code> list specifies the number of vertices in each generated cluster. Let \(k\) be the length of the cluster_sizes list.</p>
+<p>Then, <code>probabilities</code> should be a \(k \times k\) matrix which specifies the edge probability between every pair of vertices. That is, for each pair of vertices \(u\) and \(v\), the probability of including the edge \(\{u, v\}\) in the graph is \(P(u, v)\), where \(P\) is the <code>probabilities</code> matrix.</p>
+<p>The approximate sampling method has running time \(O(k^2 + \mathrm{nnz})\) where \(\mathrm{nnz}\) is the number of non-zeros in the generated graph's adjacency matrix, and the exact method has running time \(O(n^2)\).</p>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1random.html">stag.random</a></div>
+<div class="line"> </div>
+<div class="line">cluster_sizes = [100, 20, 10]</div>
+<div class="line">prob_mat = np.asarray([[0.4, 0.1, 0.1],</div>
+<div class="line">                       [0.1, 0.7, 0],</div>
+<div class="line">                       [0.1, 0, 1]])</div>
+<div class="line">my_graph = <a class="code hl_function" href="namespacestag_1_1random.html#ad36a06f9b73157cade7879df022a6500">stag.random.general_sbm</a>(cluster_sizes, prob_mat)</div>
+<div class="line">print(my_graph.adjacency())</div>
+<div class="ttc" id="anamespacestag_1_1graph_html"><div class="ttname"><a href="namespacestag_1_1graph.html">stag.graph</a></div><div class="ttdef"><b>Definition:</b> graph.py:1</div></div>
+<div class="ttc" id="anamespacestag_1_1random_html"><div class="ttname"><a href="namespacestag_1_1random.html">stag.random</a></div><div class="ttdef"><b>Definition:</b> random.py:1</div></div>
+<div class="ttc" id="anamespacestag_1_1random_html_ad36a06f9b73157cade7879df022a6500"><div class="ttname"><a href="namespacestag_1_1random.html#ad36a06f9b73157cade7879df022a6500">stag.random.general_sbm</a></div><div class="ttdeci">graph.Graph general_sbm(List[int] cluster_sizes, np.ndarray probabilities, bool exact=False)</div><div class="ttdoc">Generate a graph from the general stochastic block model.</div><div class="ttdef"><b>Definition:</b> random.py:80</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cluster_sizes</td><td>a list of length \(k\) with the number of vertices in each cluster. </td></tr>
+    <tr><td class="paramname">probabilities</td><td>a \(k \times k\) numpy matrix with the inter-cluster probabilities. </td></tr>
+    <tr><td class="paramname">exact</td><td>(optional) whether to use the exact probability distribution. Default: false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the randomly generated graph </dd></dl>
+
+</div>
+</div>
 <a id="a0f4ef91b58af3f057ea668c637889bf4" name="a0f4ef91b58af3f057ea668c637889bf4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f4ef91b58af3f057ea668c637889bf4">&#9670;&#160;</a></span>erdos_renyi()</h2>
 
@@ -239,6 +310,93 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the randomly generated <a class="el" href="classstag_1_1graph_1_1Graph.html" title="The core object used to represent graphs for use with the library.">stag.graph.Graph</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad7e8a19425454b2cea12c22094c39f16" name="ad7e8a19425454b2cea12c22094c39f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e8a19425454b2cea12c22094c39f16">&#9670;&#160;</a></span>sbm_gt_labels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> List[int] stag.random.sbm_gt_labels </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a vector with the ground truth labels for a graph drawn from the symmetric stochastic block model. </p>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1random.html">stag.random</a></div>
+<div class="line"> </div>
+<div class="line">n = 6</div>
+<div class="line">k = 3</div>
+<div class="line">myGraph = <a class="code hl_function" href="namespacestag_1_1random.html#a1dad47dbb4ab0f22bfdcf3a36bed4ca0">stag.random.sbm</a>(n, k, 0.8, 0.1)</div>
+<div class="line"> </div>
+<div class="line">gt_labels = <a class="code hl_function" href="namespacestag_1_1random.html#ad7e8a19425454b2cea12c22094c39f16">stag.random.sbm_gt_labels</a>(n, k)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment"># gt_labels is the list [0, 0, 1, 1, 2, 2].</span></div>
+<div class="ttc" id="anamespacestag_1_1random_html_a1dad47dbb4ab0f22bfdcf3a36bed4ca0"><div class="ttname"><a href="namespacestag_1_1random.html#a1dad47dbb4ab0f22bfdcf3a36bed4ca0">stag.random.sbm</a></div><div class="ttdeci">graph.Graph sbm(int n, int k, float p, float q, bool exact=False)</div><div class="ttdoc">Generate a graph from the symmetric stochastic block model.</div><div class="ttdef"><b>Definition:</b> random.py:32</div></div>
+<div class="ttc" id="anamespacestag_1_1random_html_ad7e8a19425454b2cea12c22094c39f16"><div class="ttname"><a href="namespacestag_1_1random.html#ad7e8a19425454b2cea12c22094c39f16">stag.random.sbm_gt_labels</a></div><div class="ttdeci">List[int] sbm_gt_labels(int n, int k)</div><div class="ttdoc">Construct a vector with the ground truth labels for a graph drawn from the symmetric stochastic block...</div><div class="ttdef"><b>Definition:</b> random.py:130</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the number of vertices in the graph </td></tr>
+    <tr><td class="paramname">k</td><td>the number of clusters </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of integers containing the ground truth labels for the vertices in the graph. </dd></dl>
+
+</div>
+</div>
+<a id="a8f7691319072130a2cdd556f64f29956" name="a8f7691319072130a2cdd556f64f29956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7691319072130a2cdd556f64f29956">&#9670;&#160;</a></span>general_sbm_gt_labels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> List[int] stag.random.general_sbm_gt_labels </td>
+          <td>(</td>
+          <td class="paramtype">List[int]&#160;</td>
+          <td class="paramname"><em>cluster_sizes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a vector with the ground truth labels for a graph drawn from the general stochastic block model. </p>
+<dl class="section user"><dt>Example</dt><dd></dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1random.html">stag.random</a></div>
+<div class="line"> </div>
+<div class="line">cluster_sizes = [4, 2]</div>
+<div class="line">gt_labels = <a class="code hl_function" href="namespacestag_1_1random.html#a8f7691319072130a2cdd556f64f29956">stag.random.general_sbm_gt_labels</a>(cluster_sizes)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment"># gt_labels is the list [0, 0, 0, 0, 1, 1]</span></div>
+<div class="ttc" id="anamespacestag_1_1random_html_a8f7691319072130a2cdd556f64f29956"><div class="ttname"><a href="namespacestag_1_1random.html#a8f7691319072130a2cdd556f64f29956">stag.random.general_sbm_gt_labels</a></div><div class="ttdeci">List[int] general_sbm_gt_labels(List[int] cluster_sizes)</div><div class="ttdoc">Construct a vector with the ground truth labels for a graph drawn from the general stochastic block m...</div><div class="ttdef"><b>Definition:</b> random.py:155</div></div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cluster_sizes</td><td>a list of length \(k\) with the number of vertices in each cluster. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the ground truth labels for the vertices in the graph. </dd></dl>
 
 </div>
 </div>

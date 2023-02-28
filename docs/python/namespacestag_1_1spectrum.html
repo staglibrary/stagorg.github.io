@@ -181,14 +181,16 @@ Functions</h2></td></tr>
 <li><code>LM</code> will return the eigenvalues with largest magnitude</li>
 </ul>
 <p>The following example demonstrates how to compute the 3 largest eigenvectors and eigenvalues of a cycle graph.</p>
-<div class="fragment"><div class="line"><span class="comment">#import stag.graph</span></div>
-<div class="line"><span class="comment">#import stag.spectrum</span></div>
+<div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1graph.html">stag.graph</a></div>
+<div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1spectrum.html">stag.spectrum</a></div>
 <div class="line"> </div>
 <div class="line">myGraph = <a class="code hl_function" href="namespacestag_1_1graph.html#aeeb2ffa0d806038e200b30ac4d2b1d36">stag.graph.cycle_graph</a>(10)</div>
 <div class="line">lap = myGraph.normalised_laplacian()</div>
 <div class="line">eigenvalues, eigenvectors = <a class="code hl_function" href="namespacestag_1_1spectrum.html#a5047735ae3aa19cd8cc71281112c74cc">stag.spectrum.compute_eigensystem</a>(</div>
 <div class="line">    lap, 3, <span class="stringliteral">&#39;LM&#39;</span>)</div>
+<div class="ttc" id="anamespacestag_1_1graph_html"><div class="ttname"><a href="namespacestag_1_1graph.html">stag.graph</a></div><div class="ttdef"><b>Definition:</b> graph.py:1</div></div>
 <div class="ttc" id="anamespacestag_1_1graph_html_aeeb2ffa0d806038e200b30ac4d2b1d36"><div class="ttname"><a href="namespacestag_1_1graph.html#aeeb2ffa0d806038e200b30ac4d2b1d36">stag.graph.cycle_graph</a></div><div class="ttdeci">Graph cycle_graph(n)</div><div class="ttdoc">Construct a cycle graph on n vertices.</div><div class="ttdef"><b>Definition:</b> graph.py:520</div></div>
+<div class="ttc" id="anamespacestag_1_1spectrum_html"><div class="ttname"><a href="namespacestag_1_1spectrum.html">stag.spectrum</a></div><div class="ttdef"><b>Definition:</b> spectrum.py:1</div></div>
 <div class="ttc" id="anamespacestag_1_1spectrum_html_a5047735ae3aa19cd8cc71281112c74cc"><div class="ttname"><a href="namespacestag_1_1spectrum.html#a5047735ae3aa19cd8cc71281112c74cc">stag.spectrum.compute_eigensystem</a></div><div class="ttdeci">Tuple[np.ndarray, np.ndarray] compute_eigensystem(scipy.sparse.spmatrix mat, int num, str which='SM')</div><div class="ttdoc">Compute the eigenvalues and eigenvectors of a given matrix.</div><div class="ttdef"><b>Definition:</b> spectrum.py:42</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

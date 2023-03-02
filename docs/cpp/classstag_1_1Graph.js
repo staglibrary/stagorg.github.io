@@ -5,6 +5,8 @@ var classstag_1_1Graph =
     [ "adjacency", "classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90", null ],
     [ "laplacian", "classstag_1_1Graph.html#a6fa1e7a53dc61ee5f37b3a4c08ebe957", null ],
     [ "normalised_laplacian", "classstag_1_1Graph.html#a669332afb62778ef7b8419e671f9992b", null ],
+    [ "signless_laplacian", "classstag_1_1Graph.html#ae922199f9afccdb88f55afb372e26e98", null ],
+    [ "normalised_signless_laplacian", "classstag_1_1Graph.html#abddd6ffae952253a427390a518df5342", null ],
     [ "degree_matrix", "classstag_1_1Graph.html#aacde5e369670d54817b995472717c806", null ],
     [ "inverse_degree_matrix", "classstag_1_1Graph.html#a81fad4968af133222c6225df701d0633", null ],
     [ "lazy_random_walk_matrix", "classstag_1_1Graph.html#ac5c452838b81ba1bc7a93b4c32196aab", null ],

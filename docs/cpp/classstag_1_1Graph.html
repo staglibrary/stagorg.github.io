@@ -151,6 +151,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6fa1e7a53dc61ee5f37b3a4c08ebe957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a669332afb62778ef7b8419e671f9992b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#a669332afb62778ef7b8419e671f9992b">normalised_laplacian</a> ()</td></tr>
 <tr class="separator:a669332afb62778ef7b8419e671f9992b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae922199f9afccdb88f55afb372e26e98"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#ae922199f9afccdb88f55afb372e26e98">signless_laplacian</a> ()</td></tr>
+<tr class="separator:ae922199f9afccdb88f55afb372e26e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abddd6ffae952253a427390a518df5342"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#abddd6ffae952253a427390a518df5342">normalised_signless_laplacian</a> ()</td></tr>
+<tr class="separator:abddd6ffae952253a427390a518df5342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacde5e369670d54817b995472717c806"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#aacde5e369670d54817b995472717c806">degree_matrix</a> ()</td></tr>
 <tr class="separator:aacde5e369670d54817b995472717c806"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81fad4968af133222c6225df701d0633"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1Graph.html#a81fad4968af133222c6225df701d0633">inverse_degree_matrix</a> ()</td></tr>
@@ -377,6 +381,58 @@ Public Member Functions</h2></td></tr>
 \]
 </p>
 <p>where \(D\) is the diagonal matrix of vertex degrees (<a class="el" href="classstag_1_1Graph.html#aacde5e369670d54817b995472717c806">stag::Graph::degree_matrix</a>) and \(L\) is the Laplacian matrix of the graph (<a class="el" href="classstag_1_1Graph.html#a6fa1e7a53dc61ee5f37b3a4c08ebe957">stag::Graph::laplacian</a>).</p>
+<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the normalised Laplacian </dd></dl>
+
+</div>
+</div>
+<a id="ae922199f9afccdb88f55afb372e26e98" name="ae922199f9afccdb88f55afb372e26e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae922199f9afccdb88f55afb372e26e98">&#9670;&#160;</a></span>signless_laplacian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> * stag::Graph::signless_laplacian </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return the signless Laplacian matrix of the graph.</p>
+<p>The signless Laplacian matrix is defined by</p>
+<p class="formulaDsp">
+\[
+  J = D + A
+\]
+</p>
+<p>where \(D\) is the diagonal matrix of vertex degrees (<a class="el" href="classstag_1_1Graph.html#aacde5e369670d54817b995472717c806">stag::Graph::degree_matrix</a>) and A is the adjacency matrix of the graph (<a class="el" href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a>).</p>
+<dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the signless graph Laplacian </dd></dl>
+
+</div>
+</div>
+<a id="abddd6ffae952253a427390a518df5342" name="abddd6ffae952253a427390a518df5342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abddd6ffae952253a427390a518df5342">&#9670;&#160;</a></span>normalised_signless_laplacian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a> * stag::Graph::normalised_signless_laplacian </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Return the normalised signless Laplacian matrix of the graph.</p>
+<p>The normalised signless Laplacian matrix is defined by</p>
+<p class="formulaDsp">
+\[
+  \mathcal{J} = D^{-1/2} J D^{-1/2}
+\]
+</p>
+<p>where \(D\) is the diagonal matrix of vertex degrees (<a class="el" href="classstag_1_1Graph.html#aacde5e369670d54817b995472717c806">stag::Graph::degree_matrix</a>) and \(J\) is the signless Laplacian matrix of the graph (<a class="el" href="classstag_1_1Graph.html#ae922199f9afccdb88f55afb372e26e98">stag::Graph::signless_laplacian</a>).</p>
 <dl class="section return"><dt>Returns</dt><dd>a sparse Eigen matrix representing the normalised Laplacian </dd></dl>
 
 </div>

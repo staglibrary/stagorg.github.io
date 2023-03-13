@@ -151,6 +151,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1cb2b1916a67c6da01cae0f4ff029ec"><td class="memItemLeft" align="right" valign="top">scipy.sparse.csc_matrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1Graph.html#aa1cb2b1916a67c6da01cae0f4ff029ec">normalised_laplacian</a> (self)</td></tr>
 <tr class="memdesc:aa1cb2b1916a67c6da01cae0f4ff029ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the normalised Laplacian matrix of the graph.  <br /></td></tr>
 <tr class="separator:aa1cb2b1916a67c6da01cae0f4ff029ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cb2b1916a67c6da01cae0f4ff029ec"><td class="memItemLeft" align="right" valign="top">scipy.sparse.csc_matrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1Graph.html#aa1cb2b1916a67c6da01cae0f4ff029ec">normalised_laplacian</a> (self)</td></tr>
+<tr class="memdesc:aa1cb2b1916a67c6da01cae0f4ff029ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the normalised Laplacian matrix of the graph.  <br /></td></tr>
+<tr class="separator:aa1cb2b1916a67c6da01cae0f4ff029ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4154ffe54c97573bc248ae2563e2a59"><td class="memItemLeft" align="right" valign="top">scipy.sparse.csc_matrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1Graph.html#ad4154ffe54c97573bc248ae2563e2a59">signless_laplacian</a> (self)</td></tr>
+<tr class="memdesc:ad4154ffe54c97573bc248ae2563e2a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the signless Laplacian matrix of the graph.  <br /></td></tr>
+<tr class="separator:ad4154ffe54c97573bc248ae2563e2a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354b04c6caedca2c02aeb2a169e4bad2"><td class="memItemLeft" align="right" valign="top">scipy.sparse.csc_matrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1Graph.html#a354b04c6caedca2c02aeb2a169e4bad2">normalised_signless_laplacian</a> (self)</td></tr>
+<tr class="memdesc:a354b04c6caedca2c02aeb2a169e4bad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the normalised signless Laplacian matrix of the graph.  <br /></td></tr>
+<tr class="separator:a354b04c6caedca2c02aeb2a169e4bad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeed74a7d9e6e4b2dbaa2b86da0b246a0"><td class="memItemLeft" align="right" valign="top">scipy.sparse.csc_matrix&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstag_1_1graph_1_1Graph.html#aeed74a7d9e6e4b2dbaa2b86da0b246a0">degree_matrix</a> (self)</td></tr>
 <tr class="memdesc:aeed74a7d9e6e4b2dbaa2b86da0b246a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The degree matrix of the graph.  <br /></td></tr>
 <tr class="separator:aeed74a7d9e6e4b2dbaa2b86da0b246a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -321,7 +330,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa1cb2b1916a67c6da01cae0f4ff029ec" name="aa1cb2b1916a67c6da01cae0f4ff029ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1cb2b1916a67c6da01cae0f4ff029ec">&#9670;&#160;</a></span>normalised_laplacian()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1cb2b1916a67c6da01cae0f4ff029ec">&#9670;&#160;</a></span>normalised_laplacian() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,6 +354,90 @@ Public Member Functions</h2></td></tr>
 </p>
 <p>where \(D\) is the diagonal matrix of vertex degrees and \(L\) is the Laplacian matrix of the graph.</p>
 <p>:return: a <code>scipy.sparse.csc_matrix</code> representing the normalised Laplacian </p>
+
+</div>
+</div>
+<a id="aa1cb2b1916a67c6da01cae0f4ff029ec" name="aa1cb2b1916a67c6da01cae0f4ff029ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1cb2b1916a67c6da01cae0f4ff029ec">&#9670;&#160;</a></span>normalised_laplacian() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> scipy.sparse.csc_matrix stag.graph.Graph.normalised_laplacian </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct the normalised Laplacian matrix of the graph. </p>
+<p>The normalised Laplacian matrix is defined by</p>
+<p class="formulaDsp">
+\[
+        \mathcal{L} = D^{-1/2} L D^{-1/2}
+    \]
+</p>
+<p>where \(D\) is the diagonal matrix of vertex degrees and \(L\) is the Laplacian matrix of the graph.</p>
+<p>:return: a <code>scipy.sparse.csc_matrix</code> representing the normalised Laplacian </p>
+
+</div>
+</div>
+<a id="ad4154ffe54c97573bc248ae2563e2a59" name="ad4154ffe54c97573bc248ae2563e2a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4154ffe54c97573bc248ae2563e2a59">&#9670;&#160;</a></span>signless_laplacian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> scipy.sparse.csc_matrix stag.graph.Graph.signless_laplacian </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct the signless Laplacian matrix of the graph. </p>
+<p>The signless Laplacian matrix is defined by</p>
+<p class="formulaDsp">
+\[
+        J = D + A
+    \]
+</p>
+<p>where \(D\) is the diagonal matrix of vertex degrees and \(A\) is the adjacency matrix of the graph.</p>
+<p>:return: a <code>scipy.sparse.csc_matrix</code> representing the signless graph Laplacian </p>
+
+</div>
+</div>
+<a id="a354b04c6caedca2c02aeb2a169e4bad2" name="a354b04c6caedca2c02aeb2a169e4bad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354b04c6caedca2c02aeb2a169e4bad2">&#9670;&#160;</a></span>normalised_signless_laplacian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> scipy.sparse.csc_matrix stag.graph.Graph.normalised_signless_laplacian </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct the normalised signless Laplacian matrix of the graph. </p>
+<p>The normalised signless Laplacian matrix is defined by</p>
+<p class="formulaDsp">
+\[
+        \mathcal{J} = D^{-1/2} J D^{-1/2}
+    \]
+</p>
+<p>where \(D\) is the diagonal matrix of vertex degrees and \(J\) is the signless Laplacian matrix of the graph.</p>
+<p>:return: a <code>scipy.sparse.csc_matrix</code> representing the normalised signless Laplacian </p>
 
 </div>
 </div>
@@ -761,7 +854,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">myGraph = <a class="code hl_function" href="namespacestag_1_1graph.html#ae1faea33014d4ea2fdfe692a3dbb2863">stag.graph.star_graph</a>(10)</div>
 <div class="line">myGraph.draw()</div>
 <div class="line">plt.show()</div>
-<div class="ttc" id="anamespacestag_1_1graph_html_ae1faea33014d4ea2fdfe692a3dbb2863"><div class="ttname"><a href="namespacestag_1_1graph.html#ae1faea33014d4ea2fdfe692a3dbb2863">stag.graph.star_graph</a></div><div class="ttdeci">Graph star_graph(n)</div><div class="ttdoc">Construct a star graph.</div><div class="ttdef"><b>Definition:</b> graph.py:556</div></div>
+<div class="ttc" id="anamespacestag_1_1graph_html_ae1faea33014d4ea2fdfe692a3dbb2863"><div class="ttname"><a href="namespacestag_1_1graph.html#ae1faea33014d4ea2fdfe692a3dbb2863">stag.graph.star_graph</a></div><div class="ttdeci">Graph star_graph(n)</div><div class="ttdoc">Construct a star graph.</div><div class="ttdef"><b>Definition:</b> graph.py:610</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

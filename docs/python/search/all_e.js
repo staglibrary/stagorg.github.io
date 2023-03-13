@@ -8,12 +8,13 @@ var searchData=
   ['save_5fedgelist_5',['save_edgelist',['../namespacestag_1_1graphio.html#abc9c02dd6ddfc7a84a2fd8b1059fd849',1,'stag::graphio']]],
   ['sbm_6',['sbm',['../namespacestag_1_1random.html#a1dad47dbb4ab0f22bfdcf3a36bed4ca0',1,'stag::random']]],
   ['sbm_5fgt_5flabels_7',['sbm_gt_labels',['../namespacestag_1_1random.html#ad7e8a19425454b2cea12c22094c39f16',1,'stag::random']]],
-  ['spectral_5fcluster_8',['spectral_cluster',['../namespacestag_1_1cluster.html#aa5aa9cfa99063ac22ad24826840c4c3c',1,'stag::cluster']]],
-  ['spectrum_9',['spectrum',['../namespacestag_1_1spectrum.html',1,'stag']]],
-  ['spectrum_2epy_10',['spectrum.py',['../spectrum_8py.html',1,'']]],
-  ['stag_11',['stag',['../namespacestag.html',1,'']]],
-  ['stag_20and_20neo4j_12',['STAG and Neo4j',['../md_neo4j.html',1,'']]],
-  ['stag_20python_13',['STAG Python',['../index.html',1,'']]],
-  ['star_5fgraph_14',['star_graph',['../namespacestag_1_1graph.html#ae1faea33014d4ea2fdfe692a3dbb2863',1,'stag::graph']]],
-  ['sweep_5fset_5fconductance_15',['sweep_set_conductance',['../namespacestag_1_1cluster.html#a266b9d4a762e4c307eaebfdb6db15a20',1,'stag::cluster']]]
+  ['signless_5flaplacian_8',['signless_laplacian',['../classstag_1_1graph_1_1Graph.html#ad4154ffe54c97573bc248ae2563e2a59',1,'stag::graph::Graph']]],
+  ['spectral_5fcluster_9',['spectral_cluster',['../namespacestag_1_1cluster.html#aa5aa9cfa99063ac22ad24826840c4c3c',1,'stag::cluster']]],
+  ['spectrum_10',['spectrum',['../namespacestag_1_1spectrum.html',1,'stag']]],
+  ['spectrum_2epy_11',['spectrum.py',['../spectrum_8py.html',1,'']]],
+  ['stag_12',['stag',['../namespacestag.html',1,'']]],
+  ['stag_20and_20neo4j_13',['STAG and Neo4j',['../md_neo4j.html',1,'']]],
+  ['stag_20python_14',['STAG Python',['../index.html',1,'']]],
+  ['star_5fgraph_15',['star_graph',['../namespacestag_1_1graph.html#ae1faea33014d4ea2fdfe692a3dbb2863',1,'stag::graph']]],
+  ['sweep_5fset_5fconductance_16',['sweep_set_conductance',['../namespacestag_1_1cluster.html#a266b9d4a762e4c307eaebfdb6db15a20',1,'stag::cluster']]]
 ];

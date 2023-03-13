@@ -5,7 +5,8 @@ var searchData=
   ['neo4j_2emd_2',['neo4j.md',['../neo4j_8md.html',1,'']]],
   ['neo4j_2epy_3',['neo4j.py',['../neo4j_8py.html',1,'']]],
   ['neo4jgraph_4',['Neo4jGraph',['../classstag_1_1neo4j_1_1Neo4jGraph.html',1,'stag::neo4j']]],
-  ['normalised_5flaplacian_5',['normalised_laplacian',['../classstag_1_1graph_1_1Graph.html#aa1cb2b1916a67c6da01cae0f4ff029ec',1,'stag::graph::Graph']]],
-  ['number_5fof_5fedges_6',['number_of_edges',['../classstag_1_1graph_1_1Graph.html#a306f01cc126bc93e769b3e31882e6f77',1,'stag::graph::Graph']]],
-  ['number_5fof_5fvertices_7',['number_of_vertices',['../classstag_1_1graph_1_1Graph.html#a865eb8ecd3e4aded5831fc7d7f90b039',1,'stag::graph::Graph']]]
+  ['normalised_5flaplacian_5',['normalised_laplacian',['../classstag_1_1graph_1_1Graph.html#aa1cb2b1916a67c6da01cae0f4ff029ec',1,'stag.graph.Graph.normalised_laplacian(self)'],['../classstag_1_1graph_1_1Graph.html#aa1cb2b1916a67c6da01cae0f4ff029ec',1,'stag.graph.Graph.normalised_laplacian(self)']]],
+  ['normalised_5fsignless_5flaplacian_6',['normalised_signless_laplacian',['../classstag_1_1graph_1_1Graph.html#a354b04c6caedca2c02aeb2a169e4bad2',1,'stag::graph::Graph']]],
+  ['number_5fof_5fedges_7',['number_of_edges',['../classstag_1_1graph_1_1Graph.html#a306f01cc126bc93e769b3e31882e6f77',1,'stag::graph::Graph']]],
+  ['number_5fof_5fvertices_8',['number_of_vertices',['../classstag_1_1graph_1_1Graph.html#a865eb8ecd3e4aded5831fc7d7f90b039',1,'stag::graph::Graph']]]
 ];

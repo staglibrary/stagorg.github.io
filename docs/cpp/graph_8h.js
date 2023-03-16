@@ -3,6 +3,7 @@ var graph_8h =
     [ "stag::edge", "structstag_1_1edge.html", "structstag_1_1edge" ],
     [ "stag::LocalGraph", "classstag_1_1LocalGraph.html", "classstag_1_1LocalGraph" ],
     [ "stag::Graph", "classstag_1_1Graph.html", "classstag_1_1Graph" ],
+    [ "stag::AdjacencyListLocalGraph", "classstag_1_1AdjacencyListLocalGraph.html", "classstag_1_1AdjacencyListLocalGraph" ],
     [ "stag_int", "graph_8h.html#a0c328014088200f0b1217356fad00372", null ],
     [ "SprsMat", "graph_8h.html#ae6a866d72ff20e19e40c84774c534375", null ],
     [ "DenseMat", "graph_8h.html#a943bcf6d6853aaf2eaf921602dfa65bc", null ],

@@ -144,6 +144,8 @@ Functions</h2></td></tr>
 <tr class="separator:a9556a1160d25765f67b6bc5a5b2cac35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b7ce8f870ab46d7c7584534cbc925d4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a1b7ce8f870ab46d7c7584534cbc925d4">stag::adjusted_rand_index</a> (std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;gt_labels, std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;labels)</td></tr>
 <tr class="separator:a1b7ce8f870ab46d7c7584534cbc925d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208cda5596c6569bf098a03fbd1c5751"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cluster_8h.html#a208cda5596c6569bf098a03fbd1c5751">stag::conductance</a> (<a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *graph, std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;cluster)</td></tr>
+<tr class="separator:a208cda5596c6569bf098a03fbd1c5751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a92240a6d68323b538fd245077eb3e432" name="a92240a6d68323b538fd245077eb3e432"></a>
@@ -188,7 +190,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:168</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:169</div></div>
 </div><!-- fragment --><p>The spectral clustering algorithm has the following steps.</p><ul>
 <li>Compute the \(k\) smallest eigenvectors of the normalised Laplacian matrix.</li>
 <li>Embed the vertices into \(\mathbb{R}^k\) according to the eigenvectors.</li>
@@ -493,6 +495,50 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the ARI between the two labels vectors</dd></dl>
 <dl class="section user"><dt>References</dt><dd>W. M. Rand. Objective criteria for the evaluation of clustering methods. Journal of the American Statistical Association. 66 (336): 846–850. 1971. </dd></dl>
+
+</div>
+</div>
+<a id="a208cda5596c6569bf098a03fbd1c5751" name="a208cda5596c6569bf098a03fbd1c5751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a208cda5596c6569bf098a03fbd1c5751">&#9670;&#160;</a></span>conductance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double stag::conductance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1LocalGraph.html">stag::LocalGraph</a> *&#160;</td>
+          <td class="paramname"><em>graph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cluster</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the conductance of the given cluster in a graph.</p>
+<p>Given a graph \(G = (V, E)\), the conductance of \(S \subseteq V\) is defined to be</p>
+<p class="formulaDsp">
+\[
+   \phi(S) = \frac{w(S, V \setminus S)}{\mathrm{vol}(S)},
+\]
+</p>
+<p>where \(\mathrm{vol}(S) = \sum_{v \in S} \mathrm{deg}(v)\) is the volume of \(S\) and \(w(S, V \setminus S)\) is the total weight of edges crossing the cut between \(S\) and \(V \setminus S\).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">graph</td><td>a <a class="el" href="classstag_1_1LocalGraph.html" title="An abstract class which defines methods for exploring the local neighborhood of vertices in a graph.">stag::LocalGraph</a> object representing \(G\). </td></tr>
+    <tr><td class="paramname">cluster</td><td>a vector of node IDs in \(S\). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the conductance \(\phi_G(S)\). </dd></dl>
 
 </div>
 </div>

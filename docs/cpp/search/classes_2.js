@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['localgraph_0',['LocalGraph',['../classstag_1_1LocalGraph.html',1,'stag']]]
+  ['graph_0',['Graph',['../classstag_1_1Graph.html',1,'stag']]]
 ];

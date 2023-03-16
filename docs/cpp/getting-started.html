@@ -222,7 +222,7 @@ Named Graphs</h2>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:168</div></div>
+<div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:169</div></div>
 <div class="ttc" id="aclassstag_1_1Graph_html_a1e9cb4cac7ffc06d64ba3cfdefe08d90"><div class="ttname"><a href="classstag_1_1Graph.html#a1e9cb4cac7ffc06d64ba3cfdefe08d90">stag::Graph::adjacency</a></div><div class="ttdeci">const SprsMat * adjacency() const</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
 Adjacency Matrices</h2>
@@ -250,8 +250,8 @@ Adjacency Matrices</h2>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="agraph_8h_html_a0c328014088200f0b1217356fad00372"><div class="ttname"><a href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></div><div class="ttdeci">long long stag_int</div><div class="ttdef"><b>Definition:</b> graph.h:24</div></div>
-<div class="ttc" id="agraph_8h_html_ae6a866d72ff20e19e40c84774c534375"><div class="ttname"><a href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></div><div class="ttdeci">Eigen::SparseMatrix&lt; double, Eigen::ColMajor, stag_int &gt; SprsMat</div><div class="ttdef"><b>Definition:</b> graph.h:30</div></div>
+<div class="ttc" id="agraph_8h_html_a0c328014088200f0b1217356fad00372"><div class="ttname"><a href="graph_8h.html#a0c328014088200f0b1217356fad00372">stag_int</a></div><div class="ttdeci">long long stag_int</div><div class="ttdef"><b>Definition:</b> graph.h:25</div></div>
+<div class="ttc" id="agraph_8h_html_ae6a866d72ff20e19e40c84774c534375"><div class="ttname"><a href="graph_8h.html#ae6a866d72ff20e19e40c84774c534375">SprsMat</a></div><div class="ttdeci">Eigen::SparseMatrix&lt; double, Eigen::ColMajor, stag_int &gt; SprsMat</div><div class="ttdef"><b>Definition:</b> graph.h:31</div></div>
 </div><!-- fragment --><p>There are many other ways to construct the sparse adjacency matrix. Please refer to the <a href="https://eigen.tuxfamily.org/dox/group__TutorialSparse.html">Eigen Documentation</a>.</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Loading Graphs from Disk</h2>
@@ -261,7 +261,7 @@ Loading Graphs from Disk</h2>
 <div class="line">0, 1, 0.5</div>
 <div class="line">1, 2, 1</div>
 <div class="line">2, 0, 0.5</div>
-</div><!-- fragment --><p>This represents a graph on three vertices with three edges. For example, the first row corresponds to an edge between vertices 0 and 1 with weight 0.5.</p>
+</div><!-- fragment --><p>This represents a graph on three vertices with three edges. For example, the first row corresponds to an edge between vertices 0 and 1 with weight 0.5. For more information on the file formats supported by STAG, see <a class="el" href="file-formats.html">Graph File Formats</a>.</p>
 <p>To load a STAG graph from an edgelist file, you can use the following code.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stag/graph.h&gt;</span></div>
@@ -377,7 +377,8 @@ Local clustering</h2>
 <div class="line">}</div>
 <div class="ttc" id="aclassstag_1_1Graph_html_ae9d2d6c8cd34f5a822b459fe309fa88a"><div class="ttname"><a href="classstag_1_1Graph.html#ae9d2d6c8cd34f5a822b459fe309fa88a">stag::Graph::total_volume</a></div><div class="ttdeci">double total_volume()</div></div>
 </div><!-- fragment --><p>Notice that the local clustering method requires an estimate of the volume of the target cluster. This parameter does <em>not</em> impose a hard constraint on the algorithm and so an approximate volume is enough.</p>
-<p>The <a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a> method returns a vector containing the ID of each vertex in the local cluster. </p>
+<p>The <a class="el" href="cluster_8h.html#aa95a665cefc95f9ff516ccce911a2892">stag::local_cluster</a> method returns a vector containing the ID of each vertex in the local cluster.</p>
+<p>For working with very large graphs, consider using the <a class="el" href="classstag_1_1AdjacencyListLocalGraph.html" title="A local graph backed by an adjacency list file on disk.">stag::AdjacencyListLocalGraph</a> object for local clustering. This will read the graph from disk in a local way and reduces the memory requirement. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

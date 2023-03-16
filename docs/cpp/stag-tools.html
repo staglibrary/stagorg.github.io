@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STAG C++: Related Pages</title>
+<title>STAG C++: STAG Tools</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -93,7 +93,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('stag-tools.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -118,18 +118,30 @@ $(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Related Pages</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">STAG Tools </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9658;</span><a class="el" href="getting-started.html" target="_self">Getting Started</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="toggleFolder('1_')">&#9658;</span><a class="el" href="file-formats.html" target="_self">Graph File Formats</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_2_" class="arrow" onclick="toggleFolder('2_')">&#9658;</span><a class="el" href="stag-tools.html" target="_self">STAG Tools</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="md__home_runner_work_stag_stag_docs_stag_tools"></a></p>
+<p>The STAG library includes several command line tools for working with graph files. These tools are automatically installed with the library.</p>
+<h1><a class="anchor" id="autotoc_md17"></a>
+Generating random graphs</h1>
+<p>The <code>stag_sbm</code> command line tool can be used to generate random graphs from the symmetric stochastic block model.</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Usage</h2>
+<div class="fragment"><div class="line">stag_sbm [filename] [n] [k] [p] [q]</div>
+</div><!-- fragment --><p>Creates a new EdgeList file named <code>[filename]</code> containing a graph drawn from the symmetric stochastic block model with parameters <code>[n]</code>, <code>[k]</code>, <code>[p]</code>, and <code>[q]</code>. Equivalent to calling the <a class="el" href="random_8h.html#a8cf095d277fbb9d2f08b8b228ca71aed">stag::sbm</a> method and saving the resulting graph as an EdgeList.</p>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Converting between EdgeList and AdjacencyList</h1>
+<p>STAG supports two file formats (see <a class="el" href="file-formats.html">Graph File Formats</a>), and the <code>stag_edge2adj</code> and <code>stag_adj2edge</code> command line tools can be used to convert between them.</p>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Usage</h2>
+<div class="fragment"><div class="line">stag_edge2adj [edgelist] [adjacencylist]</div>
+</div><!-- fragment --><p>Converts the EdgeList file to a new AdjacencyList file. Equivalent to calling <a class="el" href="graphio_8h.html#a3719c964c9f842992ef2f152d6b90fd8">stag::edgelist_to_adjacencylist</a>.</p>
+<div class="fragment"><div class="line">stag_adj2edge [adjacencylist] [edgelist]</div>
+</div><!-- fragment --><p>Converts the AdjacencyList file to a new EdgeList file. Equivalent to calling <a class="el" href="graphio_8h.html#a814d025a4330ee25431787778b720389">stag::adjacencylist_to_edgelist</a>. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -41,6 +41,23 @@ var NAVTREE =
         [ "Local clustering", "getting-started.html#autotoc_md10", null ]
       ] ]
     ] ],
+    [ "Graph File Formats", "file-formats.html", [
+      [ "EdgeList File Format", "file-formats.html#autotoc_md11", null ],
+      [ "AdjacencyList File Format", "file-formats.html#autotoc_md12", null ],
+      [ "Working with Files", "file-formats.html#autotoc_md13", [
+        [ "Reading and Writing", "file-formats.html#autotoc_md14", null ],
+        [ "Local Access", "file-formats.html#autotoc_md15", null ],
+        [ "STAG Tools", "file-formats.html#autotoc_md16", null ]
+      ] ]
+    ] ],
+    [ "STAG Tools", "stag-tools.html", [
+      [ "Generating random graphs", "stag-tools.html#autotoc_md17", [
+        [ "Usage", "stag-tools.html#autotoc_md18", null ]
+      ] ],
+      [ "Converting between EdgeList and AdjacencyList", "stag-tools.html#autotoc_md19", [
+        [ "Usage", "stag-tools.html#autotoc_md20", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Modules", "files.html", "files" ],
     [ "STAG Python", "^https://staglibrary.io/docs/python", null ],

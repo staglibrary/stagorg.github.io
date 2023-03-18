@@ -145,6 +145,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a5a849aa0728edb2312742621e4775a5f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1cluster.html#a5a849aa0728edb2312742621e4775a5f">adjusted_rand_index</a> (List[int] gt_labels, List[int] labels)</td></tr>
 <tr class="memdesc:a5a849aa0728edb2312742621e4775a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Adjusted Rand Index between two label vectors.  <br /></td></tr>
 <tr class="separator:a5a849aa0728edb2312742621e4775a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15677c49c9d23d080b9c3188513cbc93"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestag_1_1cluster.html#a15677c49c9d23d080b9c3188513cbc93">conductance</a> (<a class="el" href="classstag_1_1graph_1_1LocalGraph.html">graph.LocalGraph</a> g, List[int] cluster)</td></tr>
+<tr class="memdesc:a15677c49c9d23d080b9c3188513cbc93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the conductance of the given cluster in a graph.  <br /></td></tr>
+<tr class="separator:a15677c49c9d23d080b9c3188513cbc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa5aa9cfa99063ac22ad24826840c4c3c" name="aa5aa9cfa99063ac22ad24826840c4c3c"></a>
@@ -460,6 +463,51 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the ARI between the two labels vectors</dd></dl>
 <dl class="section user"><dt>References</dt><dd>W. M. Rand. Objective criteria for the evaluation of clustering methods. Journal of the American Statistical Association. 66 (336): 846–850. 1971. </dd></dl>
+
+</div>
+</div>
+<a id="a15677c49c9d23d080b9c3188513cbc93" name="a15677c49c9d23d080b9c3188513cbc93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15677c49c9d23d080b9c3188513cbc93">&#9670;&#160;</a></span>conductance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> float stag.cluster.conductance </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classstag_1_1graph_1_1LocalGraph.html">graph.LocalGraph</a>&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List[int]&#160;</td>
+          <td class="paramname"><em>cluster</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the conductance of the given cluster in a graph. </p>
+<p>Given a graph \(G = (V, E)\), the conductance of \(S \subseteq V\) is defined to be</p>
+<p class="formulaDsp">
+\[
+       \phi(S) = \frac{w(S, V \setminus S)}{\mathrm{vol}(S)},
+    \]
+</p>
+<p>where \(\mathrm{vol}(S) = \sum_{v \in S} \mathrm{deg}(v)\) is the volume of \(S\) and \(w(S, V \setminus S)\) is the total weight of edges crossing the cut between \(S\) and \(V \setminus S\).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>a <a class="el" href="classstag_1_1graph_1_1LocalGraph.html" title="An abstract class which defines methods for exploring the local neighborhood of vertices in a graph.">stag.graph.LocalGraph</a> object representing \(G\). </td></tr>
+    <tr><td class="paramname">cluster</td><td>a list of node IDs in \(S\). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the conductance \(\phi_G(S)\). </dd></dl>
 
 </div>
 </div>

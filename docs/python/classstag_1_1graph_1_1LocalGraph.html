@@ -131,8 +131,9 @@ Inheritance diagram for stag.graph.LocalGraph:</div>
  <div class="center">
   <img src="classstag_1_1graph_1_1LocalGraph.png" usemap="#stag.graph.LocalGraph_map" alt=""/>
   <map id="stag.graph.LocalGraph_map" name="stag.graph.LocalGraph_map">
-<area href="classstag_1_1graph_1_1Graph.html" title="The core object used to represent graphs for use with the library." alt="stag.graph.Graph" shape="rect" coords="0,112,142,136"/>
-<area href="classstag_1_1neo4j_1_1Neo4jGraph.html" title="Represent a neo4j database as a stag.graph.LocalGraph object." alt="stag.neo4j.Neo4jGraph" shape="rect" coords="152,112,294,136"/>
+<area href="classstag_1_1graph_1_1AdjacencyListLocalGraph.html" title="A local graph backed by an adjacency list file on disk." alt="stag.graph.AdjacencyListLocalGraph" shape="rect" coords="0,112,222,136"/>
+<area href="classstag_1_1graph_1_1Graph.html" title="The core object used to represent graphs for use with the library." alt="stag.graph.Graph" shape="rect" coords="232,112,454,136"/>
+<area href="classstag_1_1neo4j_1_1Neo4jGraph.html" title="Represent a neo4j database as a stag.graph.LocalGraph object." alt="stag.neo4j.Neo4jGraph" shape="rect" coords="464,112,686,136"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
@@ -194,7 +195,7 @@ Public Member Functions</h2></td></tr>
 <div class="ttc" id="aclassstag_1_1graph_1_1LocalGraph_html"><div class="ttname"><a href="classstag_1_1graph_1_1LocalGraph.html">stag.graph.LocalGraph</a></div><div class="ttdoc">An abstract class which defines methods for exploring the local neighborhood of vertices in a graph.</div><div class="ttdef"><b>Definition:</b> graph.py:71</div></div>
 <div class="ttc" id="anamespacestag_1_1graph_html"><div class="ttname"><a href="namespacestag_1_1graph.html">stag.graph</a></div><div class="ttdef"><b>Definition:</b> graph.py:1</div></div>
 </div><!-- fragment --> 
-<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1Graph.html#a2d0a3e7b86d9a8c0113aeed6e6bcfd63">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#aebbad3b985992840d0976bb04dca6765">stag.neo4j.Neo4jGraph</a>.</p>
+<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1Graph.html#a2d0a3e7b86d9a8c0113aeed6e6bcfd63">stag.graph.Graph</a>, <a class="el" href="classstag_1_1graph_1_1AdjacencyListLocalGraph.html#ace518406e1c899acc7aafa6de569cb12">stag.graph.AdjacencyListLocalGraph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#aebbad3b985992840d0976bb04dca6765">stag.neo4j.Neo4jGraph</a>.</p>
 
 </div>
 </div>
@@ -227,7 +228,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Given a vertex v, return its weighted degree. </p>
 
-<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1Graph.html#a97caa37897810a0afac63c3a8159db32">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#af80192c0eead41c7acaf18caa7787eb9">stag.neo4j.Neo4jGraph</a>.</p>
+<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1AdjacencyListLocalGraph.html#ac19122163092c8a79d1d3aec23ce9c7d">stag.graph.AdjacencyListLocalGraph</a>, <a class="el" href="classstag_1_1graph_1_1Graph.html#a97caa37897810a0afac63c3a8159db32">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#af80192c0eead41c7acaf18caa7787eb9">stag.neo4j.Neo4jGraph</a>.</p>
 
 </div>
 </div>
@@ -260,7 +261,7 @@ Public Member Functions</h2></td></tr>
 <p>Given a vertex v, return its unweighted degree. </p>
 <p>That is, the number of neighbors of v, ignoring the edge weights. </p>
 
-<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1Graph.html#a07211431e0d1f4dcf62fbd44e26e8c9a">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#a30c2418ebdb5be52b06b4a23b443f20f">stag.neo4j.Neo4jGraph</a>.</p>
+<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1AdjacencyListLocalGraph.html#a2eac4e58803a15f8c637e9b3b89ff72c">stag.graph.AdjacencyListLocalGraph</a>, <a class="el" href="classstag_1_1graph_1_1Graph.html#a07211431e0d1f4dcf62fbd44e26e8c9a">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#a30c2418ebdb5be52b06b4a23b443f20f">stag.neo4j.Neo4jGraph</a>.</p>
 
 </div>
 </div>
@@ -300,7 +301,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a list of <a class="el" href="classstag_1_1graph_1_1Edge.html" title="An object representing a weighted edge in a graph.">stag.graph.Edge</a> objects containing the neighbourhood of v </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1Graph.html#a461fa61297f2893e15ba395029b453ec">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#ab760d10d107f4008c918dc1d2963468e">stag.neo4j.Neo4jGraph</a>.</p>
+<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1AdjacencyListLocalGraph.html#a09d12b5ee7b0e156e02617a705c20719">stag.graph.AdjacencyListLocalGraph</a>, <a class="el" href="classstag_1_1graph_1_1Graph.html#a461fa61297f2893e15ba395029b453ec">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#ab760d10d107f4008c918dc1d2963468e">stag.neo4j.Neo4jGraph</a>.</p>
 
 </div>
 </div>
@@ -340,7 +341,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a list of vertex IDs giving the neighbours of v </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1Graph.html#a97466e29030101fabbd4bd435213066e">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#a54f90aa69348e4b6ddcffa6f51cb5595">stag.neo4j.Neo4jGraph</a>.</p>
+<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1AdjacencyListLocalGraph.html#a7943ec4c264b2707b551f190f36337e8">stag.graph.AdjacencyListLocalGraph</a>, <a class="el" href="classstag_1_1graph_1_1Graph.html#a97466e29030101fabbd4bd435213066e">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#a54f90aa69348e4b6ddcffa6f51cb5595">stag.neo4j.Neo4jGraph</a>.</p>
 
 </div>
 </div>
@@ -459,7 +460,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a boolean indicating whether there exists a vertex with the given index </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1Graph.html#acd63d87814f513aa45e6f09866663d6f">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#af2ffcb86fa9b237106b7ce1a5089516e">stag.neo4j.Neo4jGraph</a>.</p>
+<p>Reimplemented in <a class="el" href="classstag_1_1graph_1_1AdjacencyListLocalGraph.html#a5a71e96a858be2b0709d372e86994be3">stag.graph.AdjacencyListLocalGraph</a>, <a class="el" href="classstag_1_1graph_1_1Graph.html#acd63d87814f513aa45e6f09866663d6f">stag.graph.Graph</a>, and <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html#af2ffcb86fa9b237106b7ce1a5089516e">stag.neo4j.Neo4jGraph</a>.</p>
 
 </div>
 </div>

@@ -124,14 +124,14 @@ $(document).ready(function(){initNavTree('md_neo4j.html',''); initResizable(); }
 <div class="contents">
 <div class="textblock"><p>The <a class="el" href="classstag_1_1neo4j_1_1Neo4jGraph.html" title="Represent a neo4j database as a stag.graph.LocalGraph object.">stag.neo4j.Neo4jGraph</a> object provides a convenient interface with Neo4j, a popular graph database. This allows graph algorithms to be executed directly on a graph stored in the database.</p>
 <p>This tutorial will give a quick introduction to Neo4j and demonstrate how to run your first graph algorithms on a graph stored in Neo4j. In this tutorial, we will connect to a Neo4j database running in the AuraDB cloud service. The STAG library can also connect to a database running locally.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Setting up a Neo4j Database</h1>
 <p>You should begin by following the introductory steps in the <a href="https://neo4j.com/">Neo4j documentation</a> to set up a database in the cloud using the AuraDB service. We recommend first experimenting with the provided 'Movie' dataset. You will need to note the following information when you create the new database instance.</p>
 <ul>
 <li>The generated password for accessing the database instance.</li>
 <li>The connection URI.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Connecting to the Database with STAG</h1>
 <p>Once the database instance is up and running, you can connect to it with the following code.</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1neo4j.html">stag.neo4j</a></div>
@@ -143,7 +143,7 @@ Connecting to the Database with STAG</h1>
 <div class="ttc" id="anamespacestag_1_1neo4j_html"><div class="ttname"><a href="namespacestag_1_1neo4j.html">stag.neo4j</a></div><div class="ttdef"><b>Definition:</b> neo4j.py:1</div></div>
 </div><!-- fragment --><p>Then, we can test that the connection was successful by querying the database. This command will return the degree of the node with ID 0.</p>
 <div class="fragment"><div class="line">print(g.degree(0))</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 Finding Clusters in the Graph</h1>
 <p>Once we have connected successfully to the database, we can find a cluster in the data.</p>
 <div class="fragment"><div class="line"><span class="keyword">import</span> <a class="code hl_namespace" href="namespacestag_1_1cluster.html">stag.cluster</a></div>

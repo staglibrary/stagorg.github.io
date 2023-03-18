@@ -5,5 +5,6 @@ var searchData=
   ['compute_5feigensystem_2',['compute_eigensystem',['../namespacestag_1_1spectrum.html#a5047735ae3aa19cd8cc71281112c74cc',1,'stag::spectrum']]],
   ['compute_5feigenvalues_3',['compute_eigenvalues',['../namespacestag_1_1spectrum.html#a158d87da009bf115c56ee362c4fc8825',1,'stag::spectrum']]],
   ['compute_5feigenvectors_4',['compute_eigenvectors',['../namespacestag_1_1spectrum.html#a7e468903367b99a840f3d0db530ed619',1,'stag::spectrum']]],
-  ['cycle_5fgraph_5',['cycle_graph',['../namespacestag_1_1graph.html#aeeb2ffa0d806038e200b30ac4d2b1d36',1,'stag::graph']]]
+  ['conductance_5',['conductance',['../namespacestag_1_1cluster.html#a15677c49c9d23d080b9c3188513cbc93',1,'stag::cluster']]],
+  ['cycle_5fgraph_6',['cycle_graph',['../namespacestag_1_1graph.html#aeeb2ffa0d806038e200b30ac4d2b1d36',1,'stag::graph']]]
 ];

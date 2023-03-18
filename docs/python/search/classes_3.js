@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['neo4jgraph_0',['Neo4jGraph',['../classstag_1_1neo4j_1_1Neo4jGraph.html',1,'stag::neo4j']]]
+  ['localgraph_0',['LocalGraph',['../classstag_1_1graph_1_1LocalGraph.html',1,'stag::graph']]]
 ];

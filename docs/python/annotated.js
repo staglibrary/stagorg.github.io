@@ -2,6 +2,7 @@ var annotated =
 [
     [ "stag", "namespacestag.html", [
       [ "graph", "namespacestag_1_1graph.html", [
+        [ "AdjacencyListLocalGraph", "classstag_1_1graph_1_1AdjacencyListLocalGraph.html", "classstag_1_1graph_1_1AdjacencyListLocalGraph" ],
         [ "Edge", "classstag_1_1graph_1_1Edge.html", "classstag_1_1graph_1_1Edge" ],
         [ "Graph", "classstag_1_1graph_1_1Graph.html", "classstag_1_1graph_1_1Graph" ],
         [ "LocalGraph", "classstag_1_1graph_1_1LocalGraph.html", "classstag_1_1graph_1_1LocalGraph" ]

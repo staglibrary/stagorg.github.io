@@ -31,10 +31,18 @@ var NAVTREE =
       [ "Reading Graphs from Disk", "getting-started.html#autotoc_md2", null ],
       [ "Finding Clusters", "getting-started.html#autotoc_md3", null ]
     ] ],
+    [ "Graph File Formats", "file-formats.html", [
+      [ "EdgeList File Format", "file-formats.html#autotoc_md4", null ],
+      [ "AdjacencyList File Format", "file-formats.html#autotoc_md5", null ],
+      [ "Working with Files", "file-formats.html#autotoc_md6", [
+        [ "Reading and Writing", "file-formats.html#autotoc_md7", null ],
+        [ "Local Access", "file-formats.html#autotoc_md8", null ]
+      ] ]
+    ] ],
     [ "STAG and Neo4j", "md_neo4j.html", [
-      [ "Setting up a Neo4j Database", "md_neo4j.html#autotoc_md4", null ],
-      [ "Connecting to the Database with STAG", "md_neo4j.html#autotoc_md5", null ],
-      [ "Finding Clusters in the Graph", "md_neo4j.html#autotoc_md6", null ]
+      [ "Setting up a Neo4j Database", "md_neo4j.html#autotoc_md9", null ],
+      [ "Connecting to the Database with STAG", "md_neo4j.html#autotoc_md10", null ],
+      [ "Finding Clusters in the Graph", "md_neo4j.html#autotoc_md11", null ]
     ] ],
     [ "Namespaces", "namespaces.html", "namespaces" ],
     [ "Classes", "annotated.html", "annotated" ],

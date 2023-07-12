@@ -26,5 +26,6 @@ var menudata={children:[
 {text:"Related Pages",url:"pages.html"},
 {text:"Classes",url:"annotated.html"},
 {text:"Modules",url:"files.html"},
+{text:"Releases",url:"^https://github.com/staglibrary/stag/releases"},
 {text:"STAG Python",url:"^https://staglibrary.io/docs/python"},
 {text:"STAG Website",url:"^https://staglibrary.io/"}]}

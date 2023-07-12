@@ -60,6 +60,7 @@ var NAVTREE =
     ] ],
     [ "Classes", "annotated.html", "annotated" ],
     [ "Modules", "files.html", "files" ],
+    [ "Releases", "^https://github.com/staglibrary/stag/releases", null ],
     [ "STAG Python", "^https://staglibrary.io/docs/python", null ],
     [ "STAG Website", "^https://staglibrary.io/", null ]
   ] ]

@@ -46,6 +46,7 @@ var NAVTREE =
     ] ],
     [ "Namespaces", "namespaces.html", "namespaces" ],
     [ "Classes", "annotated.html", "annotated" ],
+    [ "Releases", "^https://github.com/staglibrary/stagpy/releases", null ],
     [ "STAG C++", "^https://staglibrary.io/docs/cpp", null ],
     [ "STAG Website", "^https://staglibrary.io/", null ]
   ] ]

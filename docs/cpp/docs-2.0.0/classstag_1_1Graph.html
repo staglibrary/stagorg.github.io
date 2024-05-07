@@ -254,7 +254,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
 <div class="line">  <span class="comment">// Construct a sparse matrix representing the</span></div>
 <div class="line">  <span class="comment">// triangle graph adjacency matrix.</span></div>
-<div class="line">  stag_int n = 3;</div>
+<div class="line">  <a class="code hl_typedef" href="definitions_8h.html#a71d9e7b56a1d77f9a154c09fbed3b451">StagInt</a> n = 3;</div>
 <div class="line">  <a class="code hl_typedef" href="definitions_8h.html#a1ebaa6c875adf6fd0b374b5ca2c5476a">SprsMat</a> adj(n, n);</div>
 <div class="line">  adj.coeffRef(0, 1) = 1;</div>
 <div class="line">  adj.coeffRef(0, 2) = 1;</div>
@@ -273,6 +273,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">}</div>
 <div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:139</div></div>
 <div class="ttc" id="adefinitions_8h_html_a1ebaa6c875adf6fd0b374b5ca2c5476a"><div class="ttname"><a href="definitions_8h.html#a1ebaa6c875adf6fd0b374b5ca2c5476a">SprsMat</a></div><div class="ttdeci">Eigen::SparseMatrix&lt; StagReal, Eigen::ColMajor, StagInt &gt; SprsMat</div><div class="ttdef"><b>Definition:</b> definitions.h:46</div></div>
+<div class="ttc" id="adefinitions_8h_html_a71d9e7b56a1d77f9a154c09fbed3b451"><div class="ttname"><a href="definitions_8h.html#a71d9e7b56a1d77f9a154c09fbed3b451">StagInt</a></div><div class="ttdeci">int64_t StagInt</div><div class="ttdef"><b>Definition:</b> definitions.h:30</div></div>
 </div><!-- fragment --><p>The provided matrix must be symmetric, and may include self-loops.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

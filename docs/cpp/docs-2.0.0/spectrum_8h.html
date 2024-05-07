@@ -273,7 +273,7 @@ Functions</h2></td></tr>
 <div class="line">  <a class="code hl_class" href="classstag_1_1Graph.html">stag::Graph</a> myGraph = stag::cycle_graph(10);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Compute a few eigenvalues and eigenvectors</span></div>
-<div class="line">  stag_int k = 3;</div>
+<div class="line">  <a class="code hl_typedef" href="definitions_8h.html#a71d9e7b56a1d77f9a154c09fbed3b451">StagInt</a> k = 3;</div>
 <div class="line">  <a class="code hl_typedef" href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a> eigensystem = stag::compute_eigensystem(</div>
 <div class="line">      myGraph, stag::GraphMatrix::NormalisedLaplacian,</div>
 <div class="line">      k, stag::EigenSortRule::Largest);</div>
@@ -284,6 +284,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassstag_1_1Graph_html"><div class="ttname"><a href="classstag_1_1Graph.html">stag::Graph</a></div><div class="ttdoc">The core object used to represent graphs for use with the library.</div><div class="ttdef"><b>Definition:</b> graph.h:139</div></div>
+<div class="ttc" id="adefinitions_8h_html_a71d9e7b56a1d77f9a154c09fbed3b451"><div class="ttname"><a href="definitions_8h.html#a71d9e7b56a1d77f9a154c09fbed3b451">StagInt</a></div><div class="ttdeci">int64_t StagInt</div><div class="ttdef"><b>Definition:</b> definitions.h:30</div></div>
 <div class="ttc" id="aspectrum_8h_html_afdc477f11de43a0af17c9e25167b555a"><div class="ttname"><a href="spectrum_8h.html#afdc477f11de43a0af17c9e25167b555a">stag::EigenSystem</a></div><div class="ttdeci">std::tuple&lt; Eigen::VectorXd, Eigen::MatrixXd &gt; EigenSystem</div><div class="ttdef"><b>Definition:</b> spectrum.h:58</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

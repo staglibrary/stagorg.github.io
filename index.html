@@ -116,23 +116,34 @@
       <div class="container">
       <h3><br> Components<br></h3> 
       
-       <p>
-        STAG 2.0 contains the following components:
-        </p>
+       <p> STAG 2.0 contains the following components: </p>
             
           
         <div class="row justify-content-between">
           <div class="col-lg-9 pt-5 pt-lg-0">
              <h4>Local Graph Clustering.</h4> 
             
-             <p>
+            <p>
                 Given a vertex of some underlying graph as input,  a local graph clustering algorithm is to find some low-conductance set around the input vertex, while the algorithm runs in time proportional to the size of the target cluster and independent of the size of the entire graph. As one of the key components in designing nearly-linear time graph algorithms, local graph clustering  has  been extensively studied in algorithmic spectral graph theory.
             </p>
                 
-             <p  >
+            <p>
                 STAG contains our implemention of the local graph clustering based on   PageRank (the ACL algorithm). Comparing with several existing open-source implementation for local graph clustering, our code connects to a  <a href="https://neo4j.com"> Neo4j</a>  database running in the AuraDB cloud service, or a database running locally. With this   feature, one can run local graph clustering on the entire Wikipedia graph of more than 20GB with a single PC. <br> 
             </p>  
           </div>
+          <div class="row">
+                <div class="col-md-12">
+                        <i class="bx bx-receipt"></i>
+                           
+                          <p>
+                            Reid Andersen, Fan R. K. Chung, Kevin J. Lang: Local Graph Partitioning using PageRank Vectors. FOCS 2006: 475-486
+                          </p>
+                        
+                          <p>
+                            Daniel A. Spielman, Shang-Hua Teng: A Local Clustering Algorithm for Massive Graphs and Its Application to Nearly Linear Time Graph Partitioning. SIAM J. Comput. 42(1): 1-26 (2013)<br> <br>
+                          </p>
+                </div>
+            </div>   
          
         <div class="col-lg-3 order-1 order-lg-2 hero-img img-fluid" alt="" data-aos="zoom-in" >
                    <img src="assets/img/graphswithDB.svg" class="img-fluid animated" alt=""> 

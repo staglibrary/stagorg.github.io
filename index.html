@@ -257,16 +257,17 @@ Symposium on Theory of Computing (STOC’02), pages 380–388, 2002.</p>
           <div class="col-lg-9 pt-5 pt-lg-0">
             <h4>  Fast Spectral Clustering.<br> </h4> 
                         
-             <p> For any set of n points in Euclidean space  and parameter k, the goal of spectral clustering is to partition 
-             the n points into k clusters such that similar points are grouped into the same cluster. Spectral clustering consists
-             of the following three steps: (1) compute a similarity graph G of n vertices; (2) compute the bottom k eigenvectors 
-             of the Laplacian matrix of G, and apply these eigenvectors to embed the vertices into k-dim. Euclidean space; (3) 
+             <p> For any set of  points in Euclidean space  and parameter k, the goal of spectral clustering is to partition 
+             the  points into k clusters such that similar points are grouped into the same cluster. It consists
+             of the following three steps: (1) construct a similarity graph G; (2) compute the bottom k eigenvectors 
+             of the graph matrix, and apply these  to embed the vertices into k-dim.  space; (3) 
               apply k-means on the embedded points, and use k-means’ output as the resulting clustering.
-
-            </p>
+             </p>
+             
                 
              <p>
-                STAG contains our implemention of the MS algorithm for fast spectral graph clustering.
+                STAG contains the implementation of the fast spectral clustering algorithm designed by Macgregor and Sun.  For data points
+                from low dimension, their algorithm runs in nearly-linear time, and has theoretical guarantee on the output clusters.
             </p>  
           </div>
          
